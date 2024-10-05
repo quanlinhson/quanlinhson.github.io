@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="uft-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Hoyoverse Game Ban Pick UI</title>
+</head>
+
+<body>
+    <h1>Setting</h1>
+    <div class="page-container">
+        <div class="setting">
+            <div class="container">
+                <div class="ban-character">
+                    Banned Characters:
+                    <div>
+                        <button id="plus" class="pm">+</button>
+                        <input id="input" type="text" value='0'>
+                        <button id="minus" class="pm">-</button>
+                    </div>
+                </div>
+                <br>
+                <div class="ban-character">
+                    Countdown
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <br>
+                <div class="ban-character">
+                    Ban Time
+                    <div>
+                        <button id="plus" class="pm">+</button>
+                        <input id="input" type="text" value='0'>
+                        <button id="minus" class="pm">-</button>
+                    </div>
+                </div>
+                <br>
+                <div class="ban-character">
+                    Pick Time:
+                    <div>
+                        <button id="plus" class="pm">+</button>
+                        <input id="input" type="text" value='0'>
+                        <button id="minus" class="pm">-</button>
+                    </div>
+                </div>
+                <br>
+                <p>Logic of Ban/Pick</p>
+                <div class="list-bp">
+                    <div class="sortable-list">
+                        <ul id="sortable">
+                            <li draggable="true">Item 1</li>
+                            <li draggable="true">Item 2</li>
+                            <li draggable="true">Item 3</li>
+                            <!-- Add more list items as needed -->
+                        </ul>
+                    </div>
+                </div>
+                <button id="confirm" class="confirm">Confirm</button>
+            </div>
+            <footer id="footer">
+                <p>Designed by NOTZeta. This is only for personal use.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="code.js"></script>
+</body>
+
+</html>
