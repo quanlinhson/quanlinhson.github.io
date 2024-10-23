@@ -29,8 +29,8 @@
                 <div class="ban-slots">
                     <div class="ban-slot-left">
                         <div class="ban-slot">
-                            <img src="../../../../asset/images/selection_character/ayaka.webp" alt="Girl in a jacket"
-                                width=81px height=96px>
+                            <img src="../../../../asset/images/selection_character/ayaka.webp" alt="ayaka" width=81px
+                                height=96px>
                         </div>
                         <div class="verticalLine"></div>
                         <div class="ban-slot"></div>
@@ -44,7 +44,10 @@
                     </div>
                     <p>60</p>
                     <div class="ban-slot-right">
-                        <div class="ban-slot"></div>
+                        <div class="ban-slot">
+                            <img src="../../../../asset/images/selection_character/ayaka.webp" alt="ayaka" width=81px
+                                height=96px>
+                        </div>
                         <div class="verticalLine"></div>
                         <div class="ban-slot"></div>
                         <div class="verticalLine"></div>
@@ -60,10 +63,6 @@
             <div class="pick-hud">
                 <div class="pick-slots">
                     <div class="pick-slot-left">
-                        <div class="pick-slot">
-                            <img src="../../../../asset/images/character/ayaka.webp" alt="ayaka">
-                            <p>Ayaka</p>
-                        </div>
                         <div class="pick-slot"></div>
                         <div class="pick-slot"></div>
                         <div class="pick-slot"></div>
@@ -71,12 +70,38 @@
                         <div class="pick-slot"></div>
                         <div class="pick-slot"></div>
                         <div class="pick-slot"></div>
-                        <div class="verticalLine"></div>
+                        <div class="pick-slot"></div>
                     </div>
                     <div class="banpick-player">
-                        <div class="character-filter"></div>
+                        <div class="character-filter">
+                            <div class="by-element">
+                                <img src="../../../../asset/icons/elements/anemo.svg">
+                                <img src="../../../../asset/icons/elements/cryo.svg">
+                                <img src="../../../../asset/icons/elements/dendro.svg">
+                                <img src="../../../../asset/icons/elements/electro.svg">
+                                <img src="../../../../asset/icons/elements/geo.svg">
+                                <img src="../../../../asset/icons/elements/hydro.svg">
+                                <img src="../../../../asset/icons/elements/pyro.svg">
+                            </div>
+                            <div class="by-weapon">
+                                <img src="../../../../asset/icons/weapons/bow.png">
+                                <img src="../../../../asset/icons/weapons/catalyst.png">
+                                <img src="../../../../asset/icons/weapons/claymore.png">
+                                <img src="../../../../asset/icons/weapons/polearm.png">
+                                <img src="../../../../asset/icons/weapons/sword.png">
+                            </div>
+                            <div class="by-rating">
+                                <img src="../../../../asset/icons/rarities/star-4.svg">
+                                <img src="../../../../asset/icons/rarities/star-5.svg">
+                            </div>
+                            <div class="search">
+                                <input type="text" placeholder="Search..">
+                                <button type="submit">
+                                    <img src="../../../../asset/icons/search.png" width="16px" height="16px">
+                                </button>
+                            </div>
+                        </div>
                         <div class="character-list">
-                            <p>Ban pick</p>
                         </div>
                         <button id="confirm" class="confirm">Confirm</button>
                     </div>
@@ -89,11 +114,11 @@
                         <div class="pick-slot"></div>
                         <div class="pick-slot"></div>
                         <div class="pick-slot"></div>
-                        <div class="verticalLine"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="code.js" type="module"></script>
 </body>
 
 </html>

@@ -1,5 +1,3 @@
-// import { GenshinCharacter } from "../../../../database/character";
-
 export const GenshinCharacter = [
     {
         "id": 1,
@@ -1157,7 +1155,7 @@ export const GenshinCharacter = [
     {
         "id": 45,
         "fullName": "Yae Miko",
-        "shortName": "Yae Miko",
+        "shortName": "Yae",
         "stars": 5,
         "elements": [
             "electro"
@@ -1253,100 +1251,3 @@ export const GenshinCharacter = [
         "selected": false
     }
 ]
-
-const characterSelection = document.querySelector('.character-list');
-const ul = document.createElement('ul');
-for (let i in GenshinCharacter) {
-    let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase();
-    const removeSpaces = (inputText) => {
-        return inputText.replace(/\s/g, "");
-    };
-    let character_file = removeSpaces(lowerCaseText);
-    // console.log(character_file);
-    const li = document.createElement('li');
-    const img = document.createElement('img');
-    img.src = `../../../../asset/images/character/${character_file}.webp`;
-    img.alt = lowerCaseText;
-    img.classList.add('character');
-    if (GenshinCharacter[i].stars == '4') {
-        img.style.backgroundColor = "#935DB1";
-    } else {
-        img.style.backgroundColor = "#D07825";
-    }
-    li.appendChild(img);
-    ul.appendChild(li);
-    characterSelection.appendChild(ul);
-    //add the name of the character
-    const characterName = document.createElement('div');
-    characterName.classList.add('character-name');
-    characterName.innerHTML = GenshinCharacter[i].fullName;
-    li.appendChild(characterName);
-};
-
-const logic_BP = {
-    1: "BlueBan",
-    2: "RedBan",
-    3: "BluePick",
-    4: "RedPick",
-    5: "RedBan",
-    6: "BlueBan",
-    7: "RedPick",
-    8: "BluePick",
-    9: "BluePick",
-    10: "RedPick",
-    11: "RedPick",
-    12: "BluePick",
-    13: "BlueBan",
-    14: "RedBan",
-    15: "BlueBan",
-    16: "RedBan",
-    17: "BluePick",
-    18: "RedPick",
-    19: "RedPick",
-    20: "BluePick",
-    21: "RedBan",
-    22: "BlueBan",
-    23: "RedPick",
-    24: "BluePick",
-    25: "BluePick",
-    26: "RedPick",
-};
-
-function findFullName(name) {
-    for (let i in GenshinCharacter) {
-        let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
-        if (lowerCaseText == name) {
-            return GenshinCharacter[i].fullName;
-        }
-    }
-}
-const characters = document.querySelectorAll('.character-list img');
-console.log(characters);
-characters.forEach(character => {
-    character.addEventListener('click', () => {
-        console.log(character.alt);
-        character.style.backgroundColor = '#ccc';
-        character.style.filter = 'grayscale(1)';
-        const img = document.createElement('img');
-        const file_name = character.alt;
-        img.alt = character.alt;
-        const removeSpaces = (inputText) => {
-            return inputText.replace(/\s/g, "");
-        };
-        let file = removeSpaces(character.alt);
-        img.src = `../../../../asset/images/character/${file}.webp`
-        const name = document.createElement('p');
-        name.innerHTML = findFullName(character.alt);
-        const pickSlots = document.querySelectorAll('.pick-slot');
-        //find the first empty pick slot that doesn't have a image
-        const emptySlot = Array.from(pickSlots).find((slot) => !slot.querySelector('img'));
-        // If an empty slot was found, add the image to it
-        if (emptySlot) {
-            emptySlot.appendChild(img);
-            emptySlot.appendChild(name);
-        } else {
-            console.log('No empty pick slots available');
-        }
-    });
-});
-
