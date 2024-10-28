@@ -1265,7 +1265,7 @@ for (let i in GenshinCharacter) {
     // console.log(character_file);
     const li = document.createElement('li');
     const img = document.createElement('img');
-    img.src = `../../../../asset/images/character/${character_file}.webp`;
+    img.src = `../../../../asset/images/selection_character/${character_file}.webp`;
     img.alt = lowerCaseText;
     img.classList.add('character');
     if (GenshinCharacter[i].stars == '4') {
@@ -1320,10 +1320,40 @@ function findFullName(name) {
         }
     }
 }
+
+let i = 1;
 const characters = document.querySelectorAll('.character-list img');
-console.log(characters);
+// console.log(characters);
 characters.forEach(character => {
     character.addEventListener('click', () => {
+        // if (logic_BP[i] == "RedBan") {
+        //     console.log("RedBan");
+        //     const redlog = document.querySelector(".red_log");
+        //     const log = document.createElement('p');
+        //     log.innerHTML = "Red Ban";
+        //     redlog.appendChild(log);
+        // }
+        // if (logic_BP[i] == "BlueBan") {
+        //     console.log("BlueBan");
+        //     const blue_log = document.querySelector(".blue_log");
+        //     const log = document.createElement('p');
+        //     log.innerHTML = 'Blue Ban';
+        //     blue_log.appendChild(log);
+        // }
+        // if (logic_BP[i] == "BluePick") {
+        //     console.log("BluePick");
+        //     const blue_log = document.querySelector(".blue_log");
+        //     const log = document.createElement('p');
+        //     log.innerHTML = 'Blue Pick';
+        //     blue_log.appendChild(log);
+        // }
+        // if (logic_BP[i] == "RedPick") {
+        //     console.log("RedPick");
+        //     const red_log = document.querySelector(".blue_log");
+        //     const log = document.createElement('p');
+        //     log.innerHTML = 'Blue Ban';
+        //     red_log.appendChild(log);
+        // }
         console.log(character.alt);
         character.style.backgroundColor = '#ccc';
         character.style.filter = 'grayscale(1)';
@@ -1344,6 +1374,7 @@ characters.forEach(character => {
         if (emptySlot) {
             emptySlot.appendChild(img);
             emptySlot.appendChild(name);
+            i++;
         } else {
             console.log('No empty pick slots available');
         }
