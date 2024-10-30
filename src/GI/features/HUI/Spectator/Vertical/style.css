@@ -135,6 +135,12 @@ p {
     flex-direction: row-reverse;
 }
 
+.ban-slot img {
+    width: 81px;
+    height: 100%;
+    object-fit: cover;
+}
+
 .pick-hud {
     position: fixed;
     top: 47%;
@@ -258,7 +264,7 @@ p {
 }
 
 .character-list img {
-    width: 108px;
+    width: 120px;
     /* Adjust as needed */
     height: 128px;
     /* Adjust as needed */
@@ -272,7 +278,7 @@ p {
 }
 
 .character-name {
-    width: 108px;
+    width: 120px;
     height: 40px;
     font-family: 'GI_Font';
     color: #000;
@@ -327,5 +333,33 @@ button:hover.confirm {
 
     .character-filter input[type=text] {
         border: 1px solid #ccc;
+    }
+}
+
+@keyframes blink1 {
+
+    0%,
+    100% {
+        background-color: #ff0000;
+        /* First color - red */
+    }
+
+    50% {
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Second color - black */
+    }
+}
+
+@keyframes blink2 {
+
+    0%,
+    100% {
+        background-color: #0a4264;
+        /* First color - red */
+    }
+
+    50% {
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Second color - black */
     }
 }

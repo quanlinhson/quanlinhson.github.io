@@ -1,4 +1,4 @@
-export const GenshinCharacter = [
+const GenshinCharacter = [
     {
         "id": 1,
         "fullName": "Arataki Itto",
@@ -1155,7 +1155,7 @@ export const GenshinCharacter = [
     {
         "id": 45,
         "fullName": "Yae Miko",
-        "shortName": "Yae",
+        "shortName": "Yae Miko",
         "stars": 5,
         "elements": [
             "electro"
@@ -1250,4 +1250,6 @@ export const GenshinCharacter = [
         ],
         "selected": false
     }
-]
+];
+
+export { GenshinCharacter };
