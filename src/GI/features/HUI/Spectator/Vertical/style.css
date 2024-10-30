@@ -141,6 +141,14 @@ p {
     object-fit: cover;
 }
 
+.timer {
+    font-family: 'GI_Font';
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+    top: 50%;
+}
+
 .pick-hud {
     position: fixed;
     top: 47%;
