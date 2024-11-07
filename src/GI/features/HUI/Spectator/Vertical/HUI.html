@@ -91,7 +91,8 @@
                                 <img src="../../../../asset/icons/rarities/star-5.svg">
                             </div>
                             <div class="search">
-                                <input type="text" placeholder="Search..">
+                                <input type="text" placeholder="Search.." id="searchInput">
+                                <ul id="searchResults"></ul>
                                 <button type="submit">
                                     <img src="../../../../asset/icons/search.png" width="16px" height="16px">
                                 </button>
@@ -115,6 +116,11 @@
             </div>
         </div>
         <script src="code.js" type="module"></script>
+        <script src="time.js"></script>
+        <script src="search.js" type="module"></script>
+        <audio src="../../../../asset/audio/ban_pick.flac" autoplay></audio>
+        <audio id="ban-sound" src="../../../../asset/audio/ban.wav"></audio>
+        <audio id="pick-sound" src="../../../../asset/audio/pick.wav"></audio>
 </body>
 
 </html>

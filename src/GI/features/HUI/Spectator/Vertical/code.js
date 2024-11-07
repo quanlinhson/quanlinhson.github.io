@@ -1,6 +1,16 @@
 import { GenshinCharacter } from "../../../../database/character.js";
 import { logic_BP } from "../../../../database/logic_bp.js";
 
+function ban_sound_play() {
+    var audio = document.getElementById("ban-sound");
+    audio.play();
+}
+
+function pick_sound_play() {
+    var audio = document.getElementById("pick-sound");
+    audio.play();
+}
+
 const characterSelection = document.querySelector('.character-list');
 const ul = document.createElement('ul');
 for (let i in GenshinCharacter) {
@@ -39,6 +49,23 @@ function findFullName(name) {
     }
 }
 
+function check_selection(name) {
+    for (let i in GenshinCharacter) {
+        let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
+        if (lowerCaseText == name) {
+            return GenshinCharacter[i].selected;
+        }
+    }
+}
+function picking_selection(name) {
+    for (let i in GenshinCharacter) {
+        let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
+        if (lowerCaseText == name) {
+            GenshinCharacter[i].selected = true;
+        }
+    }
+}
+
 let i = 1;
 let l = 0, r = 0, lp = 0, rp = 0;
 const characters = document.querySelectorAll('.character-list img');
@@ -55,6 +82,7 @@ function check(i) {
         current = RedBanSlot[r];
         current_n = r;
         current_log = 'ban';
+        // document.getElementById(current).style.animation = 'blink2 1s linear infinite';
         r++;
     }
     else if (logic_BP[i] == "BlueBan") {
@@ -93,69 +121,67 @@ function blink(i) {
         current = RedPickSlot[rp];
         document.getElementById(current).style.animation = 'blink1 1s linear infinite';
     }
+    else if (logic_BP[i] == "BlueBan") {
+        current = BlueBanSlot[l];
+        document.getElementById(current).style.animation = 'blink2 1s linear infinite';
+    }
+    else if (logic_BP[i] == "RedBan") {
+        current = RedBanSlot[r];
+        document.getElementById(current).style.animation = 'blink1 1s linear infinite';
+    }
 }
 
 characters.forEach(character => {
     character.addEventListener('click', () => {
         console.log(character.alt);
-        const img = document.createElement('img');
-        const file_name = character.alt;
-        img.alt = character.alt;
-        const removeSpaces = (inputText) => {
-            return inputText.replace(/\s/g, "");
-        };
-        let file = removeSpaces(character.alt);
-        check(i);
-        switch (current_log) {
-            case 'ban':
-                img.src = `../../../../asset/images/selection_character/${file}.webp`;
-                const banSlots = document.getElementById(current);
-                banSlots.appendChild(img);
-                i++;
-                character.style.backgroundColor = '#ccc';
-                character.style.filter = 'grayscale(1)';
-                // document.getElementById('.timer').innerHTML = '60';
-                break;
-            case 'pick':
-                img.src = `../../../../asset/images/character/${file}.webp`;
-                const name = document.createElement('p');
-                name.innerHTML = findFullName(character.alt);
-                const pickSlots = document.getElementById(current);
-                // If an empty slot was found, add the image to it
-                pickSlots.appendChild(img);
-                pickSlots.appendChild(name);
-                i++;
-                character.style.backgroundColor = '#ccc';
-                character.style.filter = 'grayscale(1)';
-                document.getElementById(current).style.animation = 'null';
-                // document.getElementById('.timer').innerHTML = '60';
-                break;
-            case 'stop':
-                console.log('Ban Pick End!!!');
-                break;
-        };
-        blink(i);
+        if (check_selection(character.alt) == true) {
+            alert('You cant pick this character');
+        }
+        else {
+            const img = document.createElement('img');
+            const file_name = character.alt;
+            img.alt = character.alt;
+            const removeSpaces = (inputText) => {
+                return inputText.replace(/\s/g, "");
+            };
+            let file = removeSpaces(character.alt);
+            check(i);
+            switch (current_log) {
+                case 'ban':
+                    img.src = `../../../../asset/images/selection_character/${file}.webp`;
+                    img.style.filter = 'grayscale(1)';
+                    const banSlots = document.getElementById(current);
+                    banSlots.appendChild(img);
+                    i++;
+                    character.style.backgroundColor = '#ccc';
+                    character.style.filter = 'grayscale(1)';
+                    picking_selection(character.alt);
+                    document.getElementById(current).style.animation = 'null';
+                    ban_sound_play();
+                    // document.getElementById('.timer').innerHTML = '60';
+                    break;
+                case 'pick':
+                    picking_selection(character.alt);
+                    img.src = `../../../../asset/images/character/${file}.webp`;
+                    const name = document.createElement('p');
+                    name.innerHTML = findFullName(character.alt);
+                    const pickSlots = document.getElementById(current);
+                    // If an empty slot was found, add the image to it
+                    pickSlots.appendChild(img);
+                    pickSlots.appendChild(name);
+                    i++;
+                    character.style.backgroundColor = '#ccc';
+                    character.style.filter = 'grayscale(1)';
+                    document.getElementById(current).style.animation = 'null';
+                    pick_sound_play();
+                    // document.getElementById('.timer').innerHTML = '60';
+                    break;
+                case 'stop':
+                    console.log('Ban Pick End!!!');
+                    break;
+            };
+            console.log(i);
+            blink(i);
+        }
     });
 });
-
-// Timer
-document.addEventListener('DOMContentLoaded', (event) => {
-    const countdownElement = document.querySelector('.timer');
-    const duration = 60 * 1; // 1 minute
-    startCountdown(duration, countdownElement);
-});
-
-function startCountdown(duration, display) {
-    let timer = duration, minutes, seconds;
-    setInterval(function () {
-        seconds = parseInt(timer, 10);
-
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
