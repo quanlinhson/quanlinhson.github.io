@@ -1,19 +1,62 @@
 import { GenshinCharacter } from "../../../../database/character.js";
 
 const searchInput = document.getElementById('searchInput');
+const characterSelection = document.querySelector('.character-list');
+const ul = document.createElement('ul');
+
+function check_selection(name) {
+    for (let i in GenshinCharacter) {
+        let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
+        if (lowerCaseText == name) {
+            return GenshinCharacter[i].selected;
+        }
+    }
+}
+
+displayAllItem(GenshinCharacter);
 
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase();
-    const filteredArray = GenshinCharacter.filter(character => character.shortName.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredChampions = GenshinCharacter.filter(character => character.shortName.toLowerCase().includes(searchTerm.toLowerCase()));
 
-    if (searchTerm.trim() === '') {
-        // Clear the search results if the input is empty
-        searchResults.innerHTML = '';
-    } else {
-        filteredArray.forEach(character => {
-            const li = document.createElement('li');
-            li.textContent = character.shortName;
-            searchResults.appendChild(li);
-        });
-    }
+    ul.innerHTML = '';
+
+    displayItem(filteredChampions);
 });
+
+function displayItem(champions) {
+    champions.forEach(champion => {
+        let lowerCaseText = champion.shortName.toLowerCase();
+        const removeSpaces = (inputText) => {
+            return inputText.replace(/\s/g, "");
+        };
+        let character_file = removeSpaces(lowerCaseText);
+        // console.log(character_file);
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        img.src = `../../../../asset/images/selection_character/${character_file}.webp`;
+        img.alt = lowerCaseText;
+        img.classList.add('character');
+        if (champion.stars == '4') {
+            img.style.backgroundColor = "#935DB1";
+        } else {
+            img.style.backgroundColor = "#D07825";
+        }
+        if (check_selection(lowerCaseText) == true) {
+            img.style.backgroundColor = '#ccc';
+            img.style.filter = 'grayscale(1)';
+        }
+        li.appendChild(img);
+        ul.appendChild(li);
+        characterSelection.appendChild(ul);
+        //add the name of the character
+        const characterName = document.createElement('div');
+        characterName.classList.add('character-name');
+        characterName.innerHTML = champion.fullName;
+        li.appendChild(characterName);
+    });
+}
+
+function displayAllItem() {
+    displayItem(GenshinCharacter);
+}

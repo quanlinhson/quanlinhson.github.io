@@ -1,5 +1,6 @@
 import { GenshinCharacter } from "../../../../database/character.js";
 import { logic_BP } from "../../../../database/logic_bp.js";
+import { resetTime } from "../Vertical/time.js";
 
 function ban_sound_play() {
     var audio = document.getElementById("ban-sound");
@@ -11,34 +12,39 @@ function pick_sound_play() {
     audio.play();
 }
 
+var audio_bp = document.getElementById("bp-sound");
+audio_bp.play();
+audio_bp.loop = true;
+
 const characterSelection = document.querySelector('.character-list');
 const ul = document.createElement('ul');
-for (let i in GenshinCharacter) {
-    let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase();
-    const removeSpaces = (inputText) => {
-        return inputText.replace(/\s/g, "");
-    };
-    let character_file = removeSpaces(lowerCaseText);
-    // console.log(character_file);
-    const li = document.createElement('li');
-    const img = document.createElement('img');
-    img.src = `../../../../asset/images/selection_character/${character_file}.webp`;
-    img.alt = lowerCaseText;
-    img.classList.add('character');
-    if (GenshinCharacter[i].stars == '4') {
-        img.style.backgroundColor = "#935DB1";
-    } else {
-        img.style.backgroundColor = "#D07825";
-    }
-    li.appendChild(img);
-    ul.appendChild(li);
-    characterSelection.appendChild(ul);
-    //add the name of the character
-    const characterName = document.createElement('div');
-    characterName.classList.add('character-name');
-    characterName.innerHTML = GenshinCharacter[i].fullName;
-    li.appendChild(characterName);
-};
+
+// for (let i in GenshinCharacter) {
+//     let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase();
+//     const removeSpaces = (inputText) => {
+//         return inputText.replace(/\s/g, "");
+//     };
+//     let character_file = removeSpaces(lowerCaseText);
+//     // console.log(character_file);
+//     const li = document.createElement('li');
+//     const img = document.createElement('img');
+//     img.src = `../../../../asset/images/selection_character/${character_file}.webp`;
+//     img.alt = lowerCaseText;
+//     img.classList.add('character');
+//     if (GenshinCharacter[i].stars == '4') {
+//         img.style.backgroundColor = "#935DB1";
+//     } else {
+//         img.style.backgroundColor = "#D07825";
+//     }
+//     li.appendChild(img);
+//     ul.appendChild(li);
+//     characterSelection.appendChild(ul);
+//     //add the name of the character
+//     const characterName = document.createElement('div');
+//     characterName.classList.add('character-name');
+//     characterName.innerHTML = GenshinCharacter[i].fullName;
+//     li.appendChild(characterName);
+// };
 
 function findFullName(name) {
     for (let i in GenshinCharacter) {
@@ -57,6 +63,7 @@ function check_selection(name) {
         }
     }
 }
+
 function picking_selection(name) {
     for (let i in GenshinCharacter) {
         let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
@@ -69,6 +76,13 @@ function picking_selection(name) {
 let i = 1;
 let l = 0, r = 0, lp = 0, rp = 0;
 const characters = document.querySelectorAll('.character-list img');
+let testing;
+setInterval(function () {
+    testing.push(document.querySelectorAll('.character-list img'));
+    console.log('Texting');
+    console.log(testing);
+}, 1000);
+console.log(testing);
 const BlueBanSlot = ['b1', 'b2', 'b3', 'b4', 'b5'];
 const RedBanSlot = ['r1', 'r2', 'r3', 'r4', 'r5'];
 const BluePickSlot = ['bp1', 'bp2', 'bp3', 'bp4', 'bp5', 'bp6', 'bp7', 'bp8'];
@@ -131,6 +145,7 @@ function blink(i) {
     }
 }
 
+console.log(characters);
 characters.forEach(character => {
     character.addEventListener('click', () => {
         console.log(character.alt);
@@ -158,6 +173,7 @@ characters.forEach(character => {
                     picking_selection(character.alt);
                     document.getElementById(current).style.animation = 'null';
                     ban_sound_play();
+                    resetTime();
                     // document.getElementById('.timer').innerHTML = '60';
                     break;
                 case 'pick':
@@ -174,6 +190,7 @@ characters.forEach(character => {
                     character.style.filter = 'grayscale(1)';
                     document.getElementById(current).style.animation = 'null';
                     pick_sound_play();
+                    resetTime();
                     // document.getElementById('.timer').innerHTML = '60';
                     break;
                 case 'stop':
