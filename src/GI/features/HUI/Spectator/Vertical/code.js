@@ -16,49 +16,12 @@ var audio_bp = document.getElementById("bp-sound");
 audio_bp.play();
 audio_bp.loop = true;
 
-const characterSelection = document.querySelector('.character-list');
+// const characterSelection = document.querySelector('.character-list');
 const ul = document.createElement('ul');
-
-// for (let i in GenshinCharacter) {
-//     let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase();
-//     const removeSpaces = (inputText) => {
-//         return inputText.replace(/\s/g, "");
-//     };
-//     let character_file = removeSpaces(lowerCaseText);
-//     // console.log(character_file);
-//     const li = document.createElement('li');
-//     const img = document.createElement('img');
-//     img.src = `../../../../asset/images/selection_character/${character_file}.webp`;
-//     img.alt = lowerCaseText;
-//     img.classList.add('character');
-//     if (GenshinCharacter[i].stars == '4') {
-//         img.style.backgroundColor = "#935DB1";
-//     } else {
-//         img.style.backgroundColor = "#D07825";
-//     }
-//     li.appendChild(img);
-//     ul.appendChild(li);
-//     characterSelection.appendChild(ul);
-//     //add the name of the character
-//     const characterName = document.createElement('div');
-//     characterName.classList.add('character-name');
-//     characterName.innerHTML = GenshinCharacter[i].fullName;
-//     li.appendChild(characterName);
-// };
-
-function findFullName(name) {
-    for (let i in GenshinCharacter) {
-        let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
-        if (lowerCaseText == name) {
-            return GenshinCharacter[i].fullName;
-        }
-    }
-}
 
 function check_selection(name) {
     for (let i in GenshinCharacter) {
-        let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
-        if (lowerCaseText == name) {
+        if (GenshinCharacter[i].shortName == name) {
             return GenshinCharacter[i].selected;
         }
     }
@@ -66,9 +29,8 @@ function check_selection(name) {
 
 function picking_selection(name) {
     for (let i in GenshinCharacter) {
-        let lowerCaseText = GenshinCharacter[i].shortName.toLowerCase()
-        if (lowerCaseText == name) {
-            GenshinCharacter[i].selected = true;
+        if (GenshinCharacter[i].shortName == name) {
+            return GenshinCharacter[i].selected = true;
         }
     }
 }
@@ -77,11 +39,6 @@ let i = 1;
 let l = 0, r = 0, lp = 0, rp = 0;
 const characters = document.querySelectorAll('.character-list img');
 let testing;
-setInterval(function () {
-    testing.push(document.querySelectorAll('.character-list img'));
-    console.log('Texting');
-    console.log(testing);
-}, 1000);
 console.log(testing);
 const BlueBanSlot = ['b1', 'b2', 'b3', 'b4', 'b5'];
 const RedBanSlot = ['r1', 'r2', 'r3', 'r4', 'r5'];
@@ -145,60 +102,128 @@ function blink(i) {
     }
 }
 
-console.log(characters);
-characters.forEach(character => {
-    character.addEventListener('click', () => {
-        console.log(character.alt);
-        if (check_selection(character.alt) == true) {
-            alert('You cant pick this character');
-        }
-        else {
-            const img = document.createElement('img');
-            const file_name = character.alt;
-            img.alt = character.alt;
-            const removeSpaces = (inputText) => {
-                return inputText.replace(/\s/g, "");
-            };
-            let file = removeSpaces(character.alt);
-            check(i);
-            switch (current_log) {
-                case 'ban':
-                    img.src = `../../../../asset/images/selection_character/${file}.webp`;
-                    img.style.filter = 'grayscale(1)';
-                    const banSlots = document.getElementById(current);
-                    banSlots.appendChild(img);
-                    i++;
-                    character.style.backgroundColor = '#ccc';
-                    character.style.filter = 'grayscale(1)';
-                    picking_selection(character.alt);
-                    document.getElementById(current).style.animation = 'null';
-                    ban_sound_play();
-                    resetTime();
-                    // document.getElementById('.timer').innerHTML = '60';
-                    break;
-                case 'pick':
-                    picking_selection(character.alt);
-                    img.src = `../../../../asset/images/character/${file}.webp`;
-                    const name = document.createElement('p');
-                    name.innerHTML = findFullName(character.alt);
-                    const pickSlots = document.getElementById(current);
-                    // If an empty slot was found, add the image to it
-                    pickSlots.appendChild(img);
-                    pickSlots.appendChild(name);
-                    i++;
-                    character.style.backgroundColor = '#ccc';
-                    character.style.filter = 'grayscale(1)';
-                    document.getElementById(current).style.animation = 'null';
-                    pick_sound_play();
-                    resetTime();
-                    // document.getElementById('.timer').innerHTML = '60';
-                    break;
-                case 'stop':
-                    console.log('Ban Pick End!!!');
-                    break;
-            };
-            console.log(i);
-            blink(i);
-        }
-    });
-});
+function removeSpaces(inputText) {
+    if (inputText) {
+        return inputText.replace(/\s/g, "");
+    }
+    return "";
+}
+
+export function chooseCharacter(character) {
+    console.log(character);
+    if (check_selection(character.shortName) == true) {
+        alert('You cant pick this character');
+    }
+    else {
+        const img = document.createElement('img');
+        const file_name = character.shortName;
+        console.log(file_name);
+        img.alt = character.shortName;
+        let file = removeSpaces(character.shortName);
+        console.log(file);
+        check(i);
+        switch (current_log) {
+            case 'ban':
+                img.src = `../../../../asset/images/selection_character/${file}.webp`;
+                img.style.filter = 'grayscale(1)';
+                const banSlots = document.getElementById(current);
+                banSlots.appendChild(img);
+                i++;
+                const listImg = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
+                listImg.style.backgroundColor = '#ccc';
+                listImg.style.filter = 'grayscale(1)';
+                picking_selection(character.shortName);
+                document.getElementById(current).style.animation = 'null';
+                ban_sound_play();
+                resetTime();
+                // document.getElementById('.timer').innerHTML = '60';
+                break;
+            case 'pick':
+                picking_selection(character.shortName);
+                img.src = `../../../../asset/images/character/${file}.webp`;
+                const name = document.createElement('p');
+                name.innerHTML = character.fullName;
+                const pickSlots = document.getElementById(current);
+                // If an empty slot was found, add the image to it
+                pickSlots.appendChild(img);
+                pickSlots.appendChild(name);
+                i++;
+                const listImgPick = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
+                if (listImgPick) {
+                    listImgPick.style.filter = 'grayscale(1)';
+                    listImgPick.style.backgroundColor = '#ccc';
+                }
+                // character.style.backgroundColor = '#ccc';
+                // character.style.filter = 'grayscale(1)';
+                document.getElementById(current).style.animation = 'null';
+                pick_sound_play();
+                resetTime();
+                // document.getElementById('.timer').innerHTML = '60';
+                break;
+            case 'stop':
+                console.log('Ban Pick End!!!');
+                break;
+        };
+        console.log(i);
+        blink(i);
+    }
+
+}
+// function chooseCharacter(characters) {
+//     characters.forEach(character => {
+//         character.addEventListener('click', () => {
+//             console.log(character.alt);
+//             if (check_selection(character.alt) == true) {
+//                 alert('You cant pick this character');
+//             }
+//             else {
+//                 const img = document.createElement('img');
+//                 const file_name = character.alt;
+//                 img.alt = character.alt;
+//                 const removeSpaces = (inputText) => {
+//                     return inputText.replace(/\s/g, "");
+//                 };
+//                 let file = removeSpaces(character.alt);
+//                 check(i);
+//                 switch (current_log) {
+//                     case 'ban':
+//                         img.src = `../../../../asset/images/selection_character/${file}.webp`;
+//                         img.style.filter = 'grayscale(1)';
+//                         const banSlots = document.getElementById(current);
+//                         banSlots.appendChild(img);
+//                         i++;
+//                         character.style.backgroundColor = '#ccc';
+//                         character.style.filter = 'grayscale(1)';
+//                         picking_selection(character.alt);
+//                         document.getElementById(current).style.animation = 'null';
+//                         ban_sound_play();
+//                         resetTime();
+//                         // document.getElementById('.timer').innerHTML = '60';
+//                         break;
+//                     case 'pick':
+//                         picking_selection(character.alt);
+//                         img.src = `../../../../asset/images/character/${file}.webp`;
+//                         const name = document.createElement('p');
+//                         name.innerHTML = findFullName(character.alt);
+//                         const pickSlots = document.getElementById(current);
+//                         // If an empty slot was found, add the image to it
+//                         pickSlots.appendChild(img);
+//                         pickSlots.appendChild(name);
+//                         i++;
+//                         character.style.backgroundColor = '#ccc';
+//                         character.style.filter = 'grayscale(1)';
+//                         document.getElementById(current).style.animation = 'null';
+//                         pick_sound_play();
+//                         resetTime();
+//                         // document.getElementById('.timer').innerHTML = '60';
+//                         break;
+//                     case 'stop':
+//                         console.log('Ban Pick End!!!');
+//                         break;
+//                 };
+//                 console.log(i);
+//                 blink(i);
+//             }
+//         });
+//     });
+// }

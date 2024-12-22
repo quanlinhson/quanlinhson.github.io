@@ -1,4 +1,5 @@
 import { GenshinCharacter } from "../../../../database/character.js";
+import { chooseCharacter } from "./code.js";
 
 const searchInput = document.getElementById('searchInput');
 const characterSelection = document.querySelector('.character-list');
@@ -46,6 +47,12 @@ function displayItem(champions) {
             img.style.backgroundColor = '#ccc';
             img.style.filter = 'grayscale(1)';
         }
+        // Add event listener for selecting the character
+        img.addEventListener('click', () => {
+            // Handle character selection logic here
+            console.log(`Character ${champion.fullName} selected`);
+            chooseCharacter(champion);
+        });
         li.appendChild(img);
         ul.appendChild(li);
         characterSelection.appendChild(ul);
