@@ -119,7 +119,7 @@ export function chooseCharacter(character) {
         const file_name = character.shortName;
         console.log(file_name);
         img.alt = character.shortName;
-        let file = removeSpaces(character.shortName.toLowerCase());
+        let file = removeSpaces(character.shortName.toLowerCase()); // remove spaces from the character name
         console.log(file);
         check(i);
         switch (current_log) {
