@@ -1249,6 +1249,26 @@ const GenshinCharacter = [
             "M"
         ],
         "selected": false
+    },
+    {
+        "id": 90,
+        "fullName": 'Chasca',
+        "shortName": 'Chasca',
+        "stars": 5,
+        "elements": ['anemo'],
+        "weapon": 'bow',
+        "gender": ['F'],
+        "selected": false
+    },
+    {
+        "id": 91,
+        "fullName": 'Ororon',
+        "shortName": 'Ororon',
+        "stars": 4,
+        "elements": ['electro'],
+        "weapon": 'bow',
+        "gender": ['M'],
+        "selected": false
     }
 ];
 
