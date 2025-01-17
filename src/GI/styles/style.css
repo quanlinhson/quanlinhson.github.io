@@ -9,6 +9,7 @@ body {
     background-image: url('../asset/images/background.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #1A1530;
     text-align: center;
 }
 

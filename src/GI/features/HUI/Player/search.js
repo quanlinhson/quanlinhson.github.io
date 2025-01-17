@@ -1,4 +1,4 @@
-import { GenshinCharacter } from "../../../../database/character.js";
+import { GenshinCharacter } from "../../../database/character.js";
 import { chooseCharacter } from "./code.js";
 
 const searchInput = document.getElementById('searchInput');
@@ -101,7 +101,7 @@ function displayItem(champions) {
         // console.log(character_file);
         const li = document.createElement('li');
         const img = document.createElement('img');
-        img.src = `../../../../asset/images/selection_character/${character_file}.webp`;
+        img.src = `../../../asset/images/selection_character/${character_file}.webp`;
         img.alt = lowerCaseText;
         img.classList.add('character');
         if (champion.stars == '4') {

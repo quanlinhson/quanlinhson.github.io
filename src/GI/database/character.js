@@ -168,6 +168,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 90,
+        "fullName": 'Chasca',
+        "shortName": 'Chasca',
+        "stars": 5,
+        "elements": ['anemo'],
+        "weapon": 'bow',
+        "gender": ['F'],
+        "selected": false
+    },
+    {
         "id": 77,
         "fullName": "Chevreuse",
         "shortName": "Chevreuse",
@@ -208,6 +218,16 @@ const GenshinCharacter = [
             "M"
         ],
         "selected": false
+    },
+    {
+        "id": 94,
+        "fullName": 'Citlali',
+        "shortName": 'Citlali',
+        "stars": 5,
+        "elements": ['cryo'],
+        "weapon": 'catalyst',
+        "gender": ['F'],
+        "selected": false,
     },
     {
         "id": 82,
@@ -630,6 +650,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 92,
+        "fullName": 'Lanyan',
+        "shortName": 'Lanyan',
+        "stars": 4,
+        "elements": ['anemo'],
+        "weapon": 'catalyst',
+        "gender": ['F'],
+        "selected": false,
+    },
+    {
         "id": 58,
         "fullName": "Layla",
         "shortName": "Layla",
@@ -684,6 +714,16 @@ const GenshinCharacter = [
             "M"
         ],
         "selected": false
+    },
+    {
+        "id": 93,
+        "fullName": 'Mavuika',
+        "shortName": 'Mavuika',
+        "stars": 5,
+        "elements": ['pyro'],
+        "weapon": 'claymore',
+        "gender": ['F'],
+        "selected": false,
     },
     {
         "id": 65,
@@ -809,6 +849,16 @@ const GenshinCharacter = [
         "gender": [
             "F"
         ],
+        "selected": false
+    },
+    {
+        "id": 91,
+        "fullName": 'Ororon',
+        "shortName": 'Ororon',
+        "stars": 4,
+        "elements": ['electro'],
+        "weapon": 'bow',
+        "gender": ['M'],
         "selected": false
     },
     {
@@ -1017,7 +1067,8 @@ const GenshinCharacter = [
             "geo",
             "electro",
             "dendro",
-            "hydro"
+            "hydro",
+            "pyro"
         ],
         "weapon": "sword",
         "gender": [
@@ -1250,26 +1301,6 @@ const GenshinCharacter = [
         ],
         "selected": false
     },
-    {
-        "id": 90,
-        "fullName": 'Chasca',
-        "shortName": 'Chasca',
-        "stars": 5,
-        "elements": ['anemo'],
-        "weapon": 'bow',
-        "gender": ['F'],
-        "selected": false
-    },
-    {
-        "id": 91,
-        "fullName": 'Ororon',
-        "shortName": 'Ororon',
-        "stars": 4,
-        "elements": ['electro'],
-        "weapon": 'bow',
-        "gender": ['M'],
-        "selected": false
-    }
 ];
 
 export { GenshinCharacter };

@@ -1,6 +1,6 @@
-import { GenshinCharacter } from "../../../../database/character.js";
-import { logic_BP } from "../../../../database/logic_bp.js";
-import { resetTime } from "../Vertical/time.js";
+import { GenshinCharacter } from "../../../database/character.js";
+import { logic_BP } from "../../../database/logic_bp.js";
+import { resetTime } from "./time.js";
 
 function ban_sound_play() {
     var audio = document.getElementById("ban-sound");
@@ -138,7 +138,7 @@ export function chooseCharacter(character) {
         check(i);
         switch (current_log) {
             case 'ban':
-                img.src = `../../../../asset/images/selection_character/${file}.webp`;
+                img.src = `../../../asset/images/selection_character/${file}.webp`;
                 img.style.filter = 'grayscale(1)';
                 const banSlots = document.getElementById(current);
                 banSlots.appendChild(img);
@@ -154,7 +154,7 @@ export function chooseCharacter(character) {
                 break;
             case 'pick':
                 picking_selection(character.shortName);
-                img.src = `../../../../asset/images/character/${file}.webp`;
+                img.src = `../../../asset/images/character/${file}.webp`;
                 const name = document.createElement('p');
                 name.innerHTML = character.fullName;
                 const pickSlots = document.getElementById(current);
