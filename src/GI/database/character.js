@@ -740,6 +740,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 95,
+        "fullName": 'Yumemizuki Mizuki',
+        "shortName": 'Mizuki',
+        "stars": 5,
+        "elements": ['anemo'],
+        "weapon": 'catalyst',
+        "gender": ['F'],
+        "selected": false,
+    },
+    {
         "id": 26,
         "fullName": "Mona",
         "shortName": "Mona",
@@ -1058,16 +1068,86 @@ const GenshinCharacter = [
         "selected": false
     },
     {
-        "id": 39,
-        "fullName": "Traveler",
-        "shortName": "Traveler",
+        "id": 39.1,
+        "fullName": "Traveler (Anemo)",
+        "shortName": "Traveler (Anemo)",
         "stars": 5,
         "elements": [
             "anemo",
+        ],
+        "weapon": "sword",
+        "gender": [
+            "M",
+            "F"
+        ],
+        "selected": false
+    },
+    {
+        "id": 39.2,
+        "fullName": "Traveler (Geo)",
+        "shortName": "Traveler (Geo)",
+        "stars": 5,
+        "elements": [
             "geo",
+        ],
+        "weapon": "sword",
+        "gender": [
+            "M",
+            "F"
+        ],
+        "selected": false
+    },
+    {
+        "id": 39.3,
+        "fullName": "Traveler (Electro)",
+        "shortName": "Traveler (Electro)",
+        "stars": 5,
+        "elements": [
             "electro",
+        ],
+        "weapon": "sword",
+        "gender": [
+            "M",
+            "F"
+        ],
+        "selected": false
+    },
+    {
+        "id": 39.4,
+        "fullName": "Traveler (Dendro)",
+        "shortName": "Traveler (Dendro)",
+        "stars": 5,
+        "elements": [
             "dendro",
+        ],
+        "weapon": "sword",
+        "gender": [
+            "M",
+            "F"
+        ],
+        "selected": false
+    },
+    {
+        "id": 39.5,
+        "fullName": "Traveler (Hydro)",
+        "shortName": "Traveler (Hydro)",
+        "stars": 5,
+        "elements": [
             "hydro",
+        ],
+        "weapon": "sword",
+        "gender": [
+            "M",
+            "F"
+        ],
+        "selected": false
+    },
+    {
+        "id": 39.6,
+        "fullName": "Traveler (Pyro)",
+        "shortName": "Traveler (Pyro)",
+        "stars": 5,
+        "elements": [
             "pyro"
         ],
         "weapon": "sword",

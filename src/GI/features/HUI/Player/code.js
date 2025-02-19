@@ -138,10 +138,19 @@ export function chooseCharacter(character) {
         check(i);
         switch (current_log) {
             case 'ban':
+                //Character Image
                 img.src = `../../../asset/images/selection_character/${file}.webp`;
                 img.style.filter = 'grayscale(1)';
+                //Element
+                let element = character.elements;
+                const img_element = document.createElement('div');
+                img_element.style.backgroundImage = `url('../../../asset/icons/elements/${element}.svg')`;
+                img_element.alt = element;
+                img_element.classList.add('element-icon');
+                //Add to banSlots
                 const banSlots = document.getElementById(current);
                 banSlots.appendChild(img);
+                banSlots.appendChild(img_element);
                 i++;
                 const listImg = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
                 listImg.style.backgroundColor = '#ccc';
@@ -157,10 +166,24 @@ export function chooseCharacter(character) {
                 img.src = `../../../asset/images/character/${file}.webp`;
                 const name = document.createElement('p');
                 name.innerHTML = character.fullName;
+                //Element
+                let element_p = character.elements;
+                const img_element_p = document.createElement('div');
+                img_element_p.style.backgroundImage = `url('../../../asset/icons/elements/${element_p}.svg')`;
+                img_element_p.alt = element_p;
+                img_element_p.classList.add('element-icon');
+                //Weapons
+                let weapon_p = character.weapon;
+                const img_weapon_p = document.createElement('div');
+                img_weapon_p.style.backgroundImage = `url('../../../asset/icons/weapons/${weapon_p}.png')`;
+                img_weapon_p.alt = weapon_p;
+                img_weapon_p.classList.add('weapon-icon');
                 const pickSlots = document.getElementById(current);
                 // If an empty slot was found, add the image to it
                 pickSlots.appendChild(img);
                 pickSlots.appendChild(name);
+                pickSlots.appendChild(img_element_p);
+                pickSlots.appendChild(img_weapon_p);
                 i++;
                 const listImgPick = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
                 if (listImgPick) {

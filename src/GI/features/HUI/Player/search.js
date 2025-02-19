@@ -94,6 +94,7 @@ function filterCharacters() {
 function displayItem(champions) {
     champions.forEach(champion => {
         let lowerCaseText = champion.shortName.toLowerCase();
+        let element = champion.elements;
         const removeSpaces = (inputText) => {
             return inputText.replace(/\s/g, "");
         };
@@ -101,9 +102,15 @@ function displayItem(champions) {
         // console.log(character_file);
         const li = document.createElement('li');
         const img = document.createElement('img');
+        const img_element = document.createElement('div');
         img.src = `../../../asset/images/selection_character/${character_file}.webp`;
         img.alt = lowerCaseText;
         img.classList.add('character');
+
+        img_element.style.backgroundImage = `url('../../../asset/icons/elements/${element}.svg')`;
+        img_element.alt = element;
+        img_element.classList.add('element-icon');
+
         if (champion.stars == '4') {
             img.style.backgroundColor = "#935DB1";
         } else {
@@ -120,6 +127,7 @@ function displayItem(champions) {
             chooseCharacter(champion);
         });
         li.appendChild(img);
+        li.appendChild(img_element);
         ul.appendChild(li);
         characterSelection.appendChild(ul);
         //add the name of the character

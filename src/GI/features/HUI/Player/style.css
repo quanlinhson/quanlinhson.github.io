@@ -122,6 +122,8 @@ p {
     background-position: center;
     background-repeat: no-repeat, no-repeat;
     /* background-color: rgba(0, 0, 0, 0.5); */
+    position: relative;
+    /* Add this line */
 }
 
 .ban-slot-left,
@@ -183,6 +185,7 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .pick-slot img {
@@ -280,6 +283,7 @@ p {
     padding: 10px;
     margin-bottom: 24px;
     cursor: pointer;
+    position: relative;
 }
 
 .character-list img {
@@ -290,6 +294,66 @@ p {
     display: block;
     object-fit: cover;
     /* object-position: 0% 20%; */
+}
+
+.element-icon {
+    width: 30px;
+    height: 30px;
+    bottom: 50px;
+    right: 10px;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #5d5d69;
+    border: 1px solid #000;
+}
+
+.ban-slot .element-icon {
+    width: 30px;
+    height: 30px;
+    bottom: 0px;
+    right: 10px;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #2B313F;
+    border: 1px solid #000;
+}
+
+.pick-slot .element-icon {
+    width: 30px;
+    height: 30px;
+    bottom: 0px;
+    right: 0px;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #2B313F;
+    border: 1px solid #000;
+}
+
+.pick-slot .weapon-icon {
+    width: 30px;
+    height: 30px;
+    bottom: 0px;
+    right: 30px;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #2B313F;
+    border: 1px solid #000;
 }
 
 .character-list img:hover {
