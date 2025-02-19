@@ -1070,7 +1070,7 @@ const GenshinCharacter = [
     {
         "id": 39.1,
         "fullName": "Traveler (Anemo)",
-        "shortName": "Traveler (Anemo)",
+        "shortName": "Traveler_Anemo",
         "stars": 5,
         "elements": [
             "anemo",
@@ -1085,7 +1085,7 @@ const GenshinCharacter = [
     {
         "id": 39.2,
         "fullName": "Traveler (Geo)",
-        "shortName": "Traveler (Geo)",
+        "shortName": "Traveler_Geo",
         "stars": 5,
         "elements": [
             "geo",
@@ -1100,7 +1100,7 @@ const GenshinCharacter = [
     {
         "id": 39.3,
         "fullName": "Traveler (Electro)",
-        "shortName": "Traveler (Electro)",
+        "shortName": "Traveler_Electro",
         "stars": 5,
         "elements": [
             "electro",
@@ -1115,7 +1115,7 @@ const GenshinCharacter = [
     {
         "id": 39.4,
         "fullName": "Traveler (Dendro)",
-        "shortName": "Traveler (Dendro)",
+        "shortName": "Traveler_Dendro",
         "stars": 5,
         "elements": [
             "dendro",
@@ -1130,7 +1130,7 @@ const GenshinCharacter = [
     {
         "id": 39.5,
         "fullName": "Traveler (Hydro)",
-        "shortName": "Traveler (Hydro)",
+        "shortName": "Traveler_Hydro",
         "stars": 5,
         "elements": [
             "hydro",
@@ -1145,7 +1145,7 @@ const GenshinCharacter = [
     {
         "id": 39.6,
         "fullName": "Traveler (Pyro)",
-        "shortName": "Traveler (Pyro)",
+        "shortName": "Traveler_Pyro",
         "stars": 5,
         "elements": [
             "pyro"
