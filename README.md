@@ -39,4 +39,4 @@ Website: https://quanlinhson.github.io
 -   [APACHE](LICENSE)
 
 ## Update
-(Coming soon)
+- [Update](CHANGELOG.md)
