@@ -5,7 +5,8 @@
     <meta charset="uft-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Player Ban/Pick</title>
+    <title>Spectator UI</title>
+    <!-- <script src="code.js"></script> -->
 </head>
 
 <body>
@@ -38,7 +39,9 @@
                         <div class="ban-slot" id="b5"></div>
                         <div class="verticalLine"></div>
                     </div>
-                    <div class="timer"></div>
+                    <div class="timer">
+                        60
+                    </div>
                     <div class="ban-slot-right">
                         <div class="ban-slot" id="r1"></div>
                         <div class="verticalLine"></div>
@@ -65,40 +68,39 @@
                         <div class="pick-slot" id="bp7"></div>
                         <div class="pick-slot" id="bp8"></div>
                     </div>
-                    <div class="banpick-player">
+                    <!-- <div class="banpick-player">
                         <div class="character-filter">
                             <div class="by-element">
-                                <img src="../../../asset/icons/elements/anemo.svg" alt="anemo">
-                                <img src="../../../asset/icons/elements/cryo.svg" alt="cryo">
-                                <img src="../../../asset/icons/elements/dendro.svg" alt="dendro">
-                                <img src="../../../asset/icons/elements/electro.svg" alt="electro">
-                                <img src="../../../asset/icons/elements/geo.svg" alt="geo">
-                                <img src="../../../asset/icons/elements/hydro.svg" alt="hydro">
-                                <img src="../../../asset/icons/elements/pyro.svg" alt="pyro">
+                                <img src="../../../../asset/icons/elements/anemo.svg" alt="anemo">
+                                <img src="../../../../asset/icons/elements/cryo.svg" alt="cryo">
+                                <img src="../../../../asset/icons/elements/dendro.svg" alt="dendro">
+                                <img src="../../../../asset/icons/elements/electro.svg" alt="electro">
+                                <img src="../../../../asset/icons/elements/geo.svg" alt="geo">
+                                <img src="../../../../asset/icons/elements/hydro.svg" alt="hydro">
+                                <img src="../../../../asset/icons/elements/pyro.svg" alt="pyro">
                             </div>
                             <div class="by-weapon">
-                                <img src="../../../asset/icons/weapons/bow.png" alt="bow">
-                                <img src="../../../asset/icons/weapons/catalyst.png" alt="catalyst">
-                                <img src="../../../asset/icons/weapons/claymore.png" alt="claymore">
-                                <img src="../../../asset/icons/weapons/polearm.png" alt="polearm">
-                                <img src="../../../asset/icons/weapons/sword.png" alt="sword">
+                                <img src="../../../../asset/icons/weapons/bow.png" alt="bow">
+                                <img src="../../../../asset/icons/weapons/catalyst.png" alt="catalyst">
+                                <img src="../../../../asset/icons/weapons/claymore.png" alt="claymore">
+                                <img src="../../../../asset/icons/weapons/polearm.png" alt="polearm">
+                                <img src="../../../../asset/icons/weapons/sword.png" alt="sword">
                             </div>
                             <div class="by-rating">
-                                <img src="../../../asset/icons/rarities/star-4.svg" alt="4">
-                                <img src="../../../asset/icons/rarities/star-5.svg" alt="5">
+                                <img src="../../../../asset/icons/rarities/star-4.svg" alt="4">
+                                <img src="../../../../asset/icons/rarities/star-5.svg" alt="5">
                             </div>
                             <div class="search">
                                 <input type="text" placeholder="Search.." id="searchInput">
-                                <!-- <ul id="searchResults"></ul> -->
                                 <button type="submit">
-                                    <img src="../../../asset/icons/search.png" width="16px" height="15px">
+                                    <img src="../../../../asset/icons/search.png" width="16px" height="15px">
                                 </button>
                             </div>
                         </div>
                         <div class="character-list">
                         </div>
                         <button id="confirm" class="confirm">Confirm</button>
-                    </div>
+                    </div> -->
                     <div class="pick-slot-right">
                         <div class="pick-slot" id="rp1"></div>
                         <div class="pick-slot" id="rp2"></div>
@@ -115,9 +117,9 @@
         <script src="search.js" type="module"></script>
         <script src="code.js" type="module"></script>
         <script src="time.js" type="module"></script>
-        <audio src="../../../../All/asset/audio/ban_pick.mp3" id="bp-sound"></audio>
-        <audio id="ban-sound" src="../../../../All/asset/audio/ban.wav"></audio>
-        <audio id="pick-sound" src="../../../../All/asset/audio/pick.wav"></audio>
+        <audio src="../../../../asset/audio/ban_pick.mp3" id="bp-sound"></audio>
+        <audio id="ban-sound" src="../../../../asset/audio/ban.wav"></audio>
+        <audio id="pick-sound" src="../../../../asset/audio/pick.wav"></audio>
 </body>
 
 </html>

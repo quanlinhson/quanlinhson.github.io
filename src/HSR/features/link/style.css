@@ -1,15 +1,14 @@
 @font-face {
     font-family: 'GI_Font';
-    src: url('../asset/fonts/zh-cn.ttf');
+    src: url('../../asset/fonts/zh-cn.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    background-image: url('../asset/images/background.webp');
+    background-image: url('../../asset/images/background.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #1A1530;
     text-align: center;
 }
 
@@ -21,34 +20,40 @@ p {
 }
 
 .mode-selection {
-    display: flex;
+    display: list-item;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .box {
-    width: 400px;
-    height: 150px;
+    width: 800px;
+    height: 50px;
     border: 1px solid #fff;
     padding: 10px;
-    margin: 10px;
+    margin: 0 auto;
     color: #fff;
-    background-color: rgb(66, 93, 80);
+    background-color: #2196F3;
 }
 
 .box2 {
-    width: 400px;
-    height: 150px;
+    width: 800px;
+    height: 50px;
     border: 1px solid #fff;
     padding: 10px;
-    margin: 10px;
+    margin: 0 auto;
     color: #fff;
-    background-color: rgb(40, 68, 96);
+    background-color: red;
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.box3 {
+    width: 800px;
+    height: 50px;
+    border: 1px solid #fff;
+    padding: 10px;
+    margin: 0 auto;
+    color: #fff;
+    background-color: rgb(40, 68, 96);
 }
 
 #page-container {
@@ -63,7 +68,7 @@ img {
 #footer {
     position: absolute;
     width: 100%;
-    height: 7rem;
+    height: 2.5rem;
     right: 0;
     bottom: 0;
     left: 0;

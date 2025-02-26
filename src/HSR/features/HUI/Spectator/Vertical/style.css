@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'GI_Font';
-    src: url('../../../asset/fonts/zh-cn.ttf');
+    src: url('../../../../asset/fonts/zh-cn.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,8 +9,7 @@ body {
     /* background-image: url('../../../../asset/images/background.webp');
     background-repeat: no-repeat;
     background-size: cover; */
-    /* background-color: lightblue; */
-    background-color: #1A1530;
+    background-color: lightblue;
     text-align: center;
 }
 
@@ -26,7 +25,7 @@ p {
 }
 
 .roomContainer {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 }
@@ -89,7 +88,7 @@ p {
 }
 
 .verticalLine {
-    border-left: 1px solid #ffffff;
+    border-left: thick solid #ffffff;
 }
 
 .ban-hud {
@@ -117,13 +116,11 @@ p {
     /* display: flex; */
     justify-content: center;
     align-items: center;
-    background-image: url('../../../asset/images/card-bg.svg'), url('../../../asset/images/empty.svg');
+    background-image: url('../../../../asset/images/card-bg.svg'), url('../../../../asset/images/empty.svg');
     background-size: cover, 15px;
     background-position: center;
     background-repeat: no-repeat, no-repeat;
     /* background-color: rgba(0, 0, 0, 0.5); */
-    position: relative;
-    /* Add this line */
 }
 
 .ban-slot-left,
@@ -180,13 +177,11 @@ p {
     border: 1px solid #fff;
     justify-content: space-between;
     align-items: center;
-    background-image: url('../../../asset/images/card-bg.svg'), url('../../../asset/images/choose.png');
-    background-size: 90px, 50px;
+    background-image: url('../../../../asset/images/card-bg.svg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    background-color: #3B4354;
-    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .pick-slot img {
@@ -210,15 +205,14 @@ p {
 }
 
 .character-filter {
-    width: 1150px;
+    width: 1200px;
     height: 60px;
     display: flex;
     flex-basis: 100%;
     border: 1px solid #fff;
     justify-content: space-around;
     align-items: center;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    background-color: #3B4354;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .character-filter .by-element img,
@@ -240,7 +234,6 @@ p {
 }
 
 .character-filter input[type=text] {
-    width: 150px;
     padding: 6px;
     border: none;
     margin-top: 8px;
@@ -264,7 +257,7 @@ p {
 }
 
 .character-list {
-    width: 1150px;
+    width: 1200px;
     height: 700px;
     border: 1px solid #fff;
     justify-content: space-around;
@@ -286,7 +279,6 @@ p {
     padding: 10px;
     margin-bottom: 24px;
     cursor: pointer;
-    position: relative;
 }
 
 .character-list img {
@@ -297,81 +289,6 @@ p {
     display: block;
     object-fit: cover;
     /* object-position: 0% 20%; */
-}
-
-.element-icon {
-    width: 30px;
-    height: 30px;
-    bottom: 50px;
-    right: 10px;
-    opacity: 1;
-    position: absolute;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-color: #5d5d69;
-    border: 1px solid #000;
-}
-
-.ban-slot .element-icon {
-    width: 30px;
-    height: 30px;
-    bottom: 0px;
-    right: 5px;
-    opacity: 1;
-    position: absolute;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-color: #2B313F;
-    border: 1px solid #000;
-}
-
-.pick-slot .element-icon {
-    width: 30px;
-    height: 30px;
-    bottom: 0px;
-    right: 0px;
-    opacity: 1;
-    position: absolute;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-color: #2B313F;
-    border: 1px solid #000;
-}
-
-.pick-slot .weapon-icon {
-    width: 30px;
-    height: 30px;
-    bottom: 0px;
-    right: 30px;
-    opacity: 1;
-    position: absolute;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    /* background-color: #2B313F;
-    border: 1px solid #000; */
-}
-
-.pick-slot .star-icon {
-    width: 30px;
-    height: 30px;
-    bottom: 0px;
-    right: 60px;
-    opacity: 1;
-    position: absolute;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    /* background-color: #2B313F;
-    border: 1px solid #000; */
 }
 
 .character-list img:hover {

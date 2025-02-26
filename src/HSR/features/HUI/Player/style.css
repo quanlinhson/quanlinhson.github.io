@@ -1,6 +1,13 @@
 @font-face {
-    font-family: 'GI_Font';
-    src: url('../../../asset/fonts/zh-cn.ttf');
+    font-family: 'HSR_Font';
+    src: url('../../../asset/fonts/DIN-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HSR_Bold_Font';
+    src: url('../../../asset/fonts/DIN-Bold.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,12 +24,16 @@ body {
 h1,
 h2,
 p {
-    font-family: 'GI_Font';
+    font-family: 'HSR_Bold_Font';
     color: #fff;
     display: block;
-    padding: 4px 8px;
+    padding: 4px 4px;
     float: center;
     overflow-wrap: break-word;
+}
+
+p {
+    font-size: large;
 }
 
 .roomContainer {
@@ -57,12 +68,12 @@ p {
 
 .roomContainer .roomTeamName {
     color: #fff;
-    font-family: 'GI_Font';
+    font-family: 'HSR_Font';
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     z-index: 10;
 }
 
@@ -117,8 +128,8 @@ p {
     /* display: flex; */
     justify-content: center;
     align-items: center;
-    background-image: url('../../../asset/images/card-bg.svg'), url('../../../asset/images/empty.svg');
-    background-size: cover, 15px;
+    background-image: url('../../../asset/icons/card-bg.svg'), url('../../../asset/icons/empty.png');
+    background-size: 90px, 40px;
     background-position: center;
     background-repeat: no-repeat, no-repeat;
     /* background-color: rgba(0, 0, 0, 0.5); */
@@ -146,7 +157,7 @@ p {
 }
 
 .timer {
-    font-family: 'GI_Font';
+    font-family: 'HSR_Bold_Font';
     color: #fff;
     text-align: center;
     font-size: 3rem;
@@ -180,8 +191,8 @@ p {
     border: 1px solid #fff;
     justify-content: space-between;
     align-items: center;
-    background-image: url('../../../asset/images/card-bg.svg'), url('../../../asset/images/choose.png');
-    background-size: 90px, 50px;
+    background-image: url('../../../asset/icons/card-bg.svg'), url('../../../asset/icons/choose.png');
+    background-size: 90px, 30px;
     background-position: center;
     background-repeat: no-repeat;
     /* background-color: rgba(0, 0, 0, 0.5); */
@@ -211,14 +222,29 @@ p {
 
 .character-filter {
     width: 1150px;
-    height: 60px;
-    display: flex;
+    height: 110px;
+    display: block;
     flex-basis: 100%;
     border: 1px solid #fff;
-    justify-content: space-around;
+    border-radius: 20px 20px 0px 0px;
+    justify-content: center;
     align-items: center;
     /* background-color: rgba(0, 0, 0, 0.5); */
     background-color: #3B4354;
+}
+
+.character-filter .fit1 {
+    padding: 5px 0 5px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.character-filter .by-element,
+.character-filter .by-rating,
+.character-filter .by-weapon {
+    display: inline-flex;
 }
 
 .character-filter .by-element img,
@@ -235,11 +261,12 @@ p {
 .character-filter .by-element img.selected,
 .character-filter .by-weapon img.selected,
 .character-filter .by-rating img.selected {
-    border: 5px solid #2196F3;
+    border: 3px solid #2196F3;
     border-radius: 5px;
 }
 
 .character-filter input[type=text] {
+    display: inline-flex;
     width: 150px;
     padding: 6px;
     border: none;
@@ -381,7 +408,7 @@ p {
 .character-name {
     width: 120px;
     height: 40px;
-    font-family: 'GI_Font';
+    font-family: 'HSR_Font';
     color: #000;
     text-align: center;
     justify-content: center;
@@ -393,7 +420,7 @@ p {
 
 /*confirm button*/
 button.confirm {
-    font-family: 'GI_Font';
+    font-family: 'HSR_Font';
     display: inline-block;
     width: 150px;
     height: 30px;

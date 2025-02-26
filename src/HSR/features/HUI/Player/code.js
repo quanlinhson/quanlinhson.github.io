@@ -1,4 +1,4 @@
-import { GenshinCharacter } from "../../../database/character.js";
+import { HSRCharacter } from "../../../database/character.js";
 import { logic_BP } from "../../../database/logic_bp.js";
 import { resetTime } from "./time.js";
 
@@ -35,17 +35,17 @@ playBackgroundMusic();
 // const ul = document.createElement('ul');
 
 function check_selection(name) {
-    for (let i in GenshinCharacter) {
-        if (GenshinCharacter[i].shortName == name) {
-            return GenshinCharacter[i].selected;
+    for (let i in HSRCharacter) {
+        if (HSRCharacter[i].name == name) {
+            return HSRCharacter[i].selected;
         }
     }
 }
 
 function picking_selection(name) {
-    for (let i in GenshinCharacter) {
-        if (GenshinCharacter[i].shortName == name) {
-            return GenshinCharacter[i].selected = true;
+    for (let i in HSRCharacter) {
+        if (HSRCharacter[i].name == name) {
+            return HSRCharacter[i].selected = true;
         }
     }
 }
@@ -54,48 +54,13 @@ let i = 1;
 let l = 0, r = 0, lp = 0, rp = 0;
 const characters = document.querySelectorAll('.character-list img');
 
-const BlueBanSlot = ['b1', 'b2', 'b3', 'b4', 'b5'];
-const RedBanSlot = ['r1', 'r2', 'r3', 'r4', 'r5'];
+const BlueBanSlot = ['b1', 'b2', 'b3'];
+const RedBanSlot = ['r1', 'r2', 'r3'];
 const BluePickSlot = ['bp1', 'bp2', 'bp3', 'bp4', 'bp5', 'bp6', 'bp7', 'bp8'];
 const RedPickSlot = ['rp1', 'rp2', 'rp3', 'rp4', 'rp5', 'rp6', 'rp7', 'rp8'];
 
 let current, current_log;
 let current_n = 0;
-function check(i) {
-    if (logic_BP[i] == "RedBan") {
-        console.log("RedBan");
-        current = RedBanSlot[r];
-        current_n = r;
-        current_log = 'ban';
-        // document.getElementById(current).style.animation = 'blink2 1s linear infinite';
-        r++;
-    }
-    else if (logic_BP[i] == "BlueBan") {
-        console.log("BlueBan");
-        console.log(BlueBanSlot[l]);
-        current = BlueBanSlot[l];
-        current_n = l;
-        current_log = 'ban';
-        l++;
-    }
-    else if (logic_BP[i] == "BluePick") {
-        console.log("BluePick");
-        current = BluePickSlot[lp];
-        current_n = lp;
-        current_log = 'pick';
-        lp++;
-    }
-    else if (logic_BP[i] == "RedPick") {
-        console.log("RedPick");
-        current = RedPickSlot[rp];
-        current_n = rp;
-        current_log = 'pick';
-        rp++;
-    }
-    else {
-        current_log = 'stop';
-    }
-}
 
 function begin(i) {
     if (logic_BP[i] == "RedBan") {
@@ -124,6 +89,41 @@ function begin(i) {
         current = RedPickSlot[rp];
         current_n = rp;
         current_log = 'pick';
+    }
+    else {
+        current_log = 'stop';
+    }
+}
+
+function check(i) {
+    if (logic_BP[i] == "RedBan") {
+        console.log("RedBan");
+        current = RedBanSlot[r];
+        current_n = r;
+        current_log = 'ban';
+        r++;
+    }
+    else if (logic_BP[i] == "BlueBan") {
+        console.log("BlueBan");
+        console.log(BlueBanSlot[l]);
+        current = BlueBanSlot[l];
+        current_n = l;
+        current_log = 'ban';
+        l++;
+    }
+    else if (logic_BP[i] == "BluePick") {
+        console.log("BluePick");
+        current = BluePickSlot[lp];
+        current_n = lp;
+        current_log = 'pick';
+        lp++;
+    }
+    else if (logic_BP[i] == "RedPick") {
+        console.log("RedPick");
+        current = RedPickSlot[rp];
+        current_n = rp;
+        current_log = 'pick';
+        rp++;
     }
     else {
         current_log = 'stop';
@@ -160,26 +160,22 @@ begin(i);
 
 export function chooseCharacter(character) {
     console.log(character);
-    if (check_selection(character.shortName) == true) {
+    if (check_selection(character.name) == true) {
         alert('You cant pick this character');
     }
     else {
         const img = document.createElement('img');
-        const file_name = character.shortName;
-        console.log(file_name);
-        img.alt = character.shortName;
-        let file = removeSpaces(character.shortName.toLowerCase());
-        console.log(file);
+        const file_name = character.image_path;
         check(i);
         switch (current_log) {
             case 'ban':
                 //Character Image
-                img.src = `../../../asset/images/selection_character/${file}.webp`;
+                img.src = `../../../asset/images/selection_character/${file_name}`;
                 img.style.filter = 'grayscale(1)';
                 //Element
                 let element = character.elements;
                 const img_element = document.createElement('div');
-                img_element.style.backgroundImage = `url('../../../asset/icons/elements/${element}.svg')`;
+                img_element.style.backgroundImage = `url('../../../asset/icons/elements/${element}.png')`;
                 img_element.alt = element;
                 img_element.classList.add('element-icon');
                 //Add to banSlots
@@ -188,10 +184,10 @@ export function chooseCharacter(character) {
                 banSlots.appendChild(img);
                 banSlots.appendChild(img_element);
                 i++;
-                const listImg = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
+                const listImg = document.querySelector(`.character-list img[alt="${character.name.toLowerCase()}"]`);
                 listImg.style.backgroundColor = '#ccc';
                 listImg.style.filter = 'grayscale(1)';
-                picking_selection(character.shortName);
+                picking_selection(character.name);
                 document.getElementById(current).style.animation = 'null';
                 ban_sound_play();
                 resetTime();
@@ -199,20 +195,21 @@ export function chooseCharacter(character) {
                 break;
             case 'pick':
                 //Image Character
-                picking_selection(character.shortName);
-                img.src = `../../../asset/images/character/${file}.webp`;
+                console.log(character.name);
+                picking_selection(character.name);
+                img.src = `../../../asset/images/selection_character/${file_name}`;
                 const name = document.createElement('p');
-                name.innerHTML = character.fullName;
+                name.innerHTML = character.name;
                 //Element
                 let element_p = character.elements;
                 const img_element_p = document.createElement('div');
-                img_element_p.style.backgroundImage = `url('../../../asset/icons/elements/${element_p}.svg')`;
+                img_element_p.style.backgroundImage = `url('../../../asset/icons/elements/${element_p}.png')`;
                 img_element_p.alt = element_p;
                 img_element_p.classList.add('element-icon');
                 //Weapons
-                let weapon_p = character.weapon;
+                let weapon_p = character.path;
                 const img_weapon_p = document.createElement('div');
-                img_weapon_p.style.backgroundImage = `url('../../../asset/icons/weapons/${weapon_p}.png')`;
+                img_weapon_p.style.backgroundImage = `url('../../../asset/icons/path/${weapon_p}.png')`;
                 img_weapon_p.alt = weapon_p;
                 img_weapon_p.classList.add('weapon-icon');
                 //Rarity
@@ -221,6 +218,8 @@ export function chooseCharacter(character) {
                 img_star.style.backgroundImage = `url('../../../asset/icons/rarities/star-${star}.svg')`;
                 img_star.alt = star;
                 img_star.classList.add('star-icon');
+                //Testing
+                console.log(removeSpaces(character.name.toLowerCase()));
 
                 const pickSlots = document.getElementById(current);
                 pickSlots.style.backgroundImage = 'none';
@@ -231,7 +230,7 @@ export function chooseCharacter(character) {
                 pickSlots.appendChild(img_weapon_p);
                 pickSlots.appendChild(img_star);
                 i++;
-                const listImgPick = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
+                const listImgPick = document.querySelector(`.character-list img[alt="${character.name.toLowerCase()}"]`);
                 if (listImgPick) {
                     listImgPick.style.filter = 'grayscale(1)';
                     listImgPick.style.backgroundColor = '#ccc';
@@ -250,7 +249,6 @@ export function chooseCharacter(character) {
         console.log(i);
         blink(i);
     }
-
 }
 // function chooseCharacter(characters) {
 //     characters.forEach(character => {

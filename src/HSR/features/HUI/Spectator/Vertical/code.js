@@ -1,6 +1,6 @@
-import { GenshinCharacter } from "../../../database/character.js";
-import { logic_BP } from "../../../database/logic_bp.js";
-import { resetTime } from "./time.js";
+import { GenshinCharacter } from "../../../../database/character.js";
+import { logic_BP } from "../../../../database/logic_bp.js";
+import { resetTime } from "../Vertical/time.js";
 
 function ban_sound_play() {
     var audio = document.getElementById("ban-sound");
@@ -97,39 +97,6 @@ function check(i) {
     }
 }
 
-function begin(i) {
-    if (logic_BP[i] == "RedBan") {
-        console.log("RedBan");
-        current = RedBanSlot[r];
-        current_n = r;
-        current_log = 'ban';
-        document.getElementById(current).style.animation = 'blink2 1s linear infinite';
-    }
-    else if (logic_BP[i] == "BlueBan") {
-        console.log("BlueBan");
-        console.log(BlueBanSlot[l]);
-        current = BlueBanSlot[l];
-        current_n = l;
-        current_log = 'ban';
-        document.getElementById(current).style.animation = 'blink2 1s linear infinite';
-    }
-    else if (logic_BP[i] == "BluePick") {
-        console.log("BluePick");
-        current = BluePickSlot[lp];
-        current_n = lp;
-        current_log = 'pick';
-    }
-    else if (logic_BP[i] == "RedPick") {
-        console.log("RedPick");
-        current = RedPickSlot[rp];
-        current_n = rp;
-        current_log = 'pick';
-    }
-    else {
-        current_log = 'stop';
-    }
-}
-
 function blink(i) {
     if (logic_BP[i] == "BluePick") {
         current = BluePickSlot[lp];
@@ -156,8 +123,6 @@ function removeSpaces(inputText) {
     return "";
 }
 
-begin(i);
-
 export function chooseCharacter(character) {
     console.log(character);
     if (check_selection(character.shortName) == true) {
@@ -173,20 +138,10 @@ export function chooseCharacter(character) {
         check(i);
         switch (current_log) {
             case 'ban':
-                //Character Image
-                img.src = `../../../asset/images/selection_character/${file}.webp`;
+                img.src = `../../../../asset/images/selection_character/${file}.webp`;
                 img.style.filter = 'grayscale(1)';
-                //Element
-                let element = character.elements;
-                const img_element = document.createElement('div');
-                img_element.style.backgroundImage = `url('../../../asset/icons/elements/${element}.svg')`;
-                img_element.alt = element;
-                img_element.classList.add('element-icon');
-                //Add to banSlots
                 const banSlots = document.getElementById(current);
-                banSlots.style.backgroundImage = 'none';
                 banSlots.appendChild(img);
-                banSlots.appendChild(img_element);
                 i++;
                 const listImg = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
                 listImg.style.backgroundColor = '#ccc';
@@ -198,38 +153,14 @@ export function chooseCharacter(character) {
                 // document.getElementById('.timer').innerHTML = '60';
                 break;
             case 'pick':
-                //Image Character
                 picking_selection(character.shortName);
-                img.src = `../../../asset/images/character/${file}.webp`;
+                img.src = `../../../../asset/images/character/${file}.webp`;
                 const name = document.createElement('p');
                 name.innerHTML = character.fullName;
-                //Element
-                let element_p = character.elements;
-                const img_element_p = document.createElement('div');
-                img_element_p.style.backgroundImage = `url('../../../asset/icons/elements/${element_p}.svg')`;
-                img_element_p.alt = element_p;
-                img_element_p.classList.add('element-icon');
-                //Weapons
-                let weapon_p = character.weapon;
-                const img_weapon_p = document.createElement('div');
-                img_weapon_p.style.backgroundImage = `url('../../../asset/icons/weapons/${weapon_p}.png')`;
-                img_weapon_p.alt = weapon_p;
-                img_weapon_p.classList.add('weapon-icon');
-                //Rarity
-                let star = character.stars;
-                const img_star = document.createElement('div');
-                img_star.style.backgroundImage = `url('../../../asset/icons/rarities/star-${star}.svg')`;
-                img_star.alt = star;
-                img_star.classList.add('star-icon');
-
                 const pickSlots = document.getElementById(current);
-                pickSlots.style.backgroundImage = 'none';
                 // If an empty slot was found, add the image to it
                 pickSlots.appendChild(img);
                 pickSlots.appendChild(name);
-                pickSlots.appendChild(img_element_p);
-                pickSlots.appendChild(img_weapon_p);
-                pickSlots.appendChild(img_star);
                 i++;
                 const listImgPick = document.querySelector(`.character-list img[alt="${removeSpaces(character.shortName.toLowerCase())}"]`);
                 if (listImgPick) {
