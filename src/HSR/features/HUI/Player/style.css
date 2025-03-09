@@ -36,6 +36,35 @@ p {
     font-size: large;
 }
 
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    /* Red */
+    color: white;
+    margin-bottom: 15px;
+    display: none;
+    font-family: 'HSR_Font';
+    font-size: x-large;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
 .roomContainer {
     display: flex;
     justify-content: center;
@@ -265,29 +294,26 @@ p {
     border-radius: 5px;
 }
 
-.character-filter input[type=text] {
-    display: inline-flex;
-    width: 150px;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    font-size: 17px;
+.search {
+    --padding: 14px;
+
+    width: min-content;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 20px;
+    background: #f6f6f6;
 }
 
-.search button {
-    float: right;
-    padding: 6px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
+.search-input {
+    font-size: 15px;
+    font-family: 'HSR_Font';
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
     border: none;
-    cursor: pointer;
-}
-
-.search button:hover {
-    background-color: #2196F3;
-    color: #fff;
+    background: transparent;
 }
 
 .character-list {
@@ -324,6 +350,7 @@ p {
     display: block;
     object-fit: cover;
     /* object-position: 0% 20%; */
+    border-radius: 5px 5px 0px 0px;
 }
 
 .element-icon {
@@ -411,11 +438,16 @@ p {
     font-family: 'HSR_Font';
     color: #000;
     text-align: center;
+    display: flex;
+    /* Change from block to flex */
     justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
     padding: auto;
-    display: block;
     overflow-wrap: break-word;
     background-color: rgba(255, 255, 255);
+    border-radius: 0px 0px 5px 5px;
 }
 
 /*confirm button*/

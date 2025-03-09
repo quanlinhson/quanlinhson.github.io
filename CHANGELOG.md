@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Version 0.2.2
+### Fix:
+- Change UI for **Search bar** (HSR, GI).
+- Change **Character Filter** (GI).
+- Center character name in the name card in character-list (HSR, GI).
+- Fix **Alert message box** (HSR, GI).
+
 ## Version 0.2.1 (HOT FIX)
 ### Fix:
 - Change Opening Page UI.
@@ -24,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change Vertical Line in Ban Slot to make it thinner.
 - Add Icon in Pick Slot.
 - Decrease the width of character-filter and character-list.
-- Fix the empty backgroud size in Pick Slot.
+- Fix the empty background size in Pick Slot.
 - Background image and Icon in Ban/Pick Slot will be disappeared when you choose your character.
 - Show Rarities for character on Pick-Slot when you pick your character. 
 - Fix bug: Can't see blink animation when game start.

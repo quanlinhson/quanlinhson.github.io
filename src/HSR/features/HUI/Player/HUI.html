@@ -5,6 +5,8 @@
     <meta charset="uft-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
     <title>Player Ban/Pick</title>
 </head>
 
@@ -58,6 +60,10 @@
                         <div class="pick-slot" id="bp8"></div>
                     </div>
                     <div class="banpick-player">
+                        <div class="alert" id="duplicate-alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            You can't choose this character again!
+                        </div>
                         <div class="character-filter">
                             <div class="fit1">
                                 <div class="by-element">
@@ -85,13 +91,14 @@
                                     <img src="../../../asset/icons/path/Abundance.png" alt="Abundance">
                                     <img src="../../../asset/icons/path/Remembrance.png" alt="Remembrance">
                                 </div>
-                                <div class="search">
-                                    <input type="text" placeholder="Search.." id="searchInput">
-                                    <!-- <ul id="searchResults"></ul> -->
-                                    <button type="submit">
-                                        <img src="../../../asset/icons/search.png" width="16px" height="15px">
-                                    </button>
-                                </div>
+                                <form>
+                                    <div class="search">
+                                        <span class="search-icon material-symbols-outlined">
+                                            search
+                                        </span>
+                                        <input class="search-input" id="searchInput" type="text" placeholder="Search..">
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="character-list">

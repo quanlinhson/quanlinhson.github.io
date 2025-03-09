@@ -161,7 +161,13 @@ begin(i);
 export function chooseCharacter(character) {
     console.log(character);
     if (check_selection(character.name) == true) {
-        alert('You cant pick this character');
+        const alertElement = document.getElementById('duplicate-alert');
+        alertElement.style.display = 'block';
+
+        // Hide the alert after 2 seconds
+        setTimeout(() => {
+            alertElement.style.display = 'none';
+        }, 2000);
     }
     else {
         const img = document.createElement('img');

@@ -5,6 +5,8 @@
     <meta charset="uft-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
     <title>Player Ban/Pick</title>
 </head>
 
@@ -66,33 +68,42 @@
                         <div class="pick-slot" id="bp8"></div>
                     </div>
                     <div class="banpick-player">
+                        <div class="alert" id="duplicate-alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            You can't choose this character again!
+                        </div>
                         <div class="character-filter">
-                            <div class="by-element">
-                                <img src="../../../asset/icons/elements/anemo.svg" alt="anemo">
-                                <img src="../../../asset/icons/elements/cryo.svg" alt="cryo">
-                                <img src="../../../asset/icons/elements/dendro.svg" alt="dendro">
-                                <img src="../../../asset/icons/elements/electro.svg" alt="electro">
-                                <img src="../../../asset/icons/elements/geo.svg" alt="geo">
-                                <img src="../../../asset/icons/elements/hydro.svg" alt="hydro">
-                                <img src="../../../asset/icons/elements/pyro.svg" alt="pyro">
+                            <div class="fit1">
+                                <div class="by-element">
+                                    <img src="../../../asset/icons/elements/anemo.svg" alt="anemo">
+                                    <img src="../../../asset/icons/elements/cryo.svg" alt="cryo">
+                                    <img src="../../../asset/icons/elements/dendro.svg" alt="dendro">
+                                    <img src="../../../asset/icons/elements/electro.svg" alt="electro">
+                                    <img src="../../../asset/icons/elements/geo.svg" alt="geo">
+                                    <img src="../../../asset/icons/elements/hydro.svg" alt="hydro">
+                                    <img src="../../../asset/icons/elements/pyro.svg" alt="pyro">
+                                </div>
+                                <div class="by-rating">
+                                    <img src="../../../asset/icons/rarities/star-4.svg" alt="4">
+                                    <img src="../../../asset/icons/rarities/star-5.svg" alt="5">
+                                </div>
                             </div>
-                            <div class="by-weapon">
-                                <img src="../../../asset/icons/weapons/bow.png" alt="bow">
-                                <img src="../../../asset/icons/weapons/catalyst.png" alt="catalyst">
-                                <img src="../../../asset/icons/weapons/claymore.png" alt="claymore">
-                                <img src="../../../asset/icons/weapons/polearm.png" alt="polearm">
-                                <img src="../../../asset/icons/weapons/sword.png" alt="sword">
-                            </div>
-                            <div class="by-rating">
-                                <img src="../../../asset/icons/rarities/star-4.svg" alt="4">
-                                <img src="../../../asset/icons/rarities/star-5.svg" alt="5">
-                            </div>
-                            <div class="search">
-                                <input type="text" placeholder="Search.." id="searchInput">
-                                <!-- <ul id="searchResults"></ul> -->
-                                <button type="submit">
-                                    <img src="../../../asset/icons/search.png" width="16px" height="15px">
-                                </button>
+                            <div class="fit1">
+                                <div class="by-weapon">
+                                    <img src="../../../asset/icons/weapons/bow.png" alt="bow">
+                                    <img src="../../../asset/icons/weapons/catalyst.png" alt="catalyst">
+                                    <img src="../../../asset/icons/weapons/claymore.png" alt="claymore">
+                                    <img src="../../../asset/icons/weapons/polearm.png" alt="polearm">
+                                    <img src="../../../asset/icons/weapons/sword.png" alt="sword">
+                                </div>
+                                <form>
+                                    <div class="search">
+                                        <span class="search-icon material-symbols-outlined">
+                                            search
+                                        </span>
+                                        <input class="search-input" id="searchInput" type="text" placeholder="Search">
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="character-list">
