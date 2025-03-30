@@ -18,6 +18,7 @@ h2,
 p {
     font-family: 'GI_Font';
     color: #fff;
+    z-index: 2;
 }
 
 .mode-selection {
@@ -63,7 +64,7 @@ img {
 #footer {
     position: absolute;
     width: 100%;
-    height: 7rem;
+    height: 6rem;
     right: 0;
     bottom: 0;
     left: 0;

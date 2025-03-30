@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Version 0.3.0
+### Add:
+- Add new character in GI v5.5: Varesa & Iansan.
+- Add **Setting** button in GI: Change team name, score and countdown time.
+- Add **Volume** button in GI: Can adjust the volume of ban/pick sound.
+- Add ban/pick turn notice on team name title.
+
+### Fix:
+- Change folder name from HUI to HUD.
+
 ## Version 0.2.2
 ### Fix:
 - Change UI for **Search bar** (HSR, GI).

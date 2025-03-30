@@ -468,6 +468,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 96,
+        "fullName": 'Iansan',
+        "shortName": 'Iansan',
+        "stars": 4,
+        "elements": ['electro'],
+        "weapon": 'polearm',
+        "gender": ['F'],
+        "selected": false,
+    },
+    {
         "id": 16,
         "fullName": "Jean",
         "shortName": "Jean",
@@ -1156,6 +1166,16 @@ const GenshinCharacter = [
             "F"
         ],
         "selected": false
+    },
+    {
+        "id": 97,
+        "fullName": 'Varesa',
+        "shortName": 'Varesa',
+        "stars": 5,
+        "elements": ['electro'],
+        "weapon": 'catalyst',
+        "gender": ['F'],
+        "selected": false,
     },
     {
         "id": 40,

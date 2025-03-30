@@ -92,6 +92,7 @@ p {
     margin-left: 20px;
     margin-right: 20px;
     z-index: 10;
+    font-size: large;
 }
 
 .roomContainer .roomTeamBackground {
@@ -109,6 +110,16 @@ p {
 .roomContainer .roomTeamBackgroundRed {
     background-color: #be2038;
     left: 0;
+}
+
+.roomTeamReady.turn {
+    background-color: lightorange;
+    /* Adjust the color as needed */
+}
+
+.roomTeamReady.turn p {
+    color: #fff;
+    /* Adjust the text color as needed */
 }
 
 #page-container {
@@ -300,6 +311,16 @@ p {
     padding: var(--padding);
     border-radius: 20px;
     background: #f6f6f6;
+}
+
+.search-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url('../../../../All/asset/icons/normal/search_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
 }
 
 .search-input {
@@ -518,4 +539,91 @@ button:hover.confirm {
         background-color: rgba(0, 0, 0, 0.5);
         /* Second color - black */
     }
+}
+
+/*Setting*/
+.settings-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-modal iframe {
+    width: 32%;
+    height: 50%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.settings-icon {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 1001;
+    background-image: url('../../../../All/asset/icons/normal/settings_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-color: #5d5d69;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.settings-icon:hover {
+    background-color: #f0f0f0;
+}
+
+/* Volume */
+.volume-dropdown {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 1001;
+    background-image: url('../../../../All/asset/icons/normal/volume_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-color: #5d5d69;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volume-dropdown:hover {
+    background-color: #f0f0f0;
+}
+
+.volume-control {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volume-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'GI_Font';
+}
+
+.volume-control input[type="range"] {
+    width: 100%;
 }
