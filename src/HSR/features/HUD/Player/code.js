@@ -1,6 +1,10 @@
 import { HSRCharacter } from "../../../database/character.js";
 import { logic_BP } from "../../../database/logic_bp.js";
-import { resetTime } from "./time.js";
+import { resetTime, startCountdown } from "../../../../All/tools/time.js";
+
+let globalTimeSetting = 60;
+let globalTeam1 = "Team 1";
+let globalTeam2 = "Team 2";
 
 function ban_sound_play() {
     var audio = document.getElementById("ban-sound");
@@ -11,10 +15,6 @@ function pick_sound_play() {
     var audio = document.getElementById("pick-sound");
     audio.play();
 }
-
-// var audio_bp = document.getElementById("bp-sound");
-// audio_bp.play();
-// audio_bp.loop = true;
 
 function playBackgroundMusic() {
     var audio_bp = document.getElementById("bp-sound");
@@ -27,12 +27,6 @@ function playBackgroundMusic() {
     });
     audio_bp.loop = true;
 }
-
-// Attempt to play background music immediately
-playBackgroundMusic();
-
-// const characterSelection = document.querySelector('.character-list');
-// const ul = document.createElement('ul');
 
 function check_selection(name) {
     for (let i in HSRCharacter) {
@@ -61,6 +55,36 @@ const RedPickSlot = ['rp1', 'rp2', 'rp3', 'rp4', 'rp5', 'rp6', 'rp7', 'rp8'];
 
 let current, current_log;
 let current_n = 0;
+
+function updateTeamTurn(i) {
+    const team1Element = document.getElementById('team1-name');
+    const team2Element = document.getElementById('team2-name');
+    const team1Container = team1Element.closest('.roomTeamReady');
+    const team2Container = team2Element.closest('.roomTeamReady');
+
+    // Reset classes and text
+    team1Container.classList.remove('turn');
+    team2Container.classList.remove('turn');
+    team1Element.textContent = globalTeam1;
+    team2Element.textContent = globalTeam2;
+
+    if (logic_BP[i] == "RedBan") {
+        team2Element.textContent = `${team2Element.textContent}'s BANNING.`;
+        team2Container.classList.add('turn');
+    }
+    else if (logic_BP[i] == "BlueBan") {
+        team1Element.textContent = `${team1Element.textContent}'s BANNING.`;
+        team1Container.classList.add('turn');
+    }
+    else if (logic_BP[i] == "BluePick") {
+        team1Element.textContent = `${team1Element.textContent}'s PICKING.`;
+        team1Container.classList.add('turn');
+    }
+    else if (logic_BP[i] == "RedPick") {
+        team2Element.textContent = `${team2Element.textContent}'s PICKING.`;
+        team2Container.classList.add('turn');
+    }
+}
 
 function begin(i) {
     if (logic_BP[i] == "RedBan") {
@@ -190,14 +214,14 @@ export function chooseCharacter(character) {
                 banSlots.appendChild(img);
                 banSlots.appendChild(img_element);
                 i++;
+                updateTeamTurn(i);
                 const listImg = document.querySelector(`.character-list img[alt="${character.name.toLowerCase()}"]`);
                 listImg.style.backgroundColor = '#ccc';
                 listImg.style.filter = 'grayscale(1)';
                 picking_selection(character.name);
                 document.getElementById(current).style.animation = 'null';
                 ban_sound_play();
-                resetTime();
-                // document.getElementById('.timer').innerHTML = '60';
+                resetTime(globalTimeSetting);
                 break;
             case 'pick':
                 //Image Character
@@ -236,17 +260,15 @@ export function chooseCharacter(character) {
                 pickSlots.appendChild(img_weapon_p);
                 pickSlots.appendChild(img_star);
                 i++;
+                updateTeamTurn(i);
                 const listImgPick = document.querySelector(`.character-list img[alt="${character.name.toLowerCase()}"]`);
                 if (listImgPick) {
                     listImgPick.style.filter = 'grayscale(1)';
                     listImgPick.style.backgroundColor = '#ccc';
                 }
-                // character.style.backgroundColor = '#ccc';
-                // character.style.filter = 'grayscale(1)';
                 document.getElementById(current).style.animation = 'null';
                 pick_sound_play();
-                resetTime();
-                // document.getElementById('.timer').innerHTML = '60';
+                resetTime(globalTimeSetting);
                 break;
             case 'stop':
                 console.log('Ban Pick End!!!');
@@ -256,61 +278,106 @@ export function chooseCharacter(character) {
         blink(i);
     }
 }
-// function chooseCharacter(characters) {
-//     characters.forEach(character => {
-//         character.addEventListener('click', () => {
-//             console.log(character.alt);
-//             if (check_selection(character.alt) == true) {
-//                 alert('You cant pick this character');
-//             }
-//             else {
-//                 const img = document.createElement('img');
-//                 const file_name = character.alt;
-//                 img.alt = character.alt;
-//                 const removeSpaces = (inputText) => {
-//                     return inputText.replace(/\s/g, "");
-//                 };
-//                 let file = removeSpaces(character.alt);
-//                 check(i);
-//                 switch (current_log) {
-//                     case 'ban':
-//                         img.src = `../../../../asset/images/selection_character/${file}.webp`;
-//                         img.style.filter = 'grayscale(1)';
-//                         const banSlots = document.getElementById(current);
-//                         banSlots.appendChild(img);
-//                         i++;
-//                         character.style.backgroundColor = '#ccc';
-//                         character.style.filter = 'grayscale(1)';
-//                         picking_selection(character.alt);
-//                         document.getElementById(current).style.animation = 'null';
-//                         ban_sound_play();
-//                         resetTime();
-//                         // document.getElementById('.timer').innerHTML = '60';
-//                         break;
-//                     case 'pick':
-//                         picking_selection(character.alt);
-//                         img.src = `../../../../asset/images/character/${file}.webp`;
-//                         const name = document.createElement('p');
-//                         name.innerHTML = findFullName(character.alt);
-//                         const pickSlots = document.getElementById(current);
-//                         // If an empty slot was found, add the image to it
-//                         pickSlots.appendChild(img);
-//                         pickSlots.appendChild(name);
-//                         i++;
-//                         character.style.backgroundColor = '#ccc';
-//                         character.style.filter = 'grayscale(1)';
-//                         document.getElementById(current).style.animation = 'null';
-//                         pick_sound_play();
-//                         resetTime();
-//                         // document.getElementById('.timer').innerHTML = '60';
-//                         break;
-//                     case 'stop':
-//                         console.log('Ban Pick End!!!');
-//                         break;
-//                 };
-//                 console.log(i);
-//                 blink(i);
-//             }
-//         });
-//     });
-// }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const settingsIcon = document.getElementById('settings-icon');
+    const settingsModal = document.getElementById('settings-modal');
+
+    if (settingsIcon && settingsModal) {
+        settingsIcon.addEventListener('click', () => {
+            settingsModal.style.display = 'flex';
+        });
+
+        settingsModal.addEventListener('click', (event) => {
+            if (event.target === settingsModal) {
+                settingsModal.style.display = 'none';
+            }
+        });
+    }
+
+    // Listen for messages from the iframe
+    window.addEventListener('message', (event) => {
+        const settingsData = event.data;
+
+        // Update team names
+        if (settingsData.team1Name) {
+            globalTeam1 = settingsData.team1Name;
+            document.getElementById('team1-name').textContent = settingsData.team1Name;
+        }
+        if (settingsData.team2Name) {
+            globalTeam2 = settingsData.team2Name;
+            document.getElementById('team2-name').textContent = settingsData.team2Name;
+        }
+
+        // Update team scores
+        if (settingsData.team1Score) {
+            document.querySelector('.roomTitleBar p:nth-child(2)').textContent = settingsData.team1Score;
+        }
+        if (settingsData.team2Score) {
+            document.querySelector('.roomTitleBar p:nth-child(4)').textContent = settingsData.team2Score;
+        }
+
+        // Update time setting
+        if (settingsData.timeSetting) {
+            globalTimeSetting = settingsData.timeSetting;
+            setTimer(settingsData.timeSetting);
+        }
+
+        // Update volume
+        if (settingsData.volume !== undefined) {
+            settingsData.volume /= 100;
+            bpSound.volume = settingsData.volume;
+            banSound.volume = settingsData.volume;
+            pickSound.volume = settingsData.volume;
+        }
+
+        // Update ban/pick turn logic
+        if (settingsData.banPickTurn) {
+            // Implement your custom logic here
+            console.log(`Ban/Pick Turn Logic: ${settingsData.banPickTurn}`);
+        }
+
+        playBackgroundMusic();
+        startCountdown(settingsData.timeSetting);
+    });
+});
+
+// Function to set the timer (example implementation)
+function setTimer(seconds) {
+    // Your timer logic here
+    console.log(`Timer set to ${seconds} seconds`);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const volumeDropdown = document.getElementById('volume-dropdown');
+    const volumeControl = document.getElementById('volume-control');
+    const bpVolumeRange = document.getElementById('bp-volume-range');
+    const banVolumeRange = document.getElementById('ban-volume-range');
+    const pickVolumeRange = document.getElementById('pick-volume-range');
+    const bpSound = document.getElementById('bp-sound');
+    const banSound = document.getElementById('ban-sound');
+    const pickSound = document.getElementById('pick-sound');
+
+    volumeDropdown.addEventListener('click', () => {
+        if (volumeControl.style.display === 'block') {
+            volumeControl.style.display = 'none';
+        } else {
+            volumeControl.style.display = 'block';
+        }
+    });
+
+    bpVolumeRange.addEventListener('input', () => {
+        const volume = bpVolumeRange.value / 100;
+        bpSound.volume = volume;
+    });
+
+    banVolumeRange.addEventListener('input', () => {
+        const volume = banVolumeRange.value / 100;
+        banSound.volume = volume;
+    });
+
+    pickVolumeRange.addEventListener('input', () => {
+        const volume = pickVolumeRange.value / 100;
+        pickSound.volume = volume;
+    });
+});

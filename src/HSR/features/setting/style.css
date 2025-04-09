@@ -1,14 +1,13 @@
 @font-face {
     font-family: 'GI_Font';
-    src: url('../../asset/fonts/zh-cn.ttf');
+    src: url('../../asset/fonts/DIN-Medium.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    background-image: url('../../asset/images/background.webp');
-    background-repeat: repeat;
-    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #1A1530;
     text-align: center;
 }
@@ -27,16 +26,6 @@ p {
 
 #content-wrap {
     padding-bottom: 2.5rem;
-}
-
-#footer {
-    position: absolute;
-    width: 100%;
-    height: 2.5rem;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: black;
 }
 
 .setting {
@@ -60,7 +49,9 @@ p {
     font-size: larger;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-align: justify;
+    padding: 2px;
 }
 
 .switch {
@@ -151,7 +142,7 @@ button:hover.pm {
 input {
     font-family: 'GI_Font';
     display: inline-block;
-    width: 20px;
+    width: 200px;
     margin: 0px 20px;
     padding: 10px 20px;
     border: 0;
@@ -188,7 +179,7 @@ button.confirm {
     font-family: 'GI_Font';
     display: inline-block;
     width: 150px;
-    height: 30px;
+    height: 60px;
     font-size: 22px;
     background-color: #ccc;
     border: 0;

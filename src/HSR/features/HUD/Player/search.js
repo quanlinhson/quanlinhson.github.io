@@ -20,15 +20,6 @@ function check_selection(name) {
 
 displayAllItem(HSRCharacter);
 
-// searchInput.addEventListener('input', () => {
-//     const searchTerm = searchInput.value.toLowerCase();
-//     const filteredChampions = HSRCharacter.filter(character => character.shortName.toLowerCase().includes(searchTerm.toLowerCase()));
-
-//     ul.innerHTML = '';
-
-//     displayItem(filteredChampions);
-// });
-
 searchInput.addEventListener('input', () => {
     filterCharacters();
 });

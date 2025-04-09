@@ -30,8 +30,6 @@ export function startCountdown(duration) {
     //clearInterval(countdown);
 }
 
-export function resetTime() {
-    const countdownElement = document.querySelector('.timer');
-    const duration = 60 * 1; // 1 minute
-    startCountdown(duration, countdownElement);
+export function resetTime(duration) {
+    startCountdown(duration);
 }

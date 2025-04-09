@@ -17,15 +17,15 @@ export const HSRCharacter = [
         "image_path": "aglaea.webp",
         "selected": false
     },
-    // {
-    //     "id": 3,
-    //     "name": "Anaxa",
-    //     "stars": 5,
-    //     "elements": "Wind",
-    //     "path": "Erudition",
-    //     "image_path": "anaxa.webp",
-    //     "selected": false
-    // },
+    {
+        "id": 3,
+        "name": "Anaxa",
+        "stars": 5,
+        "elements": "Wind",
+        "path": "Erudition",
+        "image_path": "anaxa.webp",
+        "selected": false
+    },
     {
         "id": 4,
         "name": "Argenti",
@@ -107,15 +107,15 @@ export const HSRCharacter = [
         "image_path": "bronya.webp",
         "selected": false
     },
-    // {
-    //     "id": 13,
-    //     "name": "Castorice",
-    //     "stars": 5,
-    //     "elements": "Quantum",
-    //     "path": "Remembrance",
-    //     "image_path": "castorice.webp",
-    //     "selected": false
-    // },
+    {
+        "id": 13,
+        "name": "Castorice",
+        "stars": 5,
+        "elements": "Quantum",
+        "path": "Remembrance",
+        "image_path": "castorice.webp",
+        "selected": false
+    },
     {
         "id": 14,
         "name": "Clara",

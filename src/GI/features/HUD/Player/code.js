@@ -1,6 +1,6 @@
 import { GenshinCharacter } from "../../../database/character.js";
 import { logic_BP } from "../../../database/logic_bp.js";
-import { resetTime, startCountdown } from "./time.js";
+import { resetTime, startCountdown } from "../../../../All/tools/time.js";
 
 let globalTimeSetting = 60;
 let globalTeam1 = "Team 1";
@@ -280,7 +280,6 @@ export function chooseCharacter(character) {
         console.log(i);
         blink(i);
     }
-
 }
 
 document.addEventListener('DOMContentLoaded', () => {
