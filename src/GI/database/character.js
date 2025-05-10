@@ -342,6 +342,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 99,
+        "fullName": 'Escoffier',
+        "shortName": 'Escoffier',
+        "stars": 5,
+        "elements": ['cryo'],
+        "weapon": 'polearm',
+        "gender": ['F'],
+        "selected": false,
+    },
+    {
         "id": 11,
         "fullName": "Eula",
         "shortName": "Eula",
@@ -475,6 +485,16 @@ const GenshinCharacter = [
         "elements": ['electro'],
         "weapon": 'polearm',
         "gender": ['F'],
+        "selected": false,
+    },
+    {
+        "id": 98,
+        "fullName": 'Ifa',
+        "shortName": 'Ifa',
+        "stars": 4,
+        "elements": ['anemo'],
+        "weapon": 'catalyst',
+        "gender": ['M'],
         "selected": false,
     },
     {
