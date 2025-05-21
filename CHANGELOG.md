@@ -5,11 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 🔥 Version 0.4.1 🔥
+## 🔥 Version 0.4.2 🔥
+### ✨ Add: 
+- Add new character in HSR v3.3: **Cipher & Hyacine**.
+
+##  Version 0.4.1 
 ### ✨ Add: 
 - Add new character in GI v5.6: **Escoffier & Ifa**.
 
-## 🔥 Version 0.4.0 🔥
+##  Version 0.4.0 
 ### ✨ Add: 
 - Add new character in HSR v3.2: **Castorice & Anaxa**.
 - Add **Setting** and **Volume** button in HSR Ban/Pick UI like GI.

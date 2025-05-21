@@ -126,6 +126,15 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 71,
+        "name": "Cipher",
+        "stars": 5,
+        "elements": "Quantum",
+        "path": "Nihility",
+        "image_path": "cipher.webp",
+        "selected": false
+    },
+    {
         "id": 15,
         "name": "Dan Heng",
         "stars": 4,
@@ -258,6 +267,15 @@ export const HSRCharacter = [
         "elements": "Wind",
         "path": "Abundance",
         "image_path": "huohuo.webp",
+        "selected": false
+    },
+    {
+        "id": 70,
+        "name": "Hyacine",
+        "stars": 5,
+        "elements": "Wind",
+        "path": "Remembrance",
+        "image_path": "hyacine.webp",
         "selected": false
     },
     {
