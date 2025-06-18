@@ -272,6 +272,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 100,
+        "fullName": 'Dahlia',
+        "shortName": 'Dahlia',
+        "stars": 4,
+        "elements": ['hydro'],
+        "weapon": 'sword',
+        "gender": ['M'],
+        "selected": false,
+    },
+    {
         "id": 64,
         "fullName": "Dehya",
         "shortName": "Dehya",
@@ -1042,6 +1052,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 101,
+        "fullName": 'Skirk',
+        "shortName": 'Skirk',
+        "stars": 5,
+        "elements": ['cryo'],
+        "weapon": 'sword',
+        "gender": ['F'],
+        "selected": false,
+    },
+    {
         "id": 36,
         "fullName": "Sucrose",
         "shortName": "Sucrose",
@@ -1099,7 +1119,7 @@ const GenshinCharacter = [
     },
     {
         "id": 39.1,
-        "fullName": "Traveler (Anemo)",
+        "fullName": "Traveler",
         "shortName": "Traveler_Anemo",
         "stars": 5,
         "elements": [
@@ -1114,7 +1134,7 @@ const GenshinCharacter = [
     },
     {
         "id": 39.2,
-        "fullName": "Traveler (Geo)",
+        "fullName": "Traveler",
         "shortName": "Traveler_Geo",
         "stars": 5,
         "elements": [
@@ -1129,7 +1149,7 @@ const GenshinCharacter = [
     },
     {
         "id": 39.3,
-        "fullName": "Traveler (Electro)",
+        "fullName": "Traveler",
         "shortName": "Traveler_Electro",
         "stars": 5,
         "elements": [
@@ -1144,7 +1164,7 @@ const GenshinCharacter = [
     },
     {
         "id": 39.4,
-        "fullName": "Traveler (Dendro)",
+        "fullName": "Traveler",
         "shortName": "Traveler_Dendro",
         "stars": 5,
         "elements": [
@@ -1159,7 +1179,7 @@ const GenshinCharacter = [
     },
     {
         "id": 39.5,
-        "fullName": "Traveler (Hydro)",
+        "fullName": "Traveler",
         "shortName": "Traveler_Hydro",
         "stars": 5,
         "elements": [
@@ -1174,7 +1194,7 @@ const GenshinCharacter = [
     },
     {
         "id": 39.6,
-        "fullName": "Traveler (Pyro)",
+        "fullName": "Traveler",
         "shortName": "Traveler_Pyro",
         "stars": 5,
         "elements": [

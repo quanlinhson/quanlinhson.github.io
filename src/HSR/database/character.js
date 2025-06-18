@@ -2,6 +2,7 @@ export const HSRCharacter = [
     {
         "id": 1,
         "name": "Acheron",
+        "full_name": "Acheron",
         "stars": 5,
         "elements": "Lightning",
         "path": "Nihility",
@@ -11,6 +12,7 @@ export const HSRCharacter = [
     {
         "id": 2,
         "name": "Aglaea",
+        "full_name": "Aglaea",
         "stars": 5,
         "elements": "Lightning",
         "path": "Remembrance",
@@ -20,6 +22,7 @@ export const HSRCharacter = [
     {
         "id": 3,
         "name": "Anaxa",
+        "full_name": "Anaxa",
         "stars": 5,
         "elements": "Wind",
         "path": "Erudition",
@@ -29,6 +32,7 @@ export const HSRCharacter = [
     {
         "id": 4,
         "name": "Argenti",
+        "full_name": "Argenti",
         "stars": 5,
         "elements": "Physical",
         "path": "Erudition",
@@ -38,6 +42,7 @@ export const HSRCharacter = [
     {
         "id": 5,
         "name": "Arlan",
+        "full_name": "Arlan",
         "stars": 4,
         "elements": "Lightning",
         "path": "Destruction",
@@ -47,6 +52,7 @@ export const HSRCharacter = [
     {
         "id": 6,
         "name": "Asta",
+        "full_name": "Asta",
         "stars": 4,
         "elements": "Fire",
         "path": "Harmony",
@@ -56,6 +62,7 @@ export const HSRCharacter = [
     {
         "id": 7,
         "name": "Aventurine",
+        "full_name": "Aventurine",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Preservation",
@@ -65,6 +72,7 @@ export const HSRCharacter = [
     {
         "id": 8,
         "name": "Bailu",
+        "full_name": "Bailu",
         "stars": 5,
         "elements": "Lightning",
         "path": "Abundance",
@@ -74,6 +82,7 @@ export const HSRCharacter = [
     {
         "id": 9,
         "name": "Black Swan",
+        "full_name": "Black Swan",
         "stars": 5,
         "elements": "Wind",
         "path": "Nihility",
@@ -83,6 +92,7 @@ export const HSRCharacter = [
     {
         "id": 10,
         "name": "Blade",
+        "full_name": "Blade",
         "stars": 5,
         "elements": "Wind",
         "path": "Destruction",
@@ -92,6 +102,7 @@ export const HSRCharacter = [
     {
         "id": 11,
         "name": "Boothill",
+        "full_name": "Boothill",
         "stars": 5,
         "elements": "Physical",
         "path": "The Hunt",
@@ -101,6 +112,7 @@ export const HSRCharacter = [
     {
         "id": 12,
         "name": "Bronya",
+        "full_name": "Bronya",
         "stars": 5,
         "elements": "Wind",
         "path": "Harmony",
@@ -110,6 +122,7 @@ export const HSRCharacter = [
     {
         "id": 13,
         "name": "Castorice",
+        "full_name": "Castorice",
         "stars": 5,
         "elements": "Quantum",
         "path": "Remembrance",
@@ -119,6 +132,7 @@ export const HSRCharacter = [
     {
         "id": 14,
         "name": "Clara",
+        "full_name": "Clara",
         "stars": 5,
         "elements": "Physical",
         "path": "Destruction",
@@ -128,6 +142,7 @@ export const HSRCharacter = [
     {
         "id": 71,
         "name": "Cipher",
+        "full_name": "Cipher",
         "stars": 5,
         "elements": "Quantum",
         "path": "Nihility",
@@ -137,6 +152,7 @@ export const HSRCharacter = [
     {
         "id": 15,
         "name": "Dan Heng",
+        "full_name": "Dan Heng",
         "stars": 4,
         "elements": "Wind",
         "path": "The Hunt",
@@ -146,6 +162,7 @@ export const HSRCharacter = [
     {
         "id": 16,
         "name": "Dan Heng - Imbibitor Lunae",
+        "full_name": "Dan Heng - Imbibitor Lunae",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Destruction",
@@ -155,6 +172,7 @@ export const HSRCharacter = [
     {
         "id": 17,
         "name": "Dr.Ratio",
+        "full_name": "Dr.Ratio",
         "stars": 5,
         "elements": "Imaginary",
         "path": "The Hunt",
@@ -164,6 +182,7 @@ export const HSRCharacter = [
     {
         "id": 18,
         "name": "Feixiao",
+        "full_name": "Feixiao",
         "stars": 5,
         "elements": "Wind",
         "path": "The Hunt",
@@ -173,6 +192,7 @@ export const HSRCharacter = [
     {
         "id": 19,
         "name": "Firefly",
+        "full_name": "Firefly",
         "stars": 5,
         "elements": "Fire",
         "path": "Destruction",
@@ -182,6 +202,7 @@ export const HSRCharacter = [
     {
         "id": 20,
         "name": "Fu Xuan",
+        "full_name": "Fu Xuan",
         "stars": 5,
         "elements": "Quantum",
         "path": "Preservation",
@@ -191,6 +212,7 @@ export const HSRCharacter = [
     {
         "id": 21,
         "name": "Fugue",
+        "full_name": "Fugue",
         "stars": 5,
         "elements": "Fire",
         "path": "Nihility",
@@ -200,6 +222,7 @@ export const HSRCharacter = [
     {
         "id": 22,
         "name": "Gallagher",
+        "full_name": "Gallagher",
         "stars": 4,
         "elements": "Fire",
         "path": "Abundance",
@@ -209,6 +232,7 @@ export const HSRCharacter = [
     {
         "id": 23,
         "name": "Gepard",
+        "full_name": "Gepard",
         "stars": 5,
         "elements": "Ice",
         "path": "Preservation",
@@ -218,6 +242,7 @@ export const HSRCharacter = [
     {
         "id": 24,
         "name": "Guinaifen",
+        "full_name": "Guinaifen",
         "stars": 4,
         "elements": "Fire",
         "path": "Nihility",
@@ -227,6 +252,7 @@ export const HSRCharacter = [
     {
         "id": 25,
         "name": "Hanya",
+        "full_name": "Hanya",
         "stars": 4,
         "elements": "Physical",
         "path": "Harmony",
@@ -236,6 +262,7 @@ export const HSRCharacter = [
     {
         "id": 26,
         "name": "Herta",
+        "full_name": "Herta",
         "stars": 4,
         "elements": "Ice",
         "path": "Erudition",
@@ -245,6 +272,7 @@ export const HSRCharacter = [
     {
         "id": 27,
         "name": "Himeko",
+        "full_name": "Himeko",
         "stars": 5,
         "elements": "Fire",
         "path": "Erudition",
@@ -254,6 +282,7 @@ export const HSRCharacter = [
     {
         "id": 28,
         "name": "Hook",
+        "full_name": "Hook",
         "stars": 4,
         "elements": "Fire",
         "path": "Destruction",
@@ -262,7 +291,8 @@ export const HSRCharacter = [
     },
     {
         "id": 29,
-        "name": "Huohuo",
+        "name": "Huo Huo",
+        "full_name": "Huo Huo",
         "stars": 5,
         "elements": "Wind",
         "path": "Abundance",
@@ -272,6 +302,7 @@ export const HSRCharacter = [
     {
         "id": 70,
         "name": "Hyacine",
+        "full_name": "Hyacine",
         "stars": 5,
         "elements": "Wind",
         "path": "Remembrance",
@@ -281,6 +312,7 @@ export const HSRCharacter = [
     {
         "id": 30,
         "name": "Jade",
+        "full_name": "Jade",
         "stars": 5,
         "elements": "Quantum",
         "path": "Erudition",
@@ -290,6 +322,7 @@ export const HSRCharacter = [
     {
         "id": 31,
         "name": "Jiaoqiu",
+        "full_name": "Jiaoqiu",
         "stars": 5,
         "elements": "Fire",
         "path": "Nihility",
@@ -299,6 +332,7 @@ export const HSRCharacter = [
     {
         "id": 32,
         "name": "Jing Yuan",
+        "full_name": "Jing Yuan",
         "stars": 5,
         "elements": "Lightning",
         "path": "Erudition",
@@ -308,6 +342,7 @@ export const HSRCharacter = [
     {
         "id": 33,
         "name": "Jingliu",
+        "full_name": "Jingliu",
         "stars": 5,
         "elements": "Ice",
         "path": "Destruction",
@@ -317,6 +352,7 @@ export const HSRCharacter = [
     {
         "id": 34,
         "name": "Kafka",
+        "full_name": "Kafka",
         "stars": 5,
         "elements": "Lightning",
         "path": "Nihility",
@@ -326,6 +362,7 @@ export const HSRCharacter = [
     {
         "id": 35,
         "name": "Lingsha",
+        "full_name": "Lingsha",
         "stars": 5,
         "elements": "Fire",
         "path": "Abundance",
@@ -335,6 +372,7 @@ export const HSRCharacter = [
     {
         "id": 36,
         "name": "Luka",
+        "full_name": "Luka",
         "stars": 4,
         "elements": "Physical",
         "path": "Nihility",
@@ -344,6 +382,7 @@ export const HSRCharacter = [
     {
         "id": 37,
         "name": "Luocha",
+        "full_name": "Luocha",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Abundance",
@@ -353,6 +392,7 @@ export const HSRCharacter = [
     {
         "id": 38,
         "name": "Lynx",
+        "full_name": "Lynx",
         "stars": 4,
         "elements": "Quantum",
         "path": "Abundance",
@@ -361,16 +401,18 @@ export const HSRCharacter = [
     },
     {
         "id": 39,
-        "name": "March 7th (Preservation)",
+        "name": "March 7th",
+        "full_name": "March 7th (Preservation)",
         "stars": 4,
         "elements": "Ice",
         "path": "Preservation",
-        "image_path": "march7th_preservation.gif",
+        "image_path": "march7th_preservation.webp",
         "selected": false
     },
     {
         "id": 40,
-        "name": "March 7th (The Hunt)",
+        "name": "March 7th",
+        "full_name": "March 7th (The Hunt)",
         "stars": 4,
         "elements": "Imaginary",
         "path": "The Hunt",
@@ -380,6 +422,7 @@ export const HSRCharacter = [
     {
         "id": 41,
         "name": "Misha",
+        "full_name": "Misha",
         "stars": 4,
         "elements": "Ice",
         "path": "Destruction",
@@ -389,6 +432,7 @@ export const HSRCharacter = [
     {
         "id": 42,
         "name": "Moze",
+        "full_name": "Moze",
         "stars": 4,
         "elements": "Lightning",
         "path": "The Hunt",
@@ -398,6 +442,7 @@ export const HSRCharacter = [
     {
         "id": 43,
         "name": "Mydei",
+        "full_name": "Mydei",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Destruction",
@@ -407,6 +452,7 @@ export const HSRCharacter = [
     {
         "id": 44,
         "name": "Natasha",
+        "full_name": "Natasha",
         "stars": 4,
         "elements": "Physical",
         "path": "Abundance",
@@ -416,6 +462,7 @@ export const HSRCharacter = [
     {
         "id": 45,
         "name": "Pela",
+        "full_name": "Pela",
         "stars": 4,
         "elements": "Ice",
         "path": "Nihility",
@@ -425,6 +472,7 @@ export const HSRCharacter = [
     {
         "id": 46,
         "name": "Qingque",
+        "full_name": "Qingque",
         "stars": 4,
         "elements": "Quantum",
         "path": "Erudition",
@@ -434,6 +482,7 @@ export const HSRCharacter = [
     {
         "id": 47,
         "name": "Rappa",
+        "full_name": "Rappa",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Erudition",
@@ -443,6 +492,7 @@ export const HSRCharacter = [
     {
         "id": 48,
         "name": "Robin",
+        "full_name": "Robin",
         "stars": 5,
         "elements": "Physical",
         "path": "Harmony",
@@ -452,6 +502,7 @@ export const HSRCharacter = [
     {
         "id": 49,
         "name": "Ruan Mei",
+        "full_name": "Ruan Mei",
         "stars": 5,
         "elements": "Ice",
         "path": "Harmony",
@@ -461,6 +512,7 @@ export const HSRCharacter = [
     {
         "id": 50,
         "name": "Sampo",
+        "full_name": "Sampo",
         "stars": 4,
         "elements": "Wind",
         "path": "Nihility",
@@ -470,6 +522,7 @@ export const HSRCharacter = [
     {
         "id": 51,
         "name": "Seele",
+        "full_name": "Seele",
         "stars": 5,
         "elements": "Quantum",
         "path": "The Hunt",
@@ -479,6 +532,7 @@ export const HSRCharacter = [
     {
         "id": 52,
         "name": "Serval",
+        "full_name": "Serval",
         "stars": 4,
         "elements": "Lightning",
         "path": "Erudition",
@@ -488,6 +542,7 @@ export const HSRCharacter = [
     {
         "id": 53,
         "name": "Silver Wolf",
+        "full_name": "Silver Wolf",
         "stars": 5,
         "elements": "Quantum",
         "path": "Nihility",
@@ -497,6 +552,7 @@ export const HSRCharacter = [
     {
         "id": 54,
         "name": "Sparkle",
+        "full_name": "Sparkle",
         "stars": 5,
         "elements": "Quantum",
         "path": "Harmony",
@@ -506,6 +562,7 @@ export const HSRCharacter = [
     {
         "id": 55,
         "name": "Sunday",
+        "full_name": "Sunday",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Harmony",
@@ -515,6 +572,7 @@ export const HSRCharacter = [
     {
         "id": 56,
         "name": "Sushang",
+        "full_name": "Sushang",
         "stars": 4,
         "elements": "Physical",
         "path": "The Hunt",
@@ -524,6 +582,7 @@ export const HSRCharacter = [
     {
         "id": 57,
         "name": "Tingyun",
+        "full_name": "Tingyun",
         "stars": 4,
         "elements": "Lightning",
         "path": "Harmony",
@@ -533,6 +592,7 @@ export const HSRCharacter = [
     {
         "id": 58,
         "name": "Topaz & Numpy",
+        "full_name": "Topaz & Numpy",
         "stars": 5,
         "elements": "Fire",
         "path": "The Hunt",
@@ -542,6 +602,7 @@ export const HSRCharacter = [
     {
         "id": 59,
         "name": "The Herta",
+        "full_name": "The Herta",
         "stars": 5,
         "elements": "Ice",
         "path": "Erudition",
@@ -550,7 +611,8 @@ export const HSRCharacter = [
     },
     {
         "id": 60,
-        "name": "Trailblazer (Destruction)",
+        "name": "Trailblazer",
+        "full_name": "Trailblazer (Destruction)",
         "stars": 5,
         "elements": "Physical",
         "path": "Destruction",
@@ -559,7 +621,8 @@ export const HSRCharacter = [
     },
     {
         "id": 61,
-        "name": "Trailblazer (Harmony)",
+        "name": "Trailblazer",
+        "full_name": "Trailblazer (Harmony)",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Harmony",
@@ -568,7 +631,8 @@ export const HSRCharacter = [
     },
     {
         "id": 62,
-        "name": "Trailblazer (Preservation)",
+        "name": "Trailblazer",
+        "full_name": "Trailblazer (Preservation)",
         "stars": 5,
         "elements": "Fire",
         "path": "Preservation",
@@ -577,7 +641,8 @@ export const HSRCharacter = [
     },
     {
         "id": 63,
-        "name": "Trailblazer (Remembrance)",
+        "name": "Trailblazer",
+        "full_name": "Trailblazer (Remembrance)",
         "stars": 5,
         "elements": "Ice",
         "path": "Remembrance",
@@ -587,6 +652,7 @@ export const HSRCharacter = [
     {
         "id": 64,
         "name": "Tribbie",
+        "full_name": "Tribbie",
         "stars": 5,
         "elements": "Quantum",
         "path": "Harmony",
@@ -596,6 +662,7 @@ export const HSRCharacter = [
     {
         "id": 65,
         "name": "Welt",
+        "full_name": "Welt",
         "stars": 5,
         "elements": "Imaginary",
         "path": "Nihility",
@@ -605,6 +672,7 @@ export const HSRCharacter = [
     {
         "id": 66,
         "name": "Xueyi",
+        "full_name": "Xueyi",
         "stars": 4,
         "elements": "Quantum",
         "path": "Destruction",
@@ -614,6 +682,7 @@ export const HSRCharacter = [
     {
         "id": 67,
         "name": "Yanqing",
+        "full_name": "Yanqing",
         "stars": 5,
         "elements": "Ice",
         "path": "The Hunt",
@@ -623,6 +692,7 @@ export const HSRCharacter = [
     {
         "id": 68,
         "name": "Yukong",
+        "full_name": "Yukong",
         "stars": 4,
         "elements": "Imaginary",
         "path": "Harmony",
@@ -632,6 +702,7 @@ export const HSRCharacter = [
     {
         "id": 69,
         "name": "Yunli",
+        "full_name": "Yunli",
         "stars": 5,
         "elements": "Physical",
         "path": "Destruction",

@@ -84,13 +84,12 @@ function filterCharacters() {
 
 function displayItem(champions) {
     champions.forEach(champion => {
-        let lowerCaseText = champion.name.toLowerCase();
+        let lowerCaseText = champion.full_name.toLowerCase();
         let element = champion.elements;
         const removeSpaces = (inputText) => {
             return inputText.replace(/\s/g, "");
         };
         let character_file = champion.image_path;
-        // console.log(character_file);
         const li = document.createElement('li');
         const img = document.createElement('img');
         const img_element = document.createElement('div');
@@ -111,9 +110,7 @@ function displayItem(champions) {
             img.style.backgroundColor = '#ccc';
             img.style.filter = 'grayscale(1)';
         }
-        // Add event listener for selecting the character
         img.addEventListener('click', () => {
-            // Handle character selection logic here
             console.log(`Character ${champion.name} selected`);
             chooseCharacter(champion);
         });
@@ -121,10 +118,10 @@ function displayItem(champions) {
         li.appendChild(img_element);
         ul.appendChild(li);
         characterSelection.appendChild(ul);
-        //add the name of the character
+
         const characterName = document.createElement('div');
         characterName.classList.add('character-name');
-        characterName.innerHTML = champion.name;
+        characterName.innerHTML = champion.full_name;
         li.appendChild(characterName);
     });
 }

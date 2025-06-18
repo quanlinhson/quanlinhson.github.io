@@ -1,21 +1,30 @@
-# Hoyo Game Ban Pick UI
+# NOTZeta PvP Draft Tool
 
-Website: https://quanlinhson.github.io 
+Offical Website: https://quanlinhson.github.io 
 
 ## Introduction
-**Hoyo Game Ban Pick UI** is a draft ban/pick tool website that can be used for competitions, tournaments, or offline battles with friends. On this website, you can choose one of three games to create a new draft. These games are ***Genshin Impact, Honkai: Star Rail, and Zenless Zone Zero***. Each game has its own logic ban/pick rules suit the of characters and gameplay in the respective game modes.
+**NOTZeta PvP Draft Tool** is a draft ban/pick tool website that can be used for competitions, tournaments, or offline battles with friends. On this website, you can choose one of three games to create a new draft. These games are ***Genshin Impact, and Honkai: Star Rail***. Each game has its own logic ban/pick rules suit the of characters and gameplay in the respective game modes.
+
+***CAUTION: This website can use only on DESKTOP or LAPTOP devices, not mobile devices.***
+
+## Difference between this project and other projects
+- A simple, easy-to-use tool for players to create draft ban/pick matches.
+- This tool has some unique features, such as:
+  -	Randomly select characters for each player in pick phase when pick time is ended.
+  - Players can wait for the time end to not select any characters to ban during the ban phase.
+  - Add some music to the ban/pick phase to make it more exciting. 
 
 ## Structure
 ![Structure](/src/All/images/structure.png)
 
 ## Technology
--	Front-end: HTML5/CSS.
+-	Front-end: HTML, CSS.
 -	Back-end: Javascript.
--	Data Structure: TS, JS.
+-	Data Structure: TypeScript.
 
 ##	Database
 - The data structure is referenced from [Pustur GitHub page](https://github.com/Pustur/genshin-impact-team-randomizer) and modified to fit the site's design in all games.
-- Character images and game icons are sourced from [HoYoWiki (Hoyoverse)](https://wiki.hoyolab.com/), [Honey Impact](https://gensh.honeyhunterworld.com/), and various other wiki websites.
+- Character images and game icons are sourced from [HoYoWiki (Hoyoverse)](https://wiki.hoyolab.com/), [Honey Impact](https://gensh.honeyhunterworld.com/), ingame, and various other wiki websites.
 
 ##	UI Ban/Pick 
 - Genshin Ban/Pick UI
@@ -27,16 +36,16 @@ Website: https://quanlinhson.github.io
 ![HSR After Ban/Pick](/src/All/images/HSR2.png)
 
 ##	Future development direction
--	Add some setting before draft mode.
--	Fix some bug.
--   Create New UI Template.
+- Create New Custom UI Template.
 -	More Ban/Pick Game song.
 -	Online mode.
--	etc..
+- Some other support features for new ban/pick rule such as Global Ban/Pick, Fearless Draft, etc. 
 
 ##	License
--	This is a non-profit project, not generating interest, implemented with the purpose of supporting the community with tools to create tournaments or online/offline matches with each other.
--   [APACHE](LICENSE)
+- This is a non-profit project built to support the community with online and offline tournament and matchmaking tools. 
+- The project is completely free and open source, however, please do not use it for commercial purposes. 
+- All images and some icons are from Hoyoverse and some other wiki pages and are for community use only.
+- [APACHE](LICENSE)
 
 ## Update
 - [Update](CHANGELOG.md)

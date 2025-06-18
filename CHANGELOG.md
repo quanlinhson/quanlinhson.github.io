@@ -5,7 +5,93 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 🔥 Version 0.4.2 🔥
+## 🔥🔥Version 1.0.0 - BIG UPDATE (June 18, 2025) 🔥🔥
+### ✨ Add: 
+- Add new character in GI v5.7: **Skirk & Dahlia**.
+
+### 🚀 Optimization:
+#### - Open page for HSR and GI:
+* Make the box for HSR and GI more **compact**.
+* Optimize the icon for HSR and GI.
+* Optimize the background for HSR and GI: Using the color for full background instead of using the image.
+* Optimize the footer:
+    - Add "About this project" with GitHub link and Feedback link.
+    - Change footer layout to make it more compact.
+    - Add my channel logo to the footer.
+    - Change the footer description text to make it more suitable for the project.
+
+#### - Setting in HSR and GI:
+* Update UI Template for setting Menu to make it suitable.
+* Add logic: you need to setting the team name, score and countdown time and click the "Save Setting" button to start the ban/pick phase or you can click the button "Save Setting" to start the ban/pick phase without edit it.
+* Add logic: you can change the team name anytime during the ban/pick phase, but not the countdown time.
+
+#### - Logic ban/pick for HSR and GI:
+* **Remove the old ban/pick logic**: Once you clicked on a character from the character list during your ban/pick phase, ***it would automatically confirm your pick***. 
+* **Add the new ban/pick logic**: You can ***choose any character during your ban/pick phase*** and **confirm** your pick with the "Confirm" button if you're happy with it.
+* Team can **choose** _only 1 variant of the character has lots of variants per team_.
+* If you didn't ban your character in the ban phase, or you choose your character to ban but didn't confirm it, the game will **automatically not ban your character** for you.
+* If you didn't pick your character in the pick phase, the game will **randomly choose a character for you from the character list**.
+* If you pick your character in the pick phase, but didn't confirm it when time was ended, the game will **automatically confirm your pick** for you after the pick phase is finished.
+
+#### - Ban/pick HUD 
+##### + For HSR: 
+* Change the blink animation for ban/pick: 
+    - From ***flashing effect*** to ***blink ban/pick slot effect*** while in turn with team color.
+    - Add the **border blink animation** to confirm your character on the pick slot when you click on the "Confirm" button.
+
+* UI of pick slot: 
+    - Removed rarities; path, element and character name will be in a corner of pick slot.
+    - Change the character image in pick slot: Now it will use ***a part of image from Character Splash Art*** instead of using the **Selection Character Image** like before.
+    - There will have a black overlay on the character image in pick slot to make it more visible.
+    - The border of the pick slot will be rounded in one corner to match the game theme.
+    - Background of pick slot when you choose your character will be darker.
+
+* The scroll bar in character-list will be **thinner**.
+
+* New confirm button design: It will be a **rounded button** with some adjustment to match the game theme.
+
+* Change color the vertical line in ban slot and border of pick slot: It will now use a different color scheme (from #ffffff to #DBC291) to match the game theme.
+
+* Add background for HUD: The background will use image from **"HSR Login screen"**.
+
+* Title bar: 
+    - Setting and Volume button will be in the title bar, not in the simple button in the conner like before.
+    - Name and score text will be bigger than before.
+    - Some adjustment design for the title bar to make it more compact. 
+
+##### + For GI:  
+* Change the blink animation for ban/pick: 
+    - From ***flashing effect*** to ***blink ban/pick slot effect*** while in turn with team color.
+    - Add the **border blink animation** to confirm your character on the pick slot when you click on the "Confirm" button.
+
+* UI of pick slot: 
+    - Removed rarities; path, element and character name will be in a corner of pick slot.
+    - There will have a white overlay on the character image in pick slot to make it more visible.
+    - Background of pick slot when you choose your character will be darker.
+
+* Change color the vertical line in ban slot and border of pick slot: It will now use a different color scheme (from #ffffff to #4D5564).
+
+* The scroll bar in character-list will be **thinner**.
+
+* New confirm button design: It will be a **rounded button** with some adjustment to match the game theme.
+
+* Add background for UI: The background will use image from "GI Spiral Abyss background".
+
+* Title bar: 
+    - Setting and Volume button will be in the title bar, not in the simple button in the conner like before.
+    - Name and score text will be bigger than before.
+    - Some adjustment design for the title bar to make it more compact. 
+
+#### - Other Optimization:
+* Hide character-list, filter, and confirm button after all ban/pick turns are finished for a cleaner UI.
+* Remove some unnecessary code and files.
+* Add a new ban/pick music for HSR.
+
+### 🔧 Fix:
+* Fix the team name title can't reset after you finish the ban/pick phase.
+* Fix the battle auto start the ban/pick phase when you open the web and did't clisk save setting to begin the ban/pick phase.
+
+## Version 0.4.2 
 ### ✨ Add: 
 - Add new character in HSR v3.3: **Cipher & Hyacine**.
 

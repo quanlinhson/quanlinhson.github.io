@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 team2Name: document.getElementById('team2-name-input').value,
                 team1Score: document.getElementById('team1-score-input').value,
                 team2Score: document.getElementById('team2-score-input').value,
-                timeSetting: document.getElementById('time-setting').value
-                // banPickTurn: document.getElementById('ban-pick-turn').value
+                banTime: document.getElementById('ban-time-setting').value,
+                pickTime: document.getElementById('pick-time-setting').value,
             };
 
             // Send settings data to parent document
-            window.parent.postMessage(settingsData, '*');
+            window.parent.postMessage({ settingsData, settingsSaved: true }, '*');
 
             // Hide settings panel after saving
             const settingsPanel = window.parent.document.getElementById('settings-modal');
@@ -36,9 +36,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// Function to set the timer (example implementation)
-function setTimer(seconds) {
-    // Your timer logic here
-    console.log(`Timer set to ${seconds} seconds`);
-}

@@ -2,13 +2,7 @@
 
 let countdown;
 
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     const countdownElement = document.querySelector('.timer');
-//     const duration = 60 * 1; // 1 minute
-//     startCountdown(duration, countdownElement);
-// });
-
-export function startCountdown(duration) {
+export function startCountdown(duration, onTimeout) {
     const display = document.querySelector('.timer');
     let timer = duration, minutes, seconds;
 
@@ -24,10 +18,12 @@ export function startCountdown(duration) {
 
         if (--timer < 0) {
             clearInterval(countdown);
-            display.textContent = 'Time\'s up!';
+            if (typeof onTimeout === 'function') {
+                onTimeout();
+                return;
+            }
         }
     }, 1000);
-    //clearInterval(countdown);
 }
 
 export function resetTime(duration) {
