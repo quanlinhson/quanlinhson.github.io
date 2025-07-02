@@ -30,6 +30,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 73,
+        "name": "Archer",
+        "full_name": "Archer",
+        "stars": 5,
+        "elements": "Quantum",
+        "path": "The Hunt",
+        "image_path": "archer.webp",
+        "selected": false
+    },
+    {
         "id": 4,
         "name": "Argenti",
         "full_name": "Argenti",
@@ -470,6 +480,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 72,
+        "name": "Phainon",
+        "full_name": "Phainon",
+        "stars": 5,
+        "elements": "Physical",
+        "path": "Destruction",
+        "image_path": "phainon.webp",
+        "selected": false
+    },
+    {
         "id": 46,
         "name": "Qingque",
         "full_name": "Qingque",
@@ -547,6 +567,16 @@ export const HSRCharacter = [
         "elements": "Quantum",
         "path": "Nihility",
         "image_path": "silverwolf.webp",
+        "selected": false
+    },
+    {
+        "id": 74,
+        "name": "Saber",
+        "full_name": "Saber",
+        "stars": 5,
+        "elements": "Wind",
+        "path": "Destruction",
+        "image_path": "saber.webp",
         "selected": false
     },
     {

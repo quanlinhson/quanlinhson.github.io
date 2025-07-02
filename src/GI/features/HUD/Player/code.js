@@ -174,6 +174,7 @@ function begin() {
                 if (slot) slot.classList.remove('active', 'red-blink');
                 r++;
                 i++;
+                ban_sound_play();
                 check();
                 begin();
                 if (confirmBtn) confirmBtn.disabled = true;
@@ -195,6 +196,7 @@ function begin() {
                 if (slot) slot.classList.remove('active', 'blue-blink');
                 l++;
                 i++;
+                ban_sound_play();
                 check();
                 begin();
                 if (confirmBtn) confirmBtn.disabled = true;
