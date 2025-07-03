@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 🔥🔥 Version 1.1.0 (July 2, 2025)
+### ✨ Add:
+- Add new character in HSR v3.4: **Archer, Phainon & Saber**.
+
+### 🔧 Fix:
+- Fix the bug that you can't hear the ban sound after the no-ban is running.
+- Fix the bug that when you choose the character that have lots of variants, lock it, and then you use filter function, the character that you choose didn't grayscale like the other characters.
+
 ## 🔥🔥Version 1.0.0 - BIG UPDATE (June 18, 2025) 🔥🔥
 ### ✨ Add: 
 - Add new character in GI v5.7: **Skirk & Dahlia**.

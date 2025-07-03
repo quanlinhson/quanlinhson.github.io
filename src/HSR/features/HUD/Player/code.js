@@ -28,14 +28,14 @@ const RedPickSlot = ['rp1', 'rp2', 'rp3', 'rp4', 'rp5', 'rp6', 'rp7', 'rp8'];
 
 function ban_sound_play() {
     var audio = document.getElementById("ban-sound");
-    let volume = 0.2;
+    let volume = 0.5;
     audio.volume = volume;
     audio.play();
 }
 
 function pick_sound_play() {
     var audio = document.getElementById("pick-sound");
-    let volume = 0.2;
+    let volume = 0.5;
     audio.volume = volume;
     audio.play();
 }
@@ -49,7 +49,7 @@ function playBackgroundMusic() {
         }, { once: true });
     });
     audio_bp.loop = true;
-    audio_bp.volume = 0.2;
+    audio_bp.volume = 0.1;
 }
 
 function check_selection(name) {
@@ -173,6 +173,7 @@ function begin() {
                 if (slot) slot.classList.remove('active', 'red-blink');
                 r++;
                 i++;
+                ban_sound_play();
                 check();
                 begin();
                 if (confirmBtn) confirmBtn.disabled = true;
@@ -194,6 +195,7 @@ function begin() {
                 if (slot) slot.classList.remove('active', 'blue-blink');
                 l++;
                 i++;
+                ban_sound_play();
                 check();
                 begin();
                 if (confirmBtn) confirmBtn.disabled = true;

@@ -11,7 +11,7 @@ let selectedRating = '';
 
 function check_selection(name) {
     for (let i in HSRCharacter) {
-        let lowerCaseText = HSRCharacter[i].name.toLowerCase()
+        let lowerCaseText = HSRCharacter[i].full_name.toLowerCase()
         if (lowerCaseText == name) {
             return HSRCharacter[i].selected;
         }
