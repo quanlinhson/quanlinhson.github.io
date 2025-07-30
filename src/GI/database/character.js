@@ -508,6 +508,16 @@ const GenshinCharacter = [
         "selected": false,
     },
     {
+        "id": 102,
+        "fullName": 'Ineffa',
+        "shortName": 'Ineffa',
+        "stars": 5,
+        "elements": ['electro'],
+        "weapon": 'polearm',
+        "gender": ['M'],
+        "selected": false,
+    },
+    {
         "id": 16,
         "fullName": "Jean",
         "shortName": "Jean",
