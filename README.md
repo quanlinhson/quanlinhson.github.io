@@ -43,9 +43,9 @@ Offical Website: https://quanlinhson.github.io
 
 ##	License
 - This is a non-profit project built to support the community with online and offline tournament and matchmaking tools. 
-- The project is completely free and open source, however, please do not use it for commercial purposes. 
-- All images and some icons are from Hoyoverse and some other wiki pages and are for community use only.
+- The project is completely free and open source. However, please DO NOT use it for commercial purposes. 
+- All images and some icons are from **Hoyoverse** and some other wiki pages; and are for community use only.
 - [APACHE](LICENSE)
 
-## Update
+## Update Log
 - [Update](CHANGELOG.md)

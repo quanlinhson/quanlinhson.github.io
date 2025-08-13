@@ -5,11 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 🔥🔥 Version 1.1.1 (July 30, 2025)
+## 🔥 Version 1.2.1 (August 13, 2025)
+### ✨ Add:
+- Add new character in HSR v3.5: **Hysilens & Cerydra**.
+
+### 🚀 Optimization:
+- Add filter title for character filter in HSR and GI.
+- Change bolder size when choosing icon in character filter in HSR and GI.
+
+## Version 1.1.1 (July 30, 2025)
 ### ✨ Add:
 - Add new character in GI v5.8: **Ineffa**.
 
-## 🔥🔥 Version 1.1.0 (July 2, 2025)
+## Version 1.1.0 (July 2, 2025)
 ### ✨ Add:
 - Add new character in HSR v3.4: **Archer, Phainon & Saber**.
 

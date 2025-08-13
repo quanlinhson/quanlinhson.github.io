@@ -29,6 +29,14 @@ p {
     font-size: large;
 }
 
+.filter-title {
+    font-size: 1.1rem;
+    color: #fff;
+    font-family: 'GI_Font';
+    margin-bottom: 8px;
+    text-align: center;
+}
+
 #page-container {
     position: relative;
     min-height: 100vh;
@@ -474,17 +482,28 @@ p {
 }
 
 .character-filter .fit1 {
-    padding: 5px 0 5px 0;
-    display: flex;
-    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 4px 15px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    min-width: 0;
 }
 
 .character-filter .by-element,
 .character-filter .by-rating,
 .character-filter .by-weapon {
     display: inline-flex;
+    align-items: center;
 }
 
 .character-filter .by-element img,
@@ -496,13 +515,14 @@ p {
     align-items: center;
     cursor: pointer;
     margin: 0 10px;
+    object-fit: contain;
 }
 
 .character-filter .by-element img.selected,
 .character-filter .by-weapon img.selected,
 .character-filter .by-rating img.selected {
-    border: 5px solid #2196F3;
-    border-radius: 5px;
+    border: 3px solid #2196F3;
+    border-radius: 10px;
 }
 
 /*search bar*/

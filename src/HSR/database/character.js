@@ -140,13 +140,13 @@ export const HSRCharacter = [
         "selected": false
     },
     {
-        "id": 14,
-        "name": "Clara",
-        "full_name": "Clara",
+        "id": 76,
+        "name": "Cerydra",
+        "full_name": "Cerydra",
         "stars": 5,
-        "elements": "Physical",
-        "path": "Destruction",
-        "image_path": "clara.webp",
+        "elements": "Wind",
+        "path": "Harmony",
+        "image_path": "cerydra.webp",
         "selected": false
     },
     {
@@ -157,6 +157,16 @@ export const HSRCharacter = [
         "elements": "Quantum",
         "path": "Nihility",
         "image_path": "cipher.webp",
+        "selected": false
+    },
+    {
+        "id": 14,
+        "name": "Clara",
+        "full_name": "Clara",
+        "stars": 5,
+        "elements": "Physical",
+        "path": "Destruction",
+        "image_path": "clara.webp",
         "selected": false
     },
     {
@@ -317,6 +327,16 @@ export const HSRCharacter = [
         "elements": "Wind",
         "path": "Remembrance",
         "image_path": "hyacine.webp",
+        "selected": false
+    },
+    {
+        "id": 75,
+        "name": "Hysilens",
+        "full_name": "Hysilens",
+        "stars": 5,
+        "elements": "Physical",
+        "path": "Nihility",
+        "image_path": "hysilens.webp",
         "selected": false
     },
     {
