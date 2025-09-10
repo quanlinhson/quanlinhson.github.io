@@ -1,17 +1,13 @@
 const GenshinCharacter = [
     {
-        "id": 1,
-        "fullName": "Arataki Itto",
-        "shortName": "Itto",
-        "stars": 5,
-        "elements": [
-            "geo"
-        ],
+        "id": 103,
+        "fullName": "Aino",
+        "shortName": "Aino",
+        "stars": 4,
+        "elements": ["hydro"],
         "weapon": "claymore",
-        "gender": [
-            "M"
-        ],
-        "selected": false
+        "gender": ["F"],
+        "selected": false,
     },
     {
         "id": 2,
@@ -66,6 +62,20 @@ const GenshinCharacter = [
         "weapon": "bow",
         "gender": [
             "F"
+        ],
+        "selected": false
+    },
+    {
+        "id": 1,
+        "fullName": "Arataki Itto",
+        "shortName": "Itto",
+        "stars": 5,
+        "elements": [
+            "geo"
+        ],
+        "weapon": "claymore",
+        "gender": [
+            "M"
         ],
         "selected": false
     },
@@ -404,6 +414,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 105,
+        "fullName": "Flins",
+        "shortName": "Flins",
+        "stars": 5,
+        "elements": ["electro"],
+        "weapon": "polearm",
+        "gender": ["M"],
+        "selected": false,
+    },
+    {
         "id": 71,
         "fullName": "Freminet",
         "shortName": "Freminet",
@@ -707,6 +727,16 @@ const GenshinCharacter = [
         "elements": ['anemo'],
         "weapon": 'catalyst',
         "gender": ['F'],
+        "selected": false,
+    },
+    {
+        "id": 104,
+        "fullName": "Lauma",
+        "shortName": "Lauma",
+        "stars": 5,
+        "elements": ["dendro"],
+        "weapon": "catalyst",
+        "gender": ["F"],
         "selected": false,
     },
     {
