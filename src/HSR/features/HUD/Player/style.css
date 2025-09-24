@@ -629,7 +629,7 @@ p {
 }
 
 .character-list img {
-    width: 120px;
+    width: 140px;
     height: 128px;
     display: block;
     object-fit: cover;
@@ -659,7 +659,7 @@ p {
 }
 
 .character-name {
-    width: 120px;
+    width: 140px;
     height: 40px;
     font-family: 'HSR_Font';
     color: #000;

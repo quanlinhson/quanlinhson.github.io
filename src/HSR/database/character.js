@@ -190,6 +190,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 78,
+        "name": "Dan Heng - Permansor Terrae",
+        "full_name": "Dan Heng - Permansor Terrae",
+        "stars": 5,
+        "elements": "Physical",
+        "path": "Preservation",
+        "image_path": "danheng_permansorterrae.webp",
+        "selected": false
+    },
+    {
         "id": 17,
         "name": "Dr.Ratio",
         "full_name": "Dr.Ratio",
@@ -197,6 +207,16 @@ export const HSRCharacter = [
         "elements": "Imaginary",
         "path": "The Hunt",
         "image_path": "drratio.webp",
+        "selected": false
+    },
+    {
+        "id": 77,
+        "name": "Evernight",
+        "full_name": "Evernight",
+        "stars": 5,
+        "elements": "Ice",
+        "path": "Remembrance",
+        "image_path": "evernight.webp",
         "selected": false
     },
     {
