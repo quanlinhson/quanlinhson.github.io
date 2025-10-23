@@ -886,6 +886,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 106,
+        "fullName": "Nefer",
+        "shortName": "Nefer",
+        "stars": 5,
+        "elements": ["dendro"],
+        "weapon": "catalyst",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
         "id": 72,
         "fullName": "Neuvillette",
         "shortName": "Neuvillette",
