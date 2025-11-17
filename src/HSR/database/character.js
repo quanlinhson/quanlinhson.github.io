@@ -170,6 +170,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 79,
+        "name": "Cyrene",
+        "full_name": "Cyrene",
+        "stars": 5,
+        "elements": "Ice",
+        "path": "Remembrance",
+        "image_path": "cyrene.webp",
+        "selected": false
+    },
+    {
         "id": 15,
         "name": "Dan Heng",
         "full_name": "Dan Heng",
