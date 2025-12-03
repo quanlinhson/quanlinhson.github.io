@@ -348,6 +348,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 107,
+        "fullName": "Durin",
+        "shortName": "Durin",
+        "stars": 5,
+        "elements": ["pyro"],
+        "weapon": "sword",
+        "gender": ["M"],
+        "selected": false,
+    },
+    {
         "id": 85,
         "fullName": "Emilie",
         "shortName": "Emilie",
@@ -535,6 +545,16 @@ const GenshinCharacter = [
         "elements": ['electro'],
         "weapon": 'polearm',
         "gender": ['M'],
+        "selected": false,
+    },
+    {
+        "id": 108,
+        "fullName": "Jahoda",
+        "shortName": "Jahoda",
+        "stars": 4,
+        "elements": ["anemo"],
+        "weapon": "bow",
+        "gender": ["F"],
         "selected": false,
     },
     {
