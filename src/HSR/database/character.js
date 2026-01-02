@@ -680,6 +680,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 80,
+        "name": "The Dahlia",
+        "full_name": "The Dahlia",
+        "stars": 5,
+        "elements": "Fire",
+        "path": "Nihility",
+        "image_path": "thedahlia.webp",
+        "selected": false
+    },
+    {
         "id": 59,
         "name": "The Herta",
         "full_name": "The Herta",
