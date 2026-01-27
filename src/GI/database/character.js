@@ -268,6 +268,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 109,
+        "fullName": "Columbina",
+        "shortName": "Columbina",
+        "stars": 5,
+        "elements": ["hydro"],
+        "weapon": "catalyst",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
         "id": 56,
         "fullName": "Cyno",
         "shortName": "Cyno",
@@ -535,6 +545,16 @@ const GenshinCharacter = [
         "elements": ['anemo'],
         "weapon": 'catalyst',
         "gender": ['M'],
+        "selected": false,
+    },
+    {
+        "id": 111,
+        "fullName": "Illuga",
+        "shortName": "Illuga",
+        "stars": 4,
+        "elements": ["geo"],
+        "weapon": "polearm",
+        "gender": ["M"],
         "selected": false,
     },
     {
@@ -1511,6 +1531,16 @@ const GenshinCharacter = [
         ],
         "selected": false
     },
+    {
+        "id": 110,
+        "fullName": "Zibai",
+        "shortName": "Zibai",
+        "stars": 5,
+        "elements": ["geo"],
+        "weapon": "sword",
+        "gender": ["F"],
+        "selected": false,
+    }
 ];
 
 export { GenshinCharacter };
