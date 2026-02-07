@@ -8,7 +8,7 @@ const elementNames = [
   'Physical',
 ];
 
-const pathNames = ['Destruction', 'The Hunt', 'Erudution', 'Harmony', 'Nihility', 'Preservation', 'Abundance', 'Remembrance'];
+const pathNames = ['Destruction', 'The Hunt', 'Erudution', 'Harmony', 'Nihility', 'Preservation', 'Abundance', 'Remembrance', 'Elation'];
 
 const rarities = [4, 5];
 

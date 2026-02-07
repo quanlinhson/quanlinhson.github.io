@@ -640,6 +640,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 82,
+        "name": "Sparxie",
+        "full_name": "Sparxie",
+        "stars": 5,
+        "elements": "Fire",
+        "path": "Elation",
+        "image_path": "sparxie.webp",
+        "selected": false
+    },
+    {
         "id": 55,
         "name": "Sunday",
         "full_name": "Sunday",
@@ -777,6 +787,16 @@ export const HSRCharacter = [
         "elements": "Ice",
         "path": "The Hunt",
         "image_path": "yanqing.webp",
+        "selected": false
+    },
+    {
+        "id": 81,
+        "name": "Yao Guang",
+        "full_name": "Yao Guang",
+        "stars": 5,
+        "elements": "Physical",
+        "path": "Elation",
+        "image_path": "yaoguang.webp",
         "selected": false
     },
     {
