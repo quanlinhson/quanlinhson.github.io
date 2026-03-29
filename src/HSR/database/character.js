@@ -60,6 +60,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 83,
+        "name": "Ashveil",
+        "full_name": "Ashveil",
+        "stars": 5,
+        "elements": "Lightning",
+        "path": "The Hunt",
+        "image_path": "ashveil.webp",
+        "selected": false
+    },
+    {
         "id": 6,
         "name": "Asta",
         "full_name": "Asta",
