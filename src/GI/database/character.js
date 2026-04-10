@@ -794,6 +794,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 113,
+        "fullName": "Linnea",
+        "shortName": "Linnea",
+        "stars": 5,
+        "elements": ["geo"],
+        "weapon": "bow",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
         "id": 25,
         "fullName": "Lisa",
         "shortName": "Lisa",
