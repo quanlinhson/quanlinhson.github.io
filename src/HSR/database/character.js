@@ -230,6 +230,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 85,
+        "name": "Evanescia",
+        "full_name": "Evanescia",
+        "stars": 5,
+        "elements": "Physical",
+        "path": "Elation",
+        "image_path": "evanescia.webp",
+        "selected": false
+    },
+    {
         "id": 77,
         "name": "Evernight",
         "full_name": "Evernight",
@@ -630,6 +640,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 84,
+        "name": "Silver Wolf Lv.999",
+        "full_name": "Silver Wolf Lv.999",
+        "stars": 5,
+        "elements": "Imaginary",
+        "path": "Elation",
+        "image_path": "silverwolflv999.webp",
+        "selected": false
+    },
+    {
         "id": 74,
         "name": "Saber",
         "full_name": "Saber",
@@ -757,6 +777,16 @@ export const HSRCharacter = [
         "elements": "Ice",
         "path": "Remembrance",
         "image_path": "trailblazer_remembrance.gif",
+        "selected": false
+    },
+    {
+        "id": 86,
+        "name": "Trailblazer",
+        "full_name": "Trailblazer (Elation)",
+        "stars": 5,
+        "elements": "Lightning",
+        "path": "Elation",
+        "image_path": "trailblazer_elation.gif",
         "selected": false
     },
     {
