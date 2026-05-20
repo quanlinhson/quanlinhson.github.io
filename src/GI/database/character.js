@@ -818,6 +818,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 116,
+        "fullName": "Lohen",
+        "shortName": "Lohen",
+        "stars": 5,
+        "elements": ["cryo"],
+        "weapon": "polearm",
+        "gender": ["M"],
+        "selected": false,
+    },
+    {
         "id": 69,
         "fullName": "Lynette",
         "shortName": "Lynette",
@@ -960,6 +970,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 115,
+        "fullName": "Nicole",
+        "shortName": "Nicole",
+        "stars": 5,
+        "elements": ["pyro"],
+        "weapon": "catalyst",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
         "id": 27,
         "fullName": "Ningguang",
         "shortName": "Ningguang",
@@ -1010,6 +1030,16 @@ const GenshinCharacter = [
         "weapon": 'bow',
         "gender": ['M'],
         "selected": false
+    },
+    {
+        "id": 114,
+        "fullName": "Prune",
+        "shortName": "Prune",
+        "stars": 4,
+        "elements": ["anemo"],
+        "weapon": "catalyst",
+        "gender": ["F"],
+        "selected": false,
     },
     {
         "id": 29,
