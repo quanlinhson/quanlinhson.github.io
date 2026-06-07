@@ -510,6 +510,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 87,
+        "name": "Mortenax Blade",
+        "full_name": "Mortenax Blade",
+        "stars": 5,
+        "elements": "Fire",
+        "path": "Nihility",
+        "image_path": "mortenax_blade.webp",
+        "selected": false
+    },
+    {
         "id": 42,
         "name": "Moze",
         "full_name": "Moze",
