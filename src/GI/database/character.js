@@ -1098,6 +1098,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 117,
+        "fullName": "Sandrone",
+        "shortName": "Sandrone",
+        "stars": 5,
+        "elements": ["cryo"],
+        "weapon": "claymore",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
         "id": 33,
         "fullName": "Sangonomiya Kokomi",
         "shortName": "Kokomi",
