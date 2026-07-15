@@ -350,6 +350,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 88,
+        "name": "Himeko - Nova",
+        "full_name": "Himeko - Nova",
+        "stars": 5,
+        "elements": "Fire",
+        "path": "Erudition",
+        "image_path": "himeko_nova.webp",
+        "selected": false
+    },
+    {
         "id": 28,
         "name": "Hook",
         "full_name": "Hook",

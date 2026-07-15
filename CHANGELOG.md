@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 🔥 Version 1.2.16 (July 01, 2026)
+## 🔥 Version 1.2.17 (July 15, 2026)
+### ✨ Add:
+- Add new character in HSR v4.4 (Part 1): **Himeko - Nova**.
+
+## Version 1.2.16 (July 01, 2026)
 ### ✨ Add:
 - Add new character in GI "Luna VIII": **Sandrone**.
 
