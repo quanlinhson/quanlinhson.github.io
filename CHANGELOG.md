@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 🔥 Version 1.2.18 (July 25, 2026)
 ### ✨ Add:
 - Add new character in HSR v4.4 (Part 2) - HSRxFATE : **Rin Tohsaka & Gilgamesh**.
+### 🔧 Fix:
+- Fix character image for **Dahlia** in HSR.
 
 ## 🔥 Version 1.2.17 (July 15, 2026)
 ### ✨ Add:
