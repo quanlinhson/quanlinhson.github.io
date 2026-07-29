@@ -310,6 +310,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 90,
+        "name": "Gilgamesh",
+        "full_name": "Gilgamesh",
+        "stars": 5,
+        "elements": "Lightning",
+        "path": "Destruction",
+        "image_path": "gilgamesh.webp",
+        "selected": false
+    },
+    {
         "id": 24,
         "name": "Guinaifen",
         "full_name": "Guinaifen",
@@ -597,6 +607,16 @@ export const HSRCharacter = [
         "elements": "Imaginary",
         "path": "Erudition",
         "image_path": "rappa.webp",
+        "selected": false
+    },
+    {
+        "id": 89,
+        "name": "Rin Tohsaka",
+        "full_name": "Rin Tohsaka",
+        "stars": 5,
+        "elements": "Quantum",
+        "path": "Erudition",
+        "image_path": "rin_tohsaka.webp",
         "selected": false
     },
     {
