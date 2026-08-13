@@ -52,6 +52,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 119,
+        "fullName": "Alyosha",
+        "shortName": "Alyosha",
+        "stars": 4,
+        "elements": ["electro"],
+        "weapon": "polearm",
+        "gender": ["M"],
+        "selected": false,
+    },
+    {
         "id": 4,
         "fullName": "Amber",
         "shortName": "Amber",
@@ -1022,6 +1032,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 118,
+        "fullName": "Odette",
+        "shortName": "Odette",
+        "stars": 5,
+        "elements": ["cryo"],
+        "weapon": "sword",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
         "id": 91,
         "fullName": 'Ororon',
         "shortName": 'Ororon',
@@ -1339,6 +1359,21 @@ const GenshinCharacter = [
         "stars": 5,
         "elements": [
             "pyro"
+        ],
+        "weapon": "sword",
+        "gender": [
+            "M",
+            "F"
+        ],
+        "selected": false
+    },
+        {
+        "id": 39.7,
+        "fullName": "Traveler",
+        "shortName": "Traveler_Cryo",
+        "stars": 5,
+        "elements": [
+            "cryo",
         ],
         "weapon": "sword",
         "gender": [
