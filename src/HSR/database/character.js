@@ -90,6 +90,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 92,
+        "name": "Aventurine - Waveflair",
+        "full_name": "Aventurine - Waveflair",
+        "stars": 5,
+        "elements": "Quantum",
+        "path": "Elation",
+        "image_path": "aventurine_waveflair.webp",
+        "selected": false
+    },
+    {
         "id": 8,
         "name": "Bailu",
         "full_name": "Bailu",
@@ -627,6 +637,16 @@ export const HSRCharacter = [
         "elements": "Physical",
         "path": "Harmony",
         "image_path": "robin.webp",
+        "selected": false
+    },
+    {
+        "id": 91,
+        "name": "Robin - Summeretto",
+        "full_name": "Robin - Summeretto",
+        "stars": 5,
+        "elements": "Wind",
+        "path": "Remembrance",
+        "image_path": "robin_summeretto.webp",
         "selected": false
     },
     {
