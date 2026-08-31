@@ -1,0 +1,833 @@
+/* ==========================================================================
+   NOTZeta Draft Tool - Shared HUD Base Styles
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1, h2, h3, p {
+    color: #fff;
+    display: block;
+    margin: 0;
+    padding: 4px 8px;
+    overflow-wrap: break-word;
+}
+
+p {
+    font-size: large;
+}
+
+.page-container,
+#page-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.verticalLine {
+    border-left: 1px solid #4D5564;
+    height: 80px;
+    width: 0;
+    margin: 0 4px;
+    align-self: center;
+}
+
+/* ==========================================================================
+   Alert Notification Box
+   ========================================================================== */
+.alert {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 5px;
+    display: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    line-height: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* ==========================================================================
+   Room Title Bar & Scoreboard
+   ========================================================================== */
+.roomContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roomTitleBar {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 55px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+}
+
+.roomTitleBar > .settings-icon,
+.roomTitleBar > .volume-dropdown {
+    width: 55px;
+    height: 55px;
+    flex: none;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #5d5d69;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.roomTitleBar > .settings-icon:hover,
+.roomTitleBar > .volume-dropdown:hover {
+    background-color: #888;
+}
+
+.roomTitleBar-section {
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.roomTitleBar-section.team1 {
+    background: #0a4264;
+    flex: 2;
+}
+
+.roomTitleBar-section.score {
+    background: rgba(0, 0, 0, 0.5);
+    flex: 1;
+    justify-content: space-around;
+}
+
+.roomTitleBar-section.team2 {
+    background: #be2038;
+    flex: 2;
+}
+
+.roomTeamName,
+.roomScore {
+    color: #fff;
+    text-shadow: none;
+}
+
+.roomTeamName.turn {
+    animation: text-pulse 1s infinite alternate;
+    font-weight: bold;
+}
+
+@keyframes text-pulse {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; text-shadow: 0 0 12px #fff; }
+}
+
+@media (max-width: 900px) {
+    .roomTitleBar-section.team1,
+    .roomTitleBar-section.team2,
+    .roomTitleBar-section.score {
+        font-size: 1rem;
+    }
+
+    .roomTitleBar {
+        height: 40px;
+    }
+
+    .roomTitleBar > .settings-icon,
+    .roomTitleBar > .volume-dropdown {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ==========================================================================
+   Ban HUD & Slots
+   ========================================================================== */
+.ban-hud {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 50;
+}
+
+.ban-slots {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.ban-slot {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat, no-repeat;
+    position: relative;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.ban-slot.active.blue-blink {
+    animation: slot-glow-blue 1.2s infinite alternate, blink-bg-blue 1s linear infinite;
+    border: 2px solid #7fdfff;
+    box-shadow: 0 0 24px 8px #7fdfffcc, 0 0 0 2px #7fdfff88 inset;
+    background-color: #0a4264;
+}
+
+.ban-slot.active.red-blink {
+    animation: slot-glow-red 1.2s infinite alternate, blink-bg-red 1s linear infinite;
+    border: 2px solid #ff5a7f;
+    box-shadow: 0 0 24px 8px #ff5a7fcc, 0 0 0 2px #ff5a7f88 inset;
+    background-color: #be2038;
+}
+
+.ban-slot.filled {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+.ban-slot img.grayscaled {
+    filter: grayscale(1);
+}
+
+.ban-slot-left,
+.ban-slot-right {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ban-slot-right {
+    flex-direction: row-reverse;
+}
+
+.ban-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ban-slot .element-icon {
+    width: 26px;
+    height: 26px;
+    bottom: 0px;
+    right: 3px;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #2B313F;
+    border: 1px solid #000;
+}
+
+.no-ban-icon {
+    font-size: 2rem;
+    color: #aaa;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* ==========================================================================
+   Timer
+   ========================================================================== */
+.timer {
+    color: #fff;
+    text-align: center;
+    font-size: 2.8rem;
+    min-width: 80px;
+}
+
+/* ==========================================================================
+   Pick HUD & Slots
+   ========================================================================== */
+.pick-hud {
+    position: fixed;
+    top: 150px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.pick-slots {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pick-slot-left,
+.pick-slot-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    width: 250px;
+    height: auto;
+    pointer-events: auto;
+}
+
+.pick-slot {
+    width: 250px;
+    height: 103px;
+    display: flex;
+    border: 1px solid #4D5564;
+    justify-content: space-between;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat, no-repeat;
+    background-color: #3B4354;
+    position: relative;
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+    z-index: 1;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.pick-slot.active {
+    animation: slot-glow 1.2s infinite alternate;
+    border-color: #7fdfff;
+    box-shadow: 0 0 48px 16px #7fdfff88, 0 0 0 2px #7fdfff55 inset;
+}
+
+.pick-slot.active.blue-blink {
+    animation: slot-glow-blue 1.2s infinite alternate, blink-bg-blue 1s linear infinite;
+    border-color: #7fdfff;
+    box-shadow: 0 0 48px 16px #7fdfffcc, 0 0 0 2px #7fdfff88 inset;
+    background-color: #0a4264;
+}
+
+.pick-slot.active.red-blink {
+    animation: slot-glow-red 1.2s infinite alternate, blink-bg-red 1s linear infinite;
+    border-color: #ff5a7f;
+    box-shadow: 0 0 48px 16px #ff5a7fcc, 0 0 0 2px #ff5a7f88 inset;
+    background-color: #be2038;
+}
+
+.pick-slot.selected {
+    animation: slot-warp 0.5s;
+    border-color: #ffe066;
+    box-shadow: 0 0 32px 8px #ffe06688, 0 0 0 2px #ffe06655 inset;
+}
+
+.pick-slot.filled {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+.pick-slot.filled:not(.active) {
+    background-image: none !important;
+    background-color: #222 !important;
+}
+
+.pick-slot-right .pick-slot {
+    flex-direction: row-reverse;
+}
+
+.pick-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(270deg, rgba(123, 123, 137, 0.7) 0%, rgba(123, 123, 137, 0.0) 50%);
+    z-index: 2;
+}
+
+.pick-slot-right .pick-overlay {
+    background: linear-gradient(90deg, rgba(123, 123, 137, 0.7) 0%, rgba(123, 123, 137, 0.0) 50%);
+}
+
+.pick-info-row {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+    text-shadow: 0 2px 8px #000a, 0 0 12px #222;
+    pointer-events: none;
+}
+
+.pick-icons-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.pick-info-row .element-icon,
+.pick-info-row .weapon-icon {
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    vertical-align: middle;
+    position: static;
+}
+
+.pick-slot-right .pick-icons-row {
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.pick-slot-left .pick-info-row {
+    padding-right: 6px;
+    padding-bottom: 4px;
+}
+
+.pick-slot-right .pick-info-row {
+    left: 0;
+    right: auto;
+    bottom: 0;
+    align-items: flex-start;
+    text-align: left;
+    width: auto;
+    padding-left: 6px;
+    padding-bottom: 4px;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes slot-glow {
+    0% { box-shadow: 0 0 24px 8px #7fdfff55, 0 0 0 2px #7fdfff22 inset; }
+    100% { box-shadow: 0 0 64px 24px #7fdfffcc, 0 0 0 4px #7fdfff55 inset; }
+}
+
+@keyframes slot-glow-blue {
+    0% { box-shadow: 0 0 24px 8px #7fdfff55, 0 0 0 2px #7fdfff22 inset; }
+    100% { box-shadow: 0 0 48px 16px #7fdfffcc, 0 0 0 4px #7fdfff88 inset; }
+}
+
+@keyframes slot-glow-red {
+    0% { box-shadow: 0 0 24px 8px #ff5a7f55, 0 0 0 2px #ff5a7f22 inset; }
+    100% { box-shadow: 0 0 48px 16px #ff5a7fcc, 0 0 0 4px #ff5a7f88 inset; }
+}
+
+@keyframes blink-bg-blue {
+    0%, 100% { background-color: #0a4264; }
+    50% { background-color: #126394; }
+}
+
+@keyframes blink-bg-red {
+    0%, 100% { background-color: #be2038; }
+    50% { background-color: #e63956; }
+}
+
+@keyframes slot-warp {
+    0% { box-shadow: 0 0 0 0 #ffe06600; }
+    60% { box-shadow: 0 0 48px 16px #ffe066cc; }
+    100% { box-shadow: 0 0 32px 8px #ffe06688; }
+}
+
+/* ==========================================================================
+   Character Filter & Search
+   ========================================================================== */
+.banpick-player {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 20;
+    max-width: calc(100vw - 520px);
+}
+
+.character-filter {
+    width: 1000px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 16px 16px 0px 0px;
+    background-color: #3B4354;
+    padding: 6px 12px;
+}
+
+.character-filter .fit1 {
+    box-sizing: border-box;
+    padding: 2px 10px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+    min-width: 0;
+}
+
+.filter-title {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.character-filter .by-element,
+.character-filter .by-rating,
+.character-filter .by-weapon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.character-filter .by-element img,
+.character-filter .by-weapon img,
+.character-filter .by-rating img {
+    width: 34px;
+    height: 34px;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 6px;
+    object-fit: contain;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.character-filter .by-element img:hover,
+.character-filter .by-weapon img:hover,
+.character-filter .by-rating img:hover {
+    transform: scale(1.1);
+}
+
+.character-filter .by-element img.selected,
+.character-filter .by-weapon img.selected,
+.character-filter .by-rating img.selected {
+    border: 3px solid #2196F3;
+    border-radius: 8px;
+}
+
+.search {
+    --padding: 8px 12px;
+    width: min-content;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 20px;
+    background: #f6f6f6;
+}
+
+.search-icon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url('../asset/icons/normal/search_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.search-input {
+    font-size: 14px;
+    color: #333333;
+    margin-left: 8px;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 140px;
+}
+
+/* ==========================================================================
+   Character Grid List
+   ========================================================================== */
+.character-list {
+    width: 1000px;
+    max-width: 100%;
+    flex: 1;
+    min-height: 0;
+    border: 1px solid #fff;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #d3d3d3 transparent;
+}
+
+.character-list::-webkit-scrollbar {
+    width: 4px;
+    background: transparent;
+}
+
+.character-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #e0e0e0 80%, #a0a0a0 100%);
+    border-radius: 2px;
+    box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.2);
+}
+
+.character-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.character-list ul {
+    list-style-type: none;
+    padding: 0;
+    gap: 8px;
+    justify-content: center;
+    margin: 0;
+}
+
+.character-list li {
+    float: left;
+    padding: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.character-list img {
+    width: 105px;
+    height: 112px;
+    display: block;
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.element-icon {
+    width: 26px;
+    height: 26px;
+    bottom: 45px;
+    right: 10px;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.character-list .element-icon {
+    background-color: #5d5d69;
+    border: 1px solid #000;
+}
+
+.character-list img:hover {
+    filter: brightness(1.4);
+}
+
+.character-name {
+    width: 105px;
+    height: 35px;
+    color: #000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-wrap: break-word;
+    background-color: rgba(255, 255, 255);
+    border-radius: 0px 0px 5px 5px;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Confirm Button & Container
+   ========================================================================== */
+button.confirm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 140px;
+    height: 34px;
+    font-size: 18px;
+    background: #ffe08a;
+    color: #222;
+    border: 2px solid #b89b4c;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 1px 2px #0002;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    outline: none;
+    position: relative;
+    flex-shrink: 0;
+}
+
+button:hover.confirm {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+button.confirm:disabled {
+    background-color: #888;
+    color: #eee;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.character-filter,
+.character-list,
+.confirm {
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Settings Modal & Volume Dropdown
+   ========================================================================== */
+.settings-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-modal iframe {
+    width: 40%;
+    height: 55%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.settings-icon {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 1001;
+    background-image: url('../asset/icons/normal/settings_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-color: #5d5d69;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volume-dropdown {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 1001;
+    background-image: url('../asset/icons/normal/volume_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-color: #5d5d69;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volume-control {
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volume-control label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.volume-control input[type="range"] {
+    width: 100%;
+}
+
+.hide-banpick-ui {
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}

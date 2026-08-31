@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 🔧 Version 1.2.20.3 (August 31, 2026)
+refactor: unify core engines, streamline HUD styles & fix layout issues
+
+### ✨ 1. Core Engine Unification (Adapter Pattern):
+- Created `src/All/core/draftEngine.js`: Consolidated Ban/Pick state machine, countdown timer, auto timeout handling (No-Ban / Random Pick), audio playback, volume controls, settings modal integration, and dynamic slot generation.
+- Created `src/All/core/filterEngine.js`: Consolidated character search (150ms debounce), multi-category filtering (element, weapon, path, rarity stars), high-performance DOM rendering via `DocumentFragment`, and Event Delegation.
+- Created `gi-config.js` and `hsr-config.js`: Extracted game-specific configurations (slot definitions, filter categories, custom card rendering).
+- Streamlined `code.js` and `search.js` in both GI & HSR into thin adapter entry points (~10 lines each).
+
+### ✨ 2. HUD Streamlining & Base/Theme CSS Separation:
+- Created `src/All/styles/hud-base.css`: Centralized shared layout flexbox/grid, animations (slot-glow, blink, warp), scoreboard, timer, volume dropdown, and search box.
+- Eliminated over 1,500 lines of duplicated CSS: reduced `GI/style.css` (819 -> 50 lines) and `HSR/style.css` (844 -> 60 lines).
+- Streamlined `HUD.html` for both games from ~160 lines down to ~65 lines via dynamic slot and filter generation.
+
+### ✨3. Bug Fixes & UI Polishing:
+- Fixed 404 resource errors for system icons (`settings_icon`, `volume_icon`, `search_icon`) caused by relative path resolutions.
+- Restored empty placeholder background images (`card-bg`, `empty`, `choose`) across both games.
+- Fixed pick slots overflow/squishing issues by establishing two seamless, compact vertical columns (`gap: 0;`, `width: 250px; height: 88px;`) aligned along the left and right screen edges matching the original reference designs.
+- Restored vertical divider lines (`.verticalLine`) between Ban slots with game-specific border colors.
+
 ## 🔧 Version 1.2.20.2 (August 31, 2026)
 ### 🔧 Fix:
 - Use DocumentFragment and batch DOM manipulation to prevent reflow/layout thrashing when rendering character grid in search.js.

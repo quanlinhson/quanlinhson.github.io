@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -36,109 +36,36 @@
                     </div>
                 </div>
             </div>
+
             <div class="ban-hud">
                 <div class="ban-slots">
-                    <div class="ban-slot-left">
-                        <div class="ban-slot" id="b1"></div>
-                        <div class="verticalLine"></div>
-                        <div class="ban-slot" id="b2"></div>
-                        <div class="verticalLine"></div>
-                        <div class="ban-slot" id="b3"></div>
-                        <div class="verticalLine"></div>
-                    </div>
+                    <div class="ban-slot-left"></div>
                     <div class="timer"></div>
-                    <div class="ban-slot-right">
-                        <div class="ban-slot" id="r1"></div>
-                        <div class="verticalLine"></div>
-                        <div class="ban-slot" id="r2"></div>
-                        <div class="verticalLine"></div>
-                        <div class="ban-slot" id="r3"></div>
-                        <div class="verticalLine"></div>
-                    </div>
+                    <div class="ban-slot-right"></div>
                 </div>
             </div>
+
             <div class="pick-hud">
                 <div class="pick-slots">
-                    <div class="pick-slot-left">
-                        <div class="pick-slot" id="bp1"></div>
-                        <div class="pick-slot" id="bp2"></div>
-                        <div class="pick-slot" id="bp3"></div>
-                        <div class="pick-slot" id="bp4"></div>
-                        <div class="pick-slot" id="bp5"></div>
-                        <div class="pick-slot" id="bp6"></div>
-                        <div class="pick-slot" id="bp7"></div>
-                        <div class="pick-slot" id="bp8"></div>
-                    </div>
+                    <div class="pick-slot-left"></div>
                     <div class="banpick-player">
                         <div class="alert" id="duplicate-alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                             You can't choose this character again!
                         </div>
-                        <div class="character-filter">
-                            <div class="fit1">
-                                <div class="filter-row">
-                                    <span class="filter-title">Element</span>
-                                    <div class=" by-element">
-                                        <img src="../../../asset/icons/elements/Physical.png" alt="Physical">
-                                        <img src="../../../asset/icons/elements/Fire.png" alt="Fire">
-                                        <img src="../../../asset/icons/elements/Ice.png" alt="Ice">
-                                        <img src="../../../asset/icons/elements/Lightning.png" alt="Lightning">
-                                        <img src="../../../asset/icons/elements/Wind.png" alt="Wind">
-                                        <img src="../../../asset/icons/elements/Quantum.png" alt="Quantum">
-                                        <img src="../../../asset/icons/elements/Imaginary.png" alt="Imaginary">
-                                    </div>
-                                </div>
-                                <div class="filter-row">
-                                    <span class="filter-title">Quality</span>
-                                    <div class="by-rating">
-                                        <img src="../../../asset/icons/rarities/star-4.svg" alt="4">
-                                        <img src="../../../asset/icons/rarities/star-5.svg" alt="5">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fit1">
-                                <div class="filter-row">
-                                    <span class="filter-title">Path</span>
-                                    <div class="by-weapon">
-                                        <img src="../../../asset/icons/path/Destruction.png" alt="Destruction">
-                                        <img src="../../../asset/icons/path/TheHunt.png" alt="TheHunt">
-                                        <img src="../../../asset/icons/path/Erudition.png" alt="Erudition">
-                                        <img src="../../../asset/icons/path/Harmony.png" alt="Harmony">
-                                        <img src="../../../asset/icons/path/Nihility.png" alt="Nihility">
-                                        <img src="../../../asset/icons/path/Preservation.png" alt="Preservation">
-                                        <img src="../../../asset/icons/path/Abundance.png" alt="Abundance">
-                                        <img src="../../../asset/icons/path/Remembrance.png" alt="Remembrance">
-                                        <img src="../../../asset/icons/path/Elation.png" alt="Elation">
-                                    </div>
-                                </div>
-                                <form>
-                                    <div class="search">
-                                        <span class="search-icon"></span>
-                                        <input class="search-input" id="searchInput" type="text" placeholder="Search..">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="character-list">
-                        </div>
+                        <div class="character-filter"></div>
+                        <div class="character-list"></div>
                         <button id="confirm" class="confirm">Choose</button>
                     </div>
-                    <div class="pick-slot-right">
-                        <div class="pick-slot" id="rp1"></div>
-                        <div class="pick-slot" id="rp2"></div>
-                        <div class="pick-slot" id="rp3"></div>
-                        <div class="pick-slot" id="rp4"></div>
-                        <div class="pick-slot" id="rp5"></div>
-                        <div class="pick-slot" id="rp6"></div>
-                        <div class="pick-slot" id="rp7"></div>
-                        <div class="pick-slot" id="rp8"></div>
-                    </div>
+                    <div class="pick-slot-right"></div>
                 </div>
             </div>
         </div>
+
         <div class="settings-modal" id="settings-modal">
             <iframe src="../../setting/setting.html" frameborder="0"></iframe>
         </div>
+
         <script src="search.js" type="module"></script>
         <script src="code.js" type="module"></script>
         <script>
