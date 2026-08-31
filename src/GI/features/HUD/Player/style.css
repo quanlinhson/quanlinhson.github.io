@@ -3,6 +3,7 @@
     src: url('../../../asset/fonts/zh-cn.ttf');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 body {

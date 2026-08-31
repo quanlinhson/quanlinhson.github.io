@@ -9,7 +9,7 @@ export type HSRElement =
 
 export type HSRPath =
   | 'Destruction'
-  | 'The Hunt'
+  | 'TheHunt'
   | 'Erudution'
   | 'Harmony'
   | 'Nihility'

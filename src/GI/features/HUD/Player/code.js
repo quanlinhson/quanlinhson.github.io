@@ -388,13 +388,14 @@ function updateSlotUI(slotId, character) {
     slot.innerHTML = '';
     slot.classList.add('filled');
 
+    const element = Array.isArray(character.elements) ? character.elements[0] : character.elements;
+
     if (current_log === 'ban') {
         const img = document.createElement('img');
         let file = removeSpaces(character.shortName.toLowerCase());
         img.src = `../../../asset/images/selection_character/${file}.webp`;
         slot.appendChild(img);
 
-        let element = character.elements;
         const img_element = document.createElement('div');
         img_element.style.backgroundImage = `url('../../../asset/icons/elements/${element}.svg')`;
         img_element.alt = element;
@@ -406,7 +407,7 @@ function updateSlotUI(slotId, character) {
             <div class="pick-overlay"></div>
             <div class="pick-info-row">
                 <div class="pick-icons-row">
-                    <span class="element-icon" style="background-image:url('../../../asset/icons/elements/${character.elements}.svg')"></span>
+                    <span class="element-icon" style="background-image:url('../../../asset/icons/elements/${element}.svg')"></span>
                     <span class="weapon-icon" style="background-image:url('../../../asset/icons/weapons/${character.weapon}.png')"></span>
             <span class="star-icon" style="background-image:url('../../../asset/icons/rarities/star-${character.stars}.svg')"></span>
                 </div>

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Version 1.2.20.1 (August 31, 2026)
+## 🔧 Version 1.2.20.2 (August 31, 2026)
+### 🔧 Fix:
+- Use DocumentFragment and batch DOM manipulation to prevent reflow/layout thrashing when rendering character grid in search.js.
+- Add debounce (150ms) to search input to optimize filtering performance.
+- Implement event delegation on character list container instead of binding individual click listeners per item.
+- Add loading="lazy" for character portraits.
+- Add font-display: swap to all @font-face rules across stylesheets to prevent FOIT (Flash of Invisible Text).
+- Safely resolve element icons when character.elements is an array in GI HUD.
+
+## 🔧 Version 1.2.20.1 (August 31, 2026)
 ### ✨ Add:
 - Add stopCountdown() helper in time.js and properly clear timer on draft completion.
 ### 🔧 Fix:

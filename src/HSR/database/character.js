@@ -35,7 +35,7 @@ export const HSRCharacter = [
         "full_name": "Archer",
         "stars": 5,
         "elements": "Quantum",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "archer.webp",
         "selected": false
     },
@@ -65,7 +65,7 @@ export const HSRCharacter = [
         "full_name": "Ashveil",
         "stars": 5,
         "elements": "Lightning",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "ashveil.webp",
         "selected": false
     },
@@ -135,7 +135,7 @@ export const HSRCharacter = [
         "full_name": "Boothill",
         "stars": 5,
         "elements": "Physical",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "boothill.webp",
         "selected": false
     },
@@ -205,7 +205,7 @@ export const HSRCharacter = [
         "full_name": "Dan Heng",
         "stars": 4,
         "elements": "Wind",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "danheng.webp",
         "selected": false
     },
@@ -235,7 +235,7 @@ export const HSRCharacter = [
         "full_name": "Dr.Ratio",
         "stars": 5,
         "elements": "Imaginary",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "drratio.webp",
         "selected": false
     },
@@ -265,7 +265,7 @@ export const HSRCharacter = [
         "full_name": "Feixiao",
         "stars": 5,
         "elements": "Wind",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "feixiao.webp",
         "selected": false
     },
@@ -525,7 +525,7 @@ export const HSRCharacter = [
         "full_name": "March 7th (The Hunt)",
         "stars": 4,
         "elements": "Imaginary",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "march7th_hunt.webp",
         "selected": false
     },
@@ -555,7 +555,7 @@ export const HSRCharacter = [
         "full_name": "Moze",
         "stars": 4,
         "elements": "Lightning",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "moze.webp",
         "selected": false
     },
@@ -675,7 +675,7 @@ export const HSRCharacter = [
         "full_name": "Seele",
         "stars": 5,
         "elements": "Quantum",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "seele.webp",
         "selected": false
     },
@@ -755,7 +755,7 @@ export const HSRCharacter = [
         "full_name": "Sushang",
         "stars": 4,
         "elements": "Physical",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "sushang.webp",
         "selected": false
     },
@@ -775,7 +775,7 @@ export const HSRCharacter = [
         "full_name": "Topaz & Numpy",
         "stars": 5,
         "elements": "Fire",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "topaz_numpy.webp",
         "selected": false
     },
@@ -885,7 +885,7 @@ export const HSRCharacter = [
         "full_name": "Yanqing",
         "stars": 5,
         "elements": "Ice",
-        "path": "The Hunt",
+        "path": "TheHunt",
         "image_path": "yanqing.webp",
         "selected": false
     },
