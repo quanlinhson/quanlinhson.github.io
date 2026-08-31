@@ -26,6 +26,13 @@ export function startCountdown(duration, onTimeout) {
     }, 1000);
 }
 
+export function stopCountdown() {
+    if (countdown) {
+        clearInterval(countdown);
+        countdown = null;
+    }
+}
+
 export function resetTime(duration) {
     startCountdown(duration);
 }

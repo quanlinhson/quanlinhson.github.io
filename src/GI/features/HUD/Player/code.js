@@ -1,6 +1,6 @@
 import { GenshinCharacter } from "../../../database/character.js";
 import { logic_BP } from "../../../database/logic_bp.js";
-import { resetTime, startCountdown } from "../../../../All/tools/time.js";
+import { resetTime, startCountdown, stopCountdown } from "../../../../All/tools/time.js";
 
 //Time setting value
 let banTimeSetting = 30;
@@ -138,7 +138,7 @@ function handleCharacterPick(character, slotId) {
 function handleBanPickEnd() {
     const timer = document.querySelector('.timer');
     if (timer) timer.textContent = 'Ended';
-    if (window.countdown) clearInterval(window.countdown);
+    stopCountdown();
     if (confirmBtn) confirmBtn.disabled = true;
     isBanPickFinished = true;
     tempSelectedCharacter = null;
@@ -472,10 +472,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update volume
             if (settingsData.volume !== undefined) {
-                settingsData.volume /= 100;
-                bpSound.volume = settingsData.volume;
-                banSound.volume = settingsData.volume;
-                pickSound.volume = settingsData.volume;
+                const vol = settingsData.volume / 100;
+                const bpSound = document.getElementById('bp-sound');
+                const banSound = document.getElementById('ban-sound');
+                const pickSound = document.getElementById('pick-sound');
+                if (bpSound) bpSound.volume = vol;
+                if (banSound) banSound.volume = vol;
+                if (pickSound) pickSound.volume = vol;
             }
 
             characterFilter.style.pointerEvents = 'auto';
@@ -526,40 +529,42 @@ document.addEventListener('DOMContentLoaded', () => {
 function hideBanPickUI() {
     document.querySelector('.character-filter')?.classList.add('hide-banpick-ui');
     document.querySelector('.character-list')?.classList.add('hide-banpick-ui');
-    const confirmBtn = document.getElementById('confirm');
-    if (confirmBtn) {
-        confirmBtn.classList.add('hide-banpick-ui');
-        confirmBtn.style.display = 'none';
+    const confirmBtnEl = document.getElementById('confirm');
+    if (confirmBtnEl) {
+        confirmBtnEl.classList.add('hide-banpick-ui');
+        confirmBtnEl.style.display = 'none';
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const confirmBtn = document.getElementById('confirm');
-    confirmBtn.disabled = true;
-
-    confirmBtn.addEventListener('click', () => {
-        if (!tempSelectedCharacter) return;
-
-        handleCharacterPick(tempSelectedCharacter, current);
-
-        if (current_log === 'ban') ban_sound_play();
-        else if (current_log === 'pick') pick_sound_play();
-
-        if (logic_BP[i] == "RedBan") r++;
-        else if (logic_BP[i] == "BlueBan") l++;
-        else if (logic_BP[i] == "BluePick") lp++;
-        else if (logic_BP[i] == "RedPick") rp++;
-
-        i++;
-        if (i >= champion_number) {
-            handleBanPickEnd();
-            return;
-        }
-
-        check();
-        begin();
-
-        tempSelectedCharacter = null;
+    confirmBtn = document.getElementById('confirm');
+    if (confirmBtn) {
         confirmBtn.disabled = true;
-    });
+
+        confirmBtn.addEventListener('click', () => {
+            if (!tempSelectedCharacter) return;
+
+            handleCharacterPick(tempSelectedCharacter, current);
+
+            if (current_log === 'ban') ban_sound_play();
+            else if (current_log === 'pick') pick_sound_play();
+
+            if (logic_BP[i] == "RedBan") r++;
+            else if (logic_BP[i] == "BlueBan") l++;
+            else if (logic_BP[i] == "BluePick") lp++;
+            else if (logic_BP[i] == "RedPick") rp++;
+
+            i++;
+            if (i >= champion_number) {
+                handleBanPickEnd();
+                return;
+            }
+
+            check();
+            begin();
+
+            tempSelectedCharacter = null;
+            confirmBtn.disabled = true;
+        });
+    }
 });

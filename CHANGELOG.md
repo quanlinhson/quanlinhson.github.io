@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Version 1.2.20.1 (August 31, 2026)
+### ✨ Add:
+- Add stopCountdown() helper in time.js and properly clear timer on draft completion.
+### 🔧 Fix:
+- Fix navigation link paths (change Windows backslashes '\' to '/' and relative assets) in index.html for Linux/GitHub Pages compatibility.
+- Fix audio source bindings (correctly map ban.wav to ban-sound and pick.wav to pick-sound) in GI and HSR HUDs.
+- Fix audio volume ReferenceError and confirmBtn variable shadowing in code.js for both GI & HSR.
+- Rename 'setting copy.html' to 'setting.html' across GI and HSR features and update iframe sources.
+- Fix unclosed HTML tags and CSS selector mismatch (.page-container vs #page-container).
+
 ## 🔥 Version 1.2.20 (August 26, 2026)
 ### ✨ Add:
 - Add new character in HSR v4.5 : **Robin - Summeretto & Aventurine - Waveflair**.
