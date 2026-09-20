@@ -75,9 +75,23 @@ button.confirm {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: 180%;
-    background-position: 55% 20%;
+    background-size: 160%;
+    background-position: 55% 32%;
     z-index: 1;
+}
+
+.ban-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+}
+
+.broadcast-hud .pick-art {
+    background-size: 400%;
+    background-position: 50% 36%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
 }
 
 .pick-overlay {

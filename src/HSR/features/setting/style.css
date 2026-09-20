@@ -70,6 +70,19 @@ input[type="number"] {
     font-family: HSR_Font, sans-serif;
 }
 
+select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 1%;
+    font-family: HSR_Font, sans-serif;
+    background-color: #fff;
+    color: #333;
+    width: 90%;
+    cursor: pointer;
+}
+
 label {
     font-size: 14px;
     margin-bottom: 5px;

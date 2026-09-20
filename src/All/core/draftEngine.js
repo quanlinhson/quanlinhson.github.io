@@ -34,6 +34,7 @@ export class DraftEngine {
     }
 
     init() {
+        this.applyLayoutMode();
         this.renderBanSlots();
         this.renderPickSlots();
 
@@ -46,6 +47,17 @@ export class DraftEngine {
         this.bindSettingsModal();
         this.bindSettingsMessage();
         this.bindVolumeControls();
+    }
+
+    applyLayoutMode(layout) {
+        if (!layout) layout = localStorage.getItem('hudLayout') || 'classic';
+        if (layout === 'broadcast') {
+            document.body.classList.add('broadcast-hud');
+            document.body.classList.remove('classic-hud');
+        } else {
+            document.body.classList.add('classic-hud');
+            document.body.classList.remove('broadcast-hud');
+        }
     }
 
     renderBanSlots() {
@@ -543,6 +555,11 @@ export class DraftEngine {
                 if (settingsData.pickTime && !this.isPickTimeSet) {
                     this.pickTimeSetting = parseInt(settingsData.pickTime, 10);
                     this.isPickTimeSet = true;
+                }
+
+                // Update HUD layout mode
+                if (settingsData.hudLayout) {
+                    this.applyLayoutMode(settingsData.hudLayout);
                 }
 
                 // Update sound volume

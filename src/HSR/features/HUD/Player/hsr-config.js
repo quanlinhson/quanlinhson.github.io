@@ -50,7 +50,7 @@ export const HSRConfig = {
 
     renderPickSlot(char, slot) {
         slot.innerHTML = `
-            <div class="pick-art"></div>
+            <div class="pick-art" style="background-image: url('../../../asset/images/character/${char.image_path}')"></div>
             <div class="pick-overlay"></div>
             <div class="pick-info-row">
                 <div class="pick-icons-row">
@@ -60,12 +60,6 @@ export const HSRConfig = {
                 <div class="pick-name">${char.full_name}</div>
             </div>
         `;
-        const artDiv = slot.querySelector('.pick-art');
-        if (artDiv) {
-            artDiv.style.backgroundImage = `url('../../../asset/images/character/${char.image_path}')`;
-            artDiv.style.backgroundSize = '160%';
-            artDiv.style.backgroundPosition = '55% 32%';
-        }
     },
 
     renderListItem(char) {
