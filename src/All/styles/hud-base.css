@@ -866,14 +866,14 @@ button.confirm:disabled {
     height: 46px;
     background: rgba(10, 15, 25, 0.95);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
-    border-bottom: 2px solid #2a334d;
+    border: none;
     z-index: 95;
 }
 
 .broadcast-hud .settings-icon {
     position: fixed;
     top: auto;
-    bottom: 261px;
+    bottom: 260px;
     left: 0;
     width: 46px;
     height: 46px;
@@ -885,7 +885,7 @@ button.confirm:disabled {
 .broadcast-hud .volume-dropdown {
     position: fixed;
     top: auto;
-    bottom: 261px;
+    bottom: 260px;
     right: 0;
     width: 46px;
     height: 46px;
@@ -910,7 +910,7 @@ button.confirm:disabled {
     background: linear-gradient(90deg, #0a4264 0%, #00b4d8 100%);
     font-weight: bold;
     font-size: 1.3rem;
-    clip-path: polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 100%, 0 100%);
     padding: 0 30px 0 20px;
     margin-right: -12px;
     z-index: 2;
@@ -952,9 +952,9 @@ button.confirm:disabled {
     left: 0;
     width: 100vw;
     height: 80px;
-    background: rgba(10, 12, 20, 0.92);
+    background: rgba(10, 12, 20, 0.95);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border: none;
     padding: 0 10px;
     z-index: 90;
 }
@@ -1049,7 +1049,7 @@ button.confirm:disabled {
     flex-direction: row;
     width: auto;
     height: 100%;
-    gap: 2px;
+    gap: 0;
     justify-content: stretch;
     pointer-events: auto;
     padding: 0;
@@ -1062,7 +1062,7 @@ button.confirm:disabled {
     flex-direction: row;
     width: auto;
     height: 100%;
-    gap: 2px;
+    gap: 0;
     justify-content: stretch;
     pointer-events: auto;
     padding: 0;
@@ -1075,7 +1075,8 @@ button.confirm:disabled {
     min-width: 0;
     height: 100%;
     max-height: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 0;
     display: flex;
     flex-direction: column;
@@ -1086,6 +1087,14 @@ button.confirm:disabled {
     background-size: 60px, 35px !important;
     overflow: hidden;
     margin: 0;
+}
+
+.broadcast-hud .pick-slot-left .pick-slot:first-child {
+    border-left: none;
+}
+
+.broadcast-hud .pick-slot-right .pick-slot:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .broadcast-hud .pick-slot img {
@@ -1159,11 +1168,14 @@ button.confirm:disabled {
     display: inline-block;
 }
 
+/* ==========================================================================
+   News Ticker (Continuous Scrolling for Long Names in Broadcast HUD)
+   ========================================================================== */
 .broadcast-hud .pick-info-row .pick-name {
     font-size: 0.75rem;
     font-weight: bold;
     color: #fff;
-    text-align: center !important;
+    text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1172,25 +1184,102 @@ button.confirm:disabled {
     text-shadow: 0 1px 4px #000;
 }
 
+.broadcast-hud .pick-name.news-ticker,
+.broadcast-hud .pick-info-row .pick-name.news-ticker {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+    width: 100% !important;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.broadcast-hud .pick-name.news-ticker:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+.broadcast-hud .ticker-track {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    animation: news-ticker-scroll 10s linear infinite;
+    will-change: transform;
+}
+
+.broadcast-hud .ticker-spacer {
+    display: inline-block;
+    margin: 0 16px;
+    color: #00ffcc;
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+@keyframes news-ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .broadcast-hud .vs-badge {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
-    background: linear-gradient(135deg, #ff0055, #ff5500);
-    border: 2px solid #fff;
-    border-radius: 50%;
-    color: #fff;
-    font-weight: 900;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    box-shadow: 0 0 20px rgba(255, 0, 85, 0.8), 0 0 0 2px rgba(255, 255, 255, 0.3);
-    z-index: 15;
+    width: 26px;
+    height: 100%;
+    background: linear-gradient(180deg, #151a28 0%, #0d101a 50%, #151a28 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: none;
+    border-bottom: none;
+    color: #8da2c0;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+    z-index: 10;
     flex-shrink: 0;
-    align-self: center;
-    margin: 0 4px;
+    align-self: stretch;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+}
+
+.broadcast-hud .vs-badge::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #00ffcc;
+    box-shadow: 0 0 6px #00ffcc;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+.broadcast-hud .vs-badge::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #ff0055;
+    box-shadow: 0 0 6px #ff0055;
+    border-radius: 50%;
+    margin-top: 8px;
+}
+
+.broadcast-hud .vs-badge span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.15;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #c4d6ed;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
 }
 
 /* Character Selector: Placed in the Upper Half during Broadcast Mode */

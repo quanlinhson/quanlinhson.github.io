@@ -1,51 +1,89 @@
 # NOTZeta PvP Draft Tool
 
-Offical Website: https://quanlinhson.github.io 
+Official Website: [https://quanlinhson.github.io](https://quanlinhson.github.io)
 
-## Introduction
-**NOTZeta PvP Draft Tool** is a draft ban/pick tool website that can be used for competitions, tournaments, or offline battles with friends. On this website, you can choose one of three games to create a new draft. These games are ***Genshin Impact, and Honkai: Star Rail***. Each game has its own logic ban/pick rules suit the of characters and gameplay in the respective game modes.
+## 📌 Introduction
+**NOTZeta PvP Draft Tool** is an interactive, high-performance Ban/Pick drafting platform designed for competitions, eSports tournaments, livestreaming, and casual PvP matches with friends.
 
-***CAUTION: This website can use only on DESKTOP or LAPTOP devices, not mobile devices.***
+Currently supporting:
+- **Genshin Impact (GI)**
+- **Honkai: Star Rail (HSR)**
 
-## Difference between this project and other projects
-- A simple, easy-to-use tool for players to create draft ban/pick matches.
-- This tool has some unique features, such as:
-  -	Randomly select characters for each player in pick phase when pick time is ended.
-  - Players can wait for the time end to not select any characters to ban during the ban phase.
-  - Add some music to the ban/pick phase to make it more exciting. 
+Each game features dedicated drafting rules, element/path/weapon filters, sound effects, and custom card rendering tailored to the respective gameplay mechanics.
 
-## Structure
-![Structure](/src/All/images/structure.png)
+> ⚠️ **CAUTION**: This web application is optimized for **Desktop and Laptop** screens (minimum recommended resolution: 1280x720).
 
-## Technology
--	Front-end: HTML, CSS.
--	Back-end: Javascript.
--	Data Structure: TypeScript.
+---
 
-##	Database
-- The data structure is referenced from [Pustur GitHub page](https://github.com/Pustur/genshin-impact-team-randomizer) and modified to fit the site's design in all games.
-- Character images and game icons are sourced from [HoYoWiki (Hoyoverse)](https://wiki.hoyolab.com/), [Honey Impact](https://gensh.honeyhunterworld.com/), ingame, and various other wiki websites.
+## ✨ Key Features
 
-##	UI Ban/Pick 
-- Genshin Ban/Pick UI
-![GI Begin Ban/Pick](/src/All/images/GI1.png)
-![GI After Ban/Pick](/src/All/images/GI2.png)
+- **🎮 Dual HUD Layout Modes**:
+  - **Player Mode (Vertical Columns)**: Classic 2-column layout with 8 vertical pick slots on each side and a centered character selector.
+  - **Broadcast Mode (Horizontal eSports Overlay)**: Bottom-docked tournament banner with full-width responsive pick cards, glow countdown timer, and a central `VS` badge—ideal for casters, OBS overlays, and livestreams.
+- **⚡ Unified Core Engine**:
+  - `DraftEngine`: Robust state machine managing turn cycles, countdown timers, dynamic slot rendering, audio playback, and layout switching.
+  - `FilterEngine`: High-performance search with debouncing (150ms), multi-attribute category filtering, and `DocumentFragment` DOM batching.
+- **⚙️ Match Customization & Persistence**:
+  - Customizable Team Names, Match Score (`0 - 0`), Ban/Pick timers, and Layout Mode with automatic `localStorage` persistence.
+  - Granular volume controls for BGM, Ban sound, and Pick sound effects.
+- **⏱️ Tournament Automations**:
+  - Automatic **No-Ban** pass when ban time expires.
+  - Automatic **Random Pick** selection when pick time expires.
 
-- HSR Ban/Pick UI
-![HSR Begin Ban/Pick](/src/All/images/HSR1.png)
-![HSR After Ban/Pick](/src/All/images/HSR2.png)
+---
 
-##	Future development direction
-- Create New Custom UI Template.
--	More Ban/Pick Game song.
--	Online mode.
-- Some other support features for new ban/pick rule such as Global Ban/Pick, Fearless Draft, etc. 
+## 🛠️ Technology & Architecture
 
-##	License
-- This is a non-profit project built to support the community with online and offline tournament and matchmaking tools. 
-- The project is completely free and open source. However, please DO NOT use it for commercial purposes. 
-- All images and some icons are from **Hoyoverse** and some other wiki pages; and are for community use only.
-- [APACHE](LICENSE)
+- **Front-end**: HTML5, Modern CSS3 (CSS Variables, Flexbox/Grid, Glassmorphism, Clip-path animations).
+- **Architecture**: Modular Vanilla JavaScript (ES6+ Modules, Adapter Pattern).
+  - `src/All/core/draftEngine.js`: Core draft state machine.
+  - `src/All/core/filterEngine.js`: Search & category filter system.
+  - `src/All/styles/hud-base.css`: Centralized layout, animations, and broadcast overlay styles.
+  - `gi-config.js` / `hsr-config.js`: Lightweight game adapters.
 
-## Update Log
-- [Update](CHANGELOG.md)
+---
+
+## 📊 Database & Assets
+
+- Data structures adapted and expanded from the [Pustur GitHub page](https://github.com/Pustur/genshin-impact-team-randomizer).
+- Character assets, splash art, and game icons sourced from [HoYoWiki (HoYoverse)](https://wiki.hoyolab.com/), [Honey Impact](https://gensh.honeyhunterworld.com/), in-game resources, and community wikis.
+
+---
+
+## 🖥️ UI Showcase
+
+### 🌟 Genshin Impact
+- **Classic Player HUD (Vertical Columns)**:
+  ![Genshin Impact Classic Player HUD](/src/All/images/GI1.png)
+- **Broadcast Mode (Horizontal eSports Overlay)**:
+  ![Genshin Impact Broadcast HUD](/src/All/images/GI_broadcast.png)
+
+### 🚀 Honkai: Star Rail
+- **Classic Player HUD (Vertical Columns)**:
+  ![Honkai Star Rail Classic Player HUD](/src/All/images/HSR1.png)
+- **Broadcast Mode (Horizontal eSports Overlay)**:
+  ![Honkai Star Rail Broadcast HUD](/src/All/images/HSR_broadcast.png)
+
+---
+
+## 🔮 Future Development Roadmap
+
+- [ ] Add Zenless Zone Zero (ZZZ) drafting support.
+- [ ] Export match results as high-resolution summary image (PNG).
+- [ ] Fearless Draft & Global Ban/Pick rule presets.
+- [ ] Online multiplayer room synchronization via WebSockets/WebRTC.
+- [ ] Additional tournament BGM and sound packs.
+
+---
+
+## 📜 License & Disclaimer
+
+- This is a **non-profit, open-source community project** created for tournament organizers, streamers, and players.
+- **NOT for commercial use.**
+- All game assets, artwork, and trademarks belong to **HoYoverse / Cognosphere**.
+- Licensed under [Apache 2.0](LICENSE).
+
+---
+
+## 📝 Update Log
+See all recent updates, refactors, and version history in [CHANGELOG.md](CHANGELOG.md).

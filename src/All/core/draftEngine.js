@@ -47,6 +47,8 @@ export class DraftEngine {
         this.bindSettingsModal();
         this.bindSettingsMessage();
         this.bindVolumeControls();
+
+        window.addEventListener('resize', () => this.checkAllMarquees());
     }
 
     applyLayoutMode(layout) {
@@ -58,6 +60,7 @@ export class DraftEngine {
             document.body.classList.add('classic-hud');
             document.body.classList.remove('broadcast-hud');
         }
+        this.checkAllMarquees();
     }
 
     renderBanSlots() {
@@ -300,7 +303,52 @@ export class DraftEngine {
             this.config.renderBanSlot(character, slot);
         } else if (this.current_log === 'pick') {
             this.config.renderPickSlot(character, slot);
+            this.applyMarqueeIfNeeded(slot);
         }
+    }
+
+    applyMarqueeIfNeeded(slot) {
+        if (!slot) return;
+        requestAnimationFrame(() => {
+            const nameEl = slot.querySelector('.pick-name');
+            if (!nameEl) return;
+
+            const rawName = nameEl.getAttribute('data-name') || nameEl.textContent.trim();
+            nameEl.setAttribute('data-name', rawName);
+
+            // In Classic mode, keep clean static text
+            if (!document.body.classList.contains('broadcast-hud')) {
+                nameEl.classList.remove('news-ticker');
+                nameEl.innerHTML = rawName;
+                return;
+            }
+
+            // In Broadcast mode, measure and apply continuous ticker if needed
+            nameEl.classList.remove('news-ticker');
+            nameEl.innerHTML = rawName;
+
+            const container = nameEl.closest('.pick-info-row') || nameEl.parentElement || slot;
+            const containerWidth = container.clientWidth;
+            const textWidth = nameEl.scrollWidth;
+
+            if (textWidth > containerWidth + 2) {
+                nameEl.innerHTML = `
+                    <span class="ticker-track">
+                        <span>${rawName}</span>
+                        <span class="ticker-spacer">•</span>
+                        <span>${rawName}</span>
+                        <span class="ticker-spacer">•</span>
+                    </span>
+                `;
+                nameEl.classList.add('news-ticker');
+            }
+        });
+    }
+
+    checkAllMarquees() {
+        document.querySelectorAll('.pick-slot').forEach(slot => {
+            this.applyMarqueeIfNeeded(slot);
+        });
     }
 
     handleBanPickEnd() {
