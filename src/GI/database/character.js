@@ -1417,6 +1417,26 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 120,
+        "fullName": "Vesna",
+        "shortName": "Vesna",
+        "stars": 5,
+        "elements": ["anemo"],
+        "weapon": "sword",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
+        "id": 121,
+        "fullName": "Vodyanitsa",
+        "shortName": "Vodyanitsa",
+        "stars": 5,
+        "elements": ["hydro"],
+        "weapon": " catalyst",
+        "gender": ["F"],
+        "selected": false,
+    },
+    {
         "id": 60,
         "fullName": "Wanderer",
         "shortName": "Wanderer",

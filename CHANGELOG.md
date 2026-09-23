@@ -5,6 +5,46 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 🔧 Version 1.3.0.1 (September 23, 2026)
+patch: title bar slants fix, news-ticker marquee for long names, seamless broadcast HUD & README updates
+
+### 🎮 1. Broadcast HUD Polish:
+- **Title Bar Slants Fix**: Adjusted `clip-path` for Team 1 and Team 2 to create the symmetrical podium layout: `"Team 1" \ 0 - 0 / "Team 2"`.
+- **Sleek VS Divider**: Redesigned central VS element into a slim 26px tournament column with vertical typography and LED indicators, matching eSports broadcast references.
+- **Seamless Overlay Layout**: Removed dividing borders between Title Bar, Ban Bar, and Pick slots (`gap: 0;`), creating a unified monolithic bottom overlay.
+
+### ✨ 2. Smart News-Ticker Marquee:
+- Implemented a continuous, smooth 1-way news ticker loop for long character names in Broadcast mode (*Shikanoin Heizou, Aventurine - Wavecrest Dream, etc.*).
+- Added gradient edge fade masks (`mask-image`) and hover-to-pause interaction.
+- Isolated ticker logic to Broadcast mode, fully preserving the original 2-column layout in Classic Vertical HUD.
+
+### 📝 3. Documentation & Showcase:
+- Updated `README.md` with complete architecture breakdown and unified core engine details.
+- Refreshed high-resolution UI showcase screenshots (`GI1.png`, `GI_broadcast.png`, `HSR1.png`, `HSR_broadcast.png`).
+
+## 🚀 Version 1.3.0 (September 20, 2026)
+major: add Broadcast / eSports HUD layout, new GI characters & visual enhancements
+
+### ✨ 1. New Characters & Artwork (GI):
+- Add new characters in GI: **Vesna** (5★ Anemo / Sword) & **Vodyanitsa** (5★ Hydro / Catalyst).
+- Added card artwork & selection portraits for **Vesna** and **Vodyanitsa**.
+- Refreshed/updated Traveler portrait assets for all 7 elements (Anemo, Geo, Electro, Dendro, Hydro, Pyro, Cryo) across character cards and selection grid.
+
+### 🎮 2. Broadcast / eSports HUD Layout Mode:
+- Added layout selector in Settings modal (`Vertical (Player Mode)` / `Horizontal (Broadcast / eSports)`) with `localStorage` persistence and live parent-child window communication.
+- Implemented full Horizontal Broadcast HUD in `src/All/styles/hud-base.css`:
+  - Docked Ban bar above pick slots with enlarged slot cards (70x70px) and glow highlights.
+  - Full-width bottom Pick bar with seamless side-by-side cards for Team 1 and Team 2.
+  - Centered glowing `VS` badge separating team pick zones.
+  - Floating upper character selection modal for optimized broadcast stream visibility.
+- Dynamic layout engine integration in `DraftEngine.applyLayoutMode` switching `.broadcast-hud` and `.classic-hud`.
+
+### 🎨 3. UI/UX Polishing & Fixes:
+- Replaced score separator in title bar from text "vs" to clean "-" dash (`#score-bar`).
+- Fixed `no_ban.svg` icon rendering by removing unwanted solid white background block.
+- Refined image centering and positioning (`object-position: 50% 20%` / `background-position`) for Ban and Pick cards across GI and HSR.
+- Streamlined `HSRConfig.renderPickSlot` art styling and added custom styles for `<select>` elements in settings panel.
+
 ## 🔧 Version 1.2.20.3 (August 31, 2026)
 refactor: unify core engines, streamline HUD styles & fix layout issues
 
