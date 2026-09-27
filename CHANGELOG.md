@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Version 1.3.1 (September 28, 2026)
+### ✨ Add:
+- Add new character in HSR v4.6 : **Pearl**.
+
 ## 🔧 Version 1.3.0.1 (September 23, 2026)
 patch: title bar slants fix, news-ticker marquee for long names, seamless broadcast HUD & README updates
 
