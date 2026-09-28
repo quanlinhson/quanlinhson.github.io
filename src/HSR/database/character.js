@@ -580,6 +580,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 93,
+        "name": "Pearl",
+        "full_name": "Pearl",
+        "stars": 5,
+        "elements": "Ice",
+        "path": "Elation",
+        "image_path": "pearl.webp",
+        "selected": false
+    },
+    {
         "id": 45,
         "name": "Pela",
         "full_name": "Pela",
