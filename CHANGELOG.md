@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Version 1.4.0 (November 4, 2026)
+summary: landing page sticky footer & links, broadcast HUD polish, multi-element BP rules & new characters
+
+### 🌐 1. Landing Page & Footer Fixes (`index.html` & `style.css`):
+- **Flexbox Sticky Footer**: Refactored `body` and `.page-container` to use a modern Flexbox layout (`min-height: 100vh; display: flex; flex-direction: column;`).
+- **Eliminated Bottom Gap**: Removed default browser `body` margins and absolute positioning artifacts, ensuring the footer stays flush at the bottom without unnecessary vertical scrollbars.
+- **Fixed Unclickable Links**: Resolved a stacking context issue where `.page-container` (`z-index: 2`) overlaid `#footer`. Elevated `#footer` (`z-index: 10`) so that **GitHub**, **Feedback**, and **Changelog** links are fully clickable with smooth cyan hover transitions.
+- **UX & Responsiveness**: Added `target="_blank" rel="noopener noreferrer"` to external links and added responsive column stacking for mobile viewports.
+
+### 🎮 2. Broadcast HUD Polish (`hud-base.css`):
+- **Timer Display Consistency**: Replaced the boxed neon cyan timer in Horizontal Broadcast HUD with clean centered white text (`2.8rem`), visually matching the Classic Vertical HUD while preserving each game's signature typography (`GI_Font` & `HSR_Bold_Font`).
+- **Clean VS Divider**: Removed the cyan and red indicator dots (`::before`, `::after`) flanking the central `VS` badge across GI and HSR.
+
+### 🛡️ 3. Multi-Element & Form-Switching Character Rules (Core Engine):
+- **Team-Unique Form Rule**: 
+  - Restored rules for main characters with multiple elements/paths (**Traveler** in GI, **Trailblazer** in HSR) and path-switching characters (**March 7th** in HSR) to allow only **1 variant per team**.
+  - Picking one variant (e.g., *Traveler Hydro* or *March 7th The Hunt*) locks out all other variants of that character for the same team, while the opposing team remains free to draft any remaining unbanned/unpicked variant.
+- **Independent Ban Phase**: Banning remains specific to individual forms/elements on the ban grid without locking untouched forms.
+- **Robust State Tracking**: Replaced fragile DOM image parsing with a centralized slot state dictionary (`slotCharacters`) in `DraftEngine`, ensuring seamless behavior across both Classic and Broadcast HUD layouts.
+
+### 🎲 4. Smart Random Pick Algorithm:
+- **Group Conflict Filtering**: Updated `DraftEngine.getValidRandomCharacter()` to automatically exclude duplicate group members from the candidate pool when drafting times out without player selection.
+- **Timeout Safety**: Added pre-confirmation conflict validation in countdown timers to prevent accidentally auto-locking an invalid or duplicate variant.
+
+### ✨ 5. Database & Asset Updates (GI):
+- Added new characters to GI database: **Mitya** (5★ Electro / Catalyst) and **Valeriy** (5★ Electro / Sword) along with character card and selection portraits.
+- Fixed weapon string typo for **Vodyanitsa** (`" catalyst"` ➔ `"catalyst"`).
+
 ## Version 1.3.1 (September 28, 2026)
 ### ✨ Add:
 - Add new character in HSR v4.6 : **Pearl**.

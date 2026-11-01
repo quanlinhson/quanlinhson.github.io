@@ -890,6 +890,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 122,
+        "fullName": "Mitya",
+        "shortName": "Mitya",
+        "stars": 5,
+        "elements": ["electro"],
+        "weapon": "catalyst",
+        "gender": ["M"],
+        "selected": false,
+    },
+    {
         "id": 95,
         "fullName": 'Yumemizuki Mizuki',
         "shortName": 'Mizuki',
@@ -1383,6 +1393,16 @@ const GenshinCharacter = [
         "selected": false
     },
     {
+        "id": 123,
+        "fullName": "Valeriy",
+        "shortName": "Valeriy",
+        "stars": 5,
+        "elements": ["electro"],
+        "weapon": "sword",
+        "gender": ["M"],
+        "selected": false,
+    },
+    {
         "id": 97,
         "fullName": 'Varesa',
         "shortName": 'Varesa',
@@ -1432,7 +1452,7 @@ const GenshinCharacter = [
         "shortName": "Vodyanitsa",
         "stars": 5,
         "elements": ["hydro"],
-        "weapon": " catalyst",
+        "weapon": "catalyst",
         "gender": ["F"],
         "selected": false,
     },
