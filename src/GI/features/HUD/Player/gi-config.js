@@ -121,21 +121,25 @@ export const GIConfig = {
         return matchesSearch && matchesElement && matchesWeapon && matchesRating;
     },
 
-    checkGroupConflict(char, teamSlots, currentSlotId) {
-        let count = 0;
+    getCharacterGroup(char) {
+        if (!char) return null;
+        if (char.fullName === 'Traveler' || (char.shortName && char.shortName.startsWith('Traveler'))) {
+            return 'Traveler';
+        }
+        return null;
+    },
+
+    checkGroupConflict(char, teamSlots, currentSlotId, slotCharacters = {}) {
+        const group = this.getCharacterGroup(char);
+        if (!group) return false;
         for (let slotId of teamSlots) {
             if (slotId === currentSlotId) continue;
-            const slot = document.getElementById(slotId);
-            if (slot && slot.classList.contains('filled')) {
-                const img = slot.querySelector('img');
-                if (img) {
-                    const imgFile = img.src.split('/').pop().replace('.webp', '');
-                    const c = GenshinCharacter.find(item => item.shortName.toLowerCase().replace(/\s/g, '') === imgFile);
-                    if (c && c.fullName === char.fullName) count++;
-                }
+            const pickedChar = slotCharacters[slotId];
+            if (pickedChar && this.getCharacterGroup(pickedChar) === group) {
+                return true;
             }
         }
-        return count > 0;
+        return false;
     }
 };
 

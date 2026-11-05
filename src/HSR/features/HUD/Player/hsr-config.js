@@ -111,8 +111,27 @@ export const HSRConfig = {
         return matchesSearch && matchesElement && matchesWeapon && matchesRating;
     },
 
-    checkGroupConflict(char, teamSlots, currentSlotId) {
-        // HSR character group conflict if applicable
+    getCharacterGroup(char) {
+        if (!char) return null;
+        if (char.name === 'Trailblazer' || (char.full_name && char.full_name.startsWith('Trailblazer'))) {
+            return 'Trailblazer';
+        }
+        if (char.name === 'March 7th' || (char.full_name && char.full_name.startsWith('March 7th'))) {
+            return 'March 7th';
+        }
+        return null;
+    },
+
+    checkGroupConflict(char, teamSlots, currentSlotId, slotCharacters = {}) {
+        const group = this.getCharacterGroup(char);
+        if (!group) return false;
+        for (let slotId of teamSlots) {
+            if (slotId === currentSlotId) continue;
+            const pickedChar = slotCharacters[slotId];
+            if (pickedChar && this.getCharacterGroup(pickedChar) === group) {
+                return true;
+            }
+        }
         return false;
     }
 };

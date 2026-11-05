@@ -1002,15 +1002,10 @@ button.confirm:disabled {
 }
 
 .broadcast-hud .timer {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #00ffcc;
-    background: #151928;
-    border: 2px solid #00ffcc;
-    border-radius: 6px;
-    padding: 2px 20px;
-    box-shadow: 0 0 14px rgba(0, 255, 204, 0.4);
-    min-width: 90px;
+    color: #fff;
+    text-align: center;
+    font-size: 2.8rem;
+    min-width: 80px;
 }
 
 /* Full-Width Horizontal Pick Bar (Docked at the Bottom Edge) */
@@ -1248,26 +1243,6 @@ button.confirm:disabled {
     margin: 0;
     border-radius: 0;
     position: relative;
-}
-
-.broadcast-hud .vs-badge::before {
-    content: '';
-    width: 5px;
-    height: 5px;
-    background: #00ffcc;
-    box-shadow: 0 0 6px #00ffcc;
-    border-radius: 50%;
-    margin-bottom: 8px;
-}
-
-.broadcast-hud .vs-badge::after {
-    content: '';
-    width: 5px;
-    height: 5px;
-    background: #ff0055;
-    box-shadow: 0 0 6px #ff0055;
-    border-radius: 50%;
-    margin-top: 8px;
 }
 
 .broadcast-hud .vs-badge span {

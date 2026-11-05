@@ -18,6 +18,7 @@ export class DraftEngine {
         this.tempSelectedCharacter = null;
         this.isBanPickFinished = false;
         this.isSettingsSaved = false;
+        this.slotCharacters = {};
 
         // Time settings
         this.banTimeSetting = 30;
@@ -34,6 +35,13 @@ export class DraftEngine {
     }
 
     init() {
+        this.slotCharacters = {};
+        if (this.config.characters) {
+            this.config.characters.forEach(c => {
+                c.selected = false;
+            });
+        }
+
         this.applyLayoutMode();
         this.renderBanSlots();
         this.renderPickSlots();
@@ -192,6 +200,8 @@ export class DraftEngine {
     }
 
     handleNoBan(slotId) {
+        this.slotCharacters[slotId] = null;
+        this.tempSelectedCharacter = null;
         const slot = document.getElementById(slotId);
         if (!slot) return;
         slot.innerHTML = '';
@@ -212,11 +222,38 @@ export class DraftEngine {
         return [];
     }
 
-    getValidRandomCharacter() {
+    checkGroupConflict(character) {
+        if (this.current_log !== 'pick') return false;
         const teamSlots = this.getTeamSlotsByCurrent();
+
+        if (this.config.getCharacterGroup) {
+            const charGroup = this.config.getCharacterGroup(character);
+            if (!charGroup) return false;
+
+            for (const slotId of teamSlots) {
+                if (slotId === this.current) continue;
+                const pickedChar = this.slotCharacters[slotId];
+                if (pickedChar) {
+                    const pickedGroup = this.config.getCharacterGroup(pickedChar);
+                    if (pickedGroup && pickedGroup === charGroup) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        if (this.config.checkGroupConflict) {
+            return this.config.checkGroupConflict(character, teamSlots, this.current, this.slotCharacters);
+        }
+
+        return false;
+    }
+
+    getValidRandomCharacter() {
         const validCharacters = this.config.characters.filter(char => {
             if (char.selected) return false;
-            if (this.config.checkGroupConflict && this.config.checkGroupConflict(char, teamSlots, this.current)) {
+            if (this.checkGroupConflict(char)) {
                 return false;
             }
             return true;
@@ -227,6 +264,7 @@ export class DraftEngine {
     }
 
     handleCharacterPick(character, slotId) {
+        this.slotCharacters[slotId] = character;
         const identifier = this.config.getCharacterIdentifier(character);
         this.picking_selection(identifier);
         this.updateSlotUI(slotId, character);
@@ -270,12 +308,9 @@ export class DraftEngine {
         if (this.isBanPickFinished) return;
 
         // Group conflict check (e.g. alternate forms of same character in same team)
-        if (this.config.checkGroupConflict) {
-            const teamSlots = this.getTeamSlotsByCurrent();
-            if (this.config.checkGroupConflict(character, teamSlots, this.current)) {
-                this.showAlert("You can't choose this character again!");
-                return;
-            }
+        if (this.checkGroupConflict(character)) {
+            this.showAlert("You can't choose this character again!");
+            return;
         }
 
         // Selected check
@@ -458,7 +493,7 @@ export class DraftEngine {
 
             startCountdown(this.pickTimeSetting, () => {
                 if (this.i >= this.config.maxSteps) return;
-                if (this.tempSelectedCharacter) {
+                if (this.tempSelectedCharacter && !this.checkGroupConflict(this.tempSelectedCharacter)) {
                     this.handleCharacterPick(this.tempSelectedCharacter, this.current);
                     this.pick_sound_play();
                 } else {
@@ -490,7 +525,7 @@ export class DraftEngine {
 
             startCountdown(this.pickTimeSetting, () => {
                 if (this.i >= this.config.maxSteps) return;
-                if (this.tempSelectedCharacter) {
+                if (this.tempSelectedCharacter && !this.checkGroupConflict(this.tempSelectedCharacter)) {
                     this.handleCharacterPick(this.tempSelectedCharacter, this.current);
                     this.pick_sound_play();
                 } else {
