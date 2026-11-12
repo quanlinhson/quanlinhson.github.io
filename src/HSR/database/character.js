@@ -10,6 +10,16 @@ export const HSRCharacter = [
         "selected": false
     },
     {
+        "id": 94,
+        "name": "Aeon ★ Aha",
+        "full_name": "Aeon ★ Aha",
+        "stars": 5,
+        "elements": "Quantum",
+        "path": "Elation",
+        "image_path": "aeon_aha.webp",
+        "selected": false
+    },
+    {
         "id": 2,
         "name": "Aglaea",
         "full_name": "Aglaea",

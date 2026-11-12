@@ -27,12 +27,31 @@
                 <div class="volume-dropdown" id="volume-dropdown">
                     <span class="volume-icon" id="volume-icon"></span>
                     <div class="volume-control" id="volume-control">
-                        <label for="bp-volume-range">Music:</label>
-                        <input type="range" id="bp-volume-range" min="0" max="100" step="1" value="100">
-                        <label for="ban-volume-range">Ban Sound:</label>
-                        <input type="range" id="ban-volume-range" min="0" max="100" step="1" value="100">
-                        <label for="pick-volume-range">Pick Sound:</label>
-                        <input type="range" id="pick-volume-range" min="0" max="100" step="1" value="100">
+                        <div class="volume-header">
+                            <span>Audio</span>
+                            <button id="mute-all-btn" type="button" class="mute-btn">Mute All</button>
+                        </div>
+                        <div class="volume-row">
+                            <div class="volume-label">
+                                <label for="bp-volume-range">Music</label>
+                                <span class="volume-val" id="bp-volume-val">100%</span>
+                            </div>
+                            <input type="range" id="bp-volume-range" min="0" max="100" step="1" value="100">
+                        </div>
+                        <div class="volume-row">
+                            <div class="volume-label">
+                                <label for="ban-volume-range">Ban Sound</label>
+                                <span class="volume-val" id="ban-volume-val">100%</span>
+                            </div>
+                            <input type="range" id="ban-volume-range" min="0" max="100" step="1" value="100">
+                        </div>
+                        <div class="volume-row">
+                            <div class="volume-label">
+                                <label for="pick-volume-range">Pick Sound</label>
+                                <span class="volume-val" id="pick-volume-val">100%</span>
+                            </div>
+                            <input type="range" id="pick-volume-range" min="0" max="100" step="1" value="100">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,7 +83,7 @@
         </div>
 
         <div class="settings-modal" id="settings-modal">
-            <iframe src="../../setting/setting.html" frameborder="0"></iframe>
+            <iframe src="../../setting/setting.html" frameborder="0" scrolling="no"></iframe>
         </div>
 
         <script src="search.js" type="module"></script>
