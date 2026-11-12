@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Version 1.5.0 (November 12, 2026)
+major: comprehensive redesign of settings modal & audio controls, full state persistence & new HSR character
+
+### ⚙️ 1. Complete Settings Modal Redesign:
+- **eSports Dark Glassmorphism Theme**: Overhauled the legacy flat purple layout with a dark glassmorphic dialog (`rgba(18, 22, 34, 0.96); backdrop-filter: blur(16px);`) featuring glowing cyan accents matching the broadcast overlay.
+- **Scrollbar Elimination**: Adjusted card paddings and iframe sizing (`490px × 570px`) with `overflow: hidden;` and `scrolling="no"`, completely removing native browser scrollbars and displaying all controls within a single view.
+- **Interactive Score Steppers**: Added quick `[−]` and `[+]` increment/decrement buttons for Team 1 and Team 2 match scores.
+- **Timer Presets**: Added quick tournament presets (`Blitz 15/30s`, `Standard 30/60s`, `Deep 45/90s`) alongside manual numeric inputs.
+- **Geometric HUD Layout Switch**: Replaced native dropdown with sleek segmented toggle buttons featuring custom geometric orientation icons (vertical rectangle for Player mode, horizontal rectangle for Broadcast mode) with glowing active states.
+- **Modal Header & Actions**: Added top-right close button `[✕]`, "Reset Defaults" action, and a glowing gradient "Save Settings" button.
+
+### 🔊 2. Dark Theme Volume Control:
+- **Dark Glassmorphic Popup**: Replaced solid white popup with a sleek dark floating card matching the title bar.
+- **Custom Range Sliders**: Styled range tracks with neon cyan thumbs and glowing hover effects.
+- **Live Percentage Feedback**: Added real-time numeric indicators (`100%`, `50%`, `0%`) next to each audio channel (Music, Ban, Pick).
+- **One-Click Mute All**: Added a quick "Mute All / Unmute" toggle button.
+- **UX & Responsive Fixes**: Prevented click event bubbling so slider interactions don't close the dropdown; added outside-click dismissal and dynamic responsive positioning (`bottom: calc(100% + 8px);`) in Broadcast mode.
+
+### 💾 3. State Persistence & Data Sync:
+- **Full `localStorage` Caching**: Automatically persists Team Names, Match Scores, Ban/Pick Timers, HUD Layout Mode, and individual audio channel volume levels across page reloads (`F5`).
+- **Live Settings Prefill**: Opening the Settings modal automatically synchronizes with and pre-fills current active match data.
+
+### ✨ 4. Database & Character Updates (HSR):
+- Added new playable character in HSR: **Aeon ★ Aha** (5★ Quantum / Elation) with card artwork and selection portraits.
+
 ## Version 1.4.0 (November 4, 2026)
 summary: landing page sticky footer & links, broadcast HUD polish, multi-element BP rules & new characters
 

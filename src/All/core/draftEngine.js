@@ -42,6 +42,29 @@ export class DraftEngine {
             });
         }
 
+        // Restore match info from localStorage if available
+        const savedTeam1 = localStorage.getItem('team1Name');
+        const savedTeam2 = localStorage.getItem('team2Name');
+        if (savedTeam1) this.globalTeam1 = savedTeam1;
+        if (savedTeam2) this.globalTeam2 = savedTeam2;
+
+        const team1El = document.getElementById('team1-name');
+        const team2El = document.getElementById('team2-name');
+        if (team1El) team1El.textContent = this.globalTeam1;
+        if (team2El) team2El.textContent = this.globalTeam2;
+
+        const savedScore1 = localStorage.getItem('team1Score');
+        const savedScore2 = localStorage.getItem('team2Score');
+        const score1El = document.getElementById('team1-score');
+        const score2El = document.getElementById('team2-score');
+        if (score1El && savedScore1 !== null) score1El.textContent = savedScore1;
+        if (score2El && savedScore2 !== null) score2El.textContent = savedScore2;
+
+        const savedBanTime = localStorage.getItem('banTime');
+        const savedPickTime = localStorage.getItem('pickTime');
+        if (savedBanTime) this.banTimeSetting = parseInt(savedBanTime, 10);
+        if (savedPickTime) this.pickTimeSetting = parseInt(savedPickTime, 10);
+
         this.applyLayoutMode();
         this.renderBanSlots();
         this.renderPickSlots();
@@ -584,15 +607,41 @@ export class DraftEngine {
         const settingsIcon = document.getElementById('settings-icon');
         const settingsModal = document.getElementById('settings-modal');
 
+        const sendCurrentSettingsToIframe = () => {
+            const iframe = settingsModal?.querySelector('iframe');
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.postMessage({
+                    type: 'INIT_SETTINGS',
+                    data: {
+                        team1Name: this.globalTeam1,
+                        team2Name: this.globalTeam2,
+                        team1Score: document.getElementById('team1-score')?.textContent?.trim() || "0",
+                        team2Score: document.getElementById('team2-score')?.textContent?.trim() || "0",
+                        banTime: this.banTimeSetting,
+                        pickTime: this.pickTimeSetting,
+                        hudLayout: localStorage.getItem('hudLayout') || 'classic'
+                    }
+                }, '*');
+            }
+        };
+
         if (settingsIcon && settingsModal) {
             settingsIcon.addEventListener('click', () => {
                 settingsModal.style.display = 'flex';
+                sendCurrentSettingsToIframe();
             });
 
             settingsModal.addEventListener('click', (event) => {
                 if (event.target === settingsModal) {
                     settingsModal.style.display = 'none';
                 }
+            });
+        }
+
+        const iframe = settingsModal?.querySelector('iframe');
+        if (iframe) {
+            iframe.addEventListener('load', () => {
+                sendCurrentSettingsToIframe();
             });
         }
     }
@@ -603,6 +652,14 @@ export class DraftEngine {
         const confirmButton = document.getElementById('confirm');
 
         window.addEventListener('message', (event) => {
+            if (event.data?.closeSettings) {
+                const settingsModal = document.getElementById('settings-modal');
+                if (settingsModal) {
+                    settingsModal.style.display = 'none';
+                }
+                return;
+            }
+
             const { settingsData, settingsSaved } = event.data || {};
 
             if (settingsSaved && settingsData) {
@@ -631,11 +688,11 @@ export class DraftEngine {
                 }
 
                 // Update timer values
-                if (settingsData.banTime && !this.isBanTimeSet) {
+                if (settingsData.banTime) {
                     this.banTimeSetting = parseInt(settingsData.banTime, 10);
                     this.isBanTimeSet = true;
                 }
-                if (settingsData.pickTime && !this.isPickTimeSet) {
+                if (settingsData.pickTime) {
                     this.pickTimeSetting = parseInt(settingsData.pickTime, 10);
                     this.isPickTimeSet = true;
                 }
@@ -643,17 +700,6 @@ export class DraftEngine {
                 // Update HUD layout mode
                 if (settingsData.hudLayout) {
                     this.applyLayoutMode(settingsData.hudLayout);
-                }
-
-                // Update sound volume
-                if (settingsData.volume !== undefined) {
-                    const vol = settingsData.volume / 100;
-                    const bpSound = document.getElementById('bp-sound');
-                    const banSound = document.getElementById('ban-sound');
-                    const pickSound = document.getElementById('pick-sound');
-                    if (bpSound) bpSound.volume = vol;
-                    if (banSound) banSound.volume = vol;
-                    if (pickSound) pickSound.volume = vol;
                 }
 
                 if (characterFilter) characterFilter.style.pointerEvents = 'auto';
@@ -672,31 +718,115 @@ export class DraftEngine {
         const bpVolumeRange = document.getElementById('bp-volume-range');
         const banVolumeRange = document.getElementById('ban-volume-range');
         const pickVolumeRange = document.getElementById('pick-volume-range');
+        const bpVal = document.getElementById('bp-volume-val');
+        const banVal = document.getElementById('ban-volume-val');
+        const pickVal = document.getElementById('pick-volume-val');
+        const muteAllBtn = document.getElementById('mute-all-btn');
         const bpSound = document.getElementById('bp-sound');
         const banSound = document.getElementById('ban-sound');
         const pickSound = document.getElementById('pick-sound');
 
+        // Restore saved volume levels
+        const savedBpVol = localStorage.getItem('vol_bp') !== null ? parseInt(localStorage.getItem('vol_bp'), 10) : 100;
+        const savedBanVol = localStorage.getItem('vol_ban') !== null ? parseInt(localStorage.getItem('vol_ban'), 10) : 100;
+        const savedPickVol = localStorage.getItem('vol_pick') !== null ? parseInt(localStorage.getItem('vol_pick'), 10) : 100;
+
+        if (bpVolumeRange) bpVolumeRange.value = savedBpVol;
+        if (banVolumeRange) banVolumeRange.value = savedBanVol;
+        if (pickVolumeRange) pickVolumeRange.value = savedPickVol;
+
+        if (bpVal) bpVal.textContent = `${savedBpVol}%`;
+        if (banVal) banVal.textContent = `${savedBanVol}%`;
+        if (pickVal) pickVal.textContent = `${savedPickVol}%`;
+
+        if (bpSound) bpSound.volume = savedBpVol / 100;
+        if (banSound) banSound.volume = savedBanVol / 100;
+        if (pickSound) pickSound.volume = savedPickVol / 100;
+
         if (volumeDropdown && volumeControl) {
-            volumeDropdown.addEventListener('click', () => {
-                volumeControl.style.display = (volumeControl.style.display === 'block') ? 'none' : 'block';
+            volumeDropdown.addEventListener('click', (e) => {
+                if (e.target === volumeDropdown || e.target.id === 'volume-icon') {
+                    volumeControl.style.display = (volumeControl.style.display === 'block') ? 'none' : 'block';
+                }
+            });
+
+            // Prevent clicks inside popup from bubbling up and closing dropdown
+            volumeControl.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!volumeDropdown.contains(e.target)) {
+                    volumeControl.style.display = 'none';
+                }
             });
         }
 
         if (bpVolumeRange && bpSound) {
             bpVolumeRange.addEventListener('input', () => {
-                bpSound.volume = bpVolumeRange.value / 100;
+                const val = bpVolumeRange.value;
+                bpSound.volume = val / 100;
+                if (bpVal) bpVal.textContent = `${val}%`;
+                localStorage.setItem('vol_bp', val);
             });
         }
 
         if (banVolumeRange && banSound) {
             banVolumeRange.addEventListener('input', () => {
-                banSound.volume = banVolumeRange.value / 100;
+                const val = banVolumeRange.value;
+                banSound.volume = val / 100;
+                if (banVal) banVal.textContent = `${val}%`;
+                localStorage.setItem('vol_ban', val);
             });
         }
 
         if (pickVolumeRange && pickSound) {
             pickVolumeRange.addEventListener('input', () => {
-                pickSound.volume = pickVolumeRange.value / 100;
+                const val = pickVolumeRange.value;
+                pickSound.volume = val / 100;
+                if (pickVal) pickVal.textContent = `${val}%`;
+                localStorage.setItem('vol_pick', val);
+            });
+        }
+
+        let isMutedAll = false;
+        let prevVolumes = { bp: 100, ban: 100, pick: 100 };
+
+        if (muteAllBtn) {
+            muteAllBtn.addEventListener('click', () => {
+                if (!isMutedAll) {
+                    prevVolumes = {
+                        bp: bpVolumeRange ? bpVolumeRange.value : 100,
+                        ban: banVolumeRange ? banVolumeRange.value : 100,
+                        pick: pickVolumeRange ? pickVolumeRange.value : 100
+                    };
+                    if (bpVolumeRange) bpVolumeRange.value = 0;
+                    if (banVolumeRange) banVolumeRange.value = 0;
+                    if (pickVolumeRange) pickVolumeRange.value = 0;
+                    if (bpSound) bpSound.volume = 0;
+                    if (banSound) banSound.volume = 0;
+                    if (pickSound) pickSound.volume = 0;
+                    if (bpVal) bpVal.textContent = '0%';
+                    if (banVal) banVal.textContent = '0%';
+                    if (pickVal) pickVal.textContent = '0%';
+                    muteAllBtn.textContent = 'Unmute';
+                    muteAllBtn.classList.add('muted');
+                    isMutedAll = true;
+                } else {
+                    if (bpVolumeRange) bpVolumeRange.value = prevVolumes.bp;
+                    if (banVolumeRange) banVolumeRange.value = prevVolumes.ban;
+                    if (pickVolumeRange) pickVolumeRange.value = prevVolumes.pick;
+                    if (bpSound) bpSound.volume = prevVolumes.bp / 100;
+                    if (banSound) banSound.volume = prevVolumes.ban / 100;
+                    if (pickSound) pickSound.volume = prevVolumes.pick / 100;
+                    if (bpVal) bpVal.textContent = `${prevVolumes.bp}%`;
+                    if (banVal) banVal.textContent = `${prevVolumes.ban}%`;
+                    if (pickVal) pickVal.textContent = `${prevVolumes.pick}%`;
+                    muteAllBtn.textContent = 'Mute All';
+                    muteAllBtn.classList.remove('muted');
+                    isMutedAll = false;
+                }
             });
         }
     }
